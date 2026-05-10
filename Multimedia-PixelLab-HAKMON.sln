@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multimedia-PixelLab-HAKMON", "Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON.csproj", "{E94AFF32-45CE-43D6-AEA4-2D2626D0F4B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E94AFF32-45CE-43D6-AEA4-2D2626D0F4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E94AFF32-45CE-43D6-AEA4-2D2626D0F4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E94AFF32-45CE-43D6-AEA4-2D2626D0F4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E94AFF32-45CE-43D6-AEA4-2D2626D0F4B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACEB400C-9119-4D5E-BB67-8D7B4800933E}
+	EndGlobalSection
+EndGlobal

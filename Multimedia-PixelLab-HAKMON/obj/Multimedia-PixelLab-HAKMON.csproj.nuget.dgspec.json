@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Univercity\\Years\\ITE 4th Year\\الفصل الثاني\\نظم وسائط المتعددة\\عملي\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj": {}
+  },
+  "projects": {
+    "D:\\Univercity\\Years\\ITE 4th Year\\الفصل الثاني\\نظم وسائط المتعددة\\عملي\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Univercity\\Years\\ITE 4th Year\\الفصل الثاني\\نظم وسائط المتعددة\\عملي\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
+        "projectName": "Multimedia-PixelLab-HAKMON",
+        "projectPath": "D:\\Univercity\\Years\\ITE 4th Year\\الفصل الثاني\\نظم وسائط المتعددة\\عملي\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
+        "packagesPath": "C:\\Users\\Mohamad Ali Alnuaimi\\.nuget\\packages\\",
+        "outputPath": "D:\\Univercity\\Years\\ITE 4th Year\\الفصل الثاني\\نظم وسائط المتعددة\\عملي\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mohamad Ali Alnuaimi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
