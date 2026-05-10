@@ -16,3 +16,21 @@ D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط ال�
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.genruntimeconfig.cache
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\ref\Multimedia-PixelLab-HAKMON.dll
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia_PixelLab_HAKMON.Properties.Resources.resources
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.exe
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.deps.json
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.runtimeconfig.json
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.dll
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.pdb
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.csproj.AssemblyReference.cache
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia_PixelLab_HAKMON.Form1.resources
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia_PixelLab_HAKMON.Properties.Resources.resources
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.csproj.GenerateResource.cache
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.AssemblyInfoInputs.cache
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.AssemblyInfo.cs
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.csproj.CoreCompileInputs.cache
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.dll
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\refint\Multimedia-PixelLab-HAKMON.dll
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.pdb
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.genruntimeconfig.cache
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\ref\Multimedia-PixelLab-HAKMON.dll

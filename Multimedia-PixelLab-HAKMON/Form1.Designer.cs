@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openImage = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.Image_information_8 = new System.Windows.Forms.Panel();
             space = new System.Windows.Forms.Panel();
             space.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -42,6 +43,7 @@
             space.AllowDrop = true;
             space.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             space.BackColor = System.Drawing.Color.Gainsboro;
+            space.Controls.Add(this.Image_information_8);
             space.Controls.Add(this.pictureBox1);
             space.Location = new System.Drawing.Point(-2, 54);
             space.Name = "space";
@@ -73,6 +75,14 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // Image_information_8
+            // 
+            this.Image_information_8.Location = new System.Drawing.Point(783, 3);
+            this.Image_information_8.Name = "Image_information_8";
+            this.Image_information_8.Size = new System.Drawing.Size(321, 451);
+            this.Image_information_8.TabIndex = 1;
+            this.Image_information_8.Paint += new System.Windows.Forms.PaintEventHandler(this.Image_information_8_Paint);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -94,5 +104,6 @@
         private Button openImage;
         private OpenFileDialog openFileDialog1;
         private PictureBox pictureBox1;
+        private Panel Image_information_8;
     }
 }

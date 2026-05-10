@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Univercity\\Years\\ITE 4th Year\\الفصل الثاني\\نظم وسائط المتعددة\\عملي\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj": {}
+    "D:\\Projects\\Multimedia-PixelLab-HKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj": {}
   },
   "projects": {
-    "D:\\Univercity\\Years\\ITE 4th Year\\الفصل الثاني\\نظم وسائط المتعددة\\عملي\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj": {
+    "D:\\Projects\\Multimedia-PixelLab-HKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Univercity\\Years\\ITE 4th Year\\الفصل الثاني\\نظم وسائط المتعددة\\عملي\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
+        "projectUniqueName": "D:\\Projects\\Multimedia-PixelLab-HKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
         "projectName": "Multimedia-PixelLab-HAKMON",
-        "projectPath": "D:\\Univercity\\Years\\ITE 4th Year\\الفصل الثاني\\نظم وسائط المتعددة\\عملي\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
-        "packagesPath": "C:\\Users\\Mohamad Ali Alnuaimi\\.nuget\\packages\\",
-        "outputPath": "D:\\Univercity\\Years\\ITE 4th Year\\الفصل الثاني\\نظم وسائط المتعددة\\عملي\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON\\obj\\",
+        "projectPath": "D:\\Projects\\Multimedia-PixelLab-HKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Multimedia-PixelLab-HKMON\\Multimedia-PixelLab-HAKMON\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mohamad Ali Alnuaimi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

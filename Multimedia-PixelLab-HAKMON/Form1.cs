@@ -14,6 +14,7 @@ namespace Multimedia_PixelLab_HAKMON
             {
                 pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
                 image = new Bitmap(openFileDialog1.FileName);
+                Image_information_8.Invalidate();
             }
 
         }
@@ -37,6 +38,43 @@ namespace Multimedia_PixelLab_HAKMON
             {
                 e.Effect = DragDropEffects.Copy;
             }
+        }
+
+        private void Image_information_8_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            g.Clear(Color.White);
+
+            if (image == null)
+            {
+                g.DrawString("No Image Loaded",
+                             new Font("Arial", 12),
+                             Brushes.Black,
+                             new PointF(10, 10));
+                return;
+            }
+
+            FileInfo fileInfo = new FileInfo(openFileDialog1.FileName);
+
+            string info =
+                "Image Information\n\n" +
+                "File Name: " + fileInfo.Name + "\n" +
+                "File Path: " + fileInfo.FullName + "\n" +
+                "File Size: " + (fileInfo.Length / 1024.0).ToString("0.00") + " KB\n" +
+                "Width: " + image.Width + " px\n" +
+                "Height: " + image.Height + " px\n" +
+                "Resolution: " + image.HorizontalResolution + " x " +
+                                  image.VerticalResolution + " DPI\n" +
+                "Pixel Format: " + image.PixelFormat.ToString() + "\n" +
+                "Raw Format: " + image.RawFormat.ToString();
+
+            g.DrawString(info,
+                         new Font("Consolas", 11),
+                         Brushes.Black,
+                         new RectangleF(10, 10,
+                         Image_information_8.Width - 20,
+                         Image_information_8.Height - 20));
         }
     }
 }
