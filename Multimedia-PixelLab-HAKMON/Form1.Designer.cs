@@ -40,7 +40,9 @@
             RGB_B = new NumericUpDown();
             RGB_G = new NumericUpDown();
             RGB_R = new NumericUpDown();
-            panel2 = new Panel();
+            HSV = new Panel();
+            Percent2 = new Label();
+            Percent = new Label();
             HSV_V_Label = new Label();
             HSV_S_Label = new Label();
             HSV_H_Label = new Label();
@@ -54,7 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)RGB_B).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RGB_G).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RGB_R).BeginInit();
-            panel2.SuspendLayout();
+            HSV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)HSV_V).BeginInit();
             ((System.ComponentModel.ISupportInitialize)HSV_S).BeginInit();
             ((System.ComponentModel.ISupportInitialize)HSV_H).BeginInit();
@@ -173,19 +175,39 @@
             RGB_R.Size = new Size(68, 27);
             RGB_R.TabIndex = 1;
             // 
-            // panel2
+            // HSV
             // 
-            panel2.Controls.Add(HSV_V_Label);
-            panel2.Controls.Add(HSV_S_Label);
-            panel2.Controls.Add(HSV_H_Label);
-            panel2.Controls.Add(HSV_V);
-            panel2.Controls.Add(HSV_S);
-            panel2.Controls.Add(HSV_H);
-            panel2.Location = new Point(194, 514);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(801, 72);
-            panel2.TabIndex = 3;
-            panel2.Visible = false;
+            HSV.Controls.Add(Percent2);
+            HSV.Controls.Add(Percent);
+            HSV.Controls.Add(HSV_V_Label);
+            HSV.Controls.Add(HSV_S_Label);
+            HSV.Controls.Add(HSV_H_Label);
+            HSV.Controls.Add(HSV_V);
+            HSV.Controls.Add(HSV_S);
+            HSV.Controls.Add(HSV_H);
+            HSV.Location = new Point(194, 514);
+            HSV.Name = "HSV";
+            HSV.Size = new Size(801, 72);
+            HSV.TabIndex = 3;
+            // 
+            // Percent2
+            // 
+            Percent2.AutoSize = true;
+            Percent2.Location = new Point(636, 27);
+            Percent2.Name = "Percent2";
+            Percent2.Size = new Size(21, 20);
+            Percent2.TabIndex = 8;
+            Percent2.Text = "%";
+            Percent2.Visible = false;
+            // 
+            // Percent
+            // 
+            Percent.AutoSize = true;
+            Percent.Location = new Point(393, 27);
+            Percent.Name = "Percent";
+            Percent.Size = new Size(21, 20);
+            Percent.TabIndex = 7;
+            Percent.Text = "%";
             // 
             // HSV_V_Label
             // 
@@ -216,20 +238,14 @@
             // 
             // HSV_V
             // 
-            HSV_V.DecimalPlaces = 1;
-            HSV_V.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             HSV_V.Location = new Point(566, 23);
-            HSV_V.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             HSV_V.Name = "HSV_V";
             HSV_V.Size = new Size(68, 27);
             HSV_V.TabIndex = 3;
             // 
             // HSV_S
             // 
-            HSV_S.DecimalPlaces = 1;
-            HSV_S.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
             HSV_S.Location = new Point(325, 23);
-            HSV_S.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
             HSV_S.Name = "HSV_S";
             HSV_S.Size = new Size(68, 27);
             HSV_S.TabIndex = 2;
@@ -249,7 +265,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1476, 591);
-            Controls.Add(panel2);
+            Controls.Add(HSV);
             Controls.Add(panel1);
             Controls.Add(comboBoxColorSystems);
             Controls.Add(openImage);
@@ -263,8 +279,8 @@
             ((System.ComponentModel.ISupportInitialize)RGB_B).EndInit();
             ((System.ComponentModel.ISupportInitialize)RGB_G).EndInit();
             ((System.ComponentModel.ISupportInitialize)RGB_R).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            HSV.ResumeLayout(false);
+            HSV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)HSV_V).EndInit();
             ((System.ComponentModel.ISupportInitialize)HSV_S).EndInit();
             ((System.ComponentModel.ISupportInitialize)HSV_H).EndInit();
@@ -286,12 +302,14 @@
         private Label RGB_G_label;
         private Label RGB_R_label;
         private Label RGB_B_label;
-        private Panel panel2;
+        private Panel HSV;
         private Label HSV_V_Label;
         private Label HSV_S_Label;
         private Label HSV_H_Label;
         private NumericUpDown HSV_V;
         private NumericUpDown HSV_S;
         private NumericUpDown HSV_H;
+        private Label Percent2;
+        private Label Percent;
     }
 }
