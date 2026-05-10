@@ -34,12 +34,19 @@
             openFileDialog1 = new OpenFileDialog();
             comboBoxColorSystems = new ComboBox();
             panel1 = new Panel();
+            RGB_B_label = new Label();
+            RGB_G_label = new Label();
+            RGB_R_label = new Label();
             RGB_B = new NumericUpDown();
             RGB_G = new NumericUpDown();
             RGB_R = new NumericUpDown();
-            RGB_R_label = new Label();
-            RGB_G_label = new Label();
-            RGB_B_label = new Label();
+            panel2 = new Panel();
+            HSV_V_Label = new Label();
+            HSV_S_Label = new Label();
+            HSV_H_Label = new Label();
+            HSV_V = new NumericUpDown();
+            HSV_S = new NumericUpDown();
+            HSV_H = new NumericUpDown();
             space = new Panel();
             space.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)RGB).BeginInit();
@@ -47,6 +54,10 @@
             ((System.ComponentModel.ISupportInitialize)RGB_B).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RGB_G).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RGB_R).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)HSV_V).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)HSV_S).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)HSV_H).BeginInit();
             SuspendLayout();
             // 
             // space
@@ -107,7 +118,36 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(801, 72);
             panel1.TabIndex = 1;
+            panel1.Visible = false;
             panel1.Paint += panel1_Paint;
+            // 
+            // RGB_B_label
+            // 
+            RGB_B_label.AutoSize = true;
+            RGB_B_label.Location = new Point(542, 27);
+            RGB_B_label.Name = "RGB_B_label";
+            RGB_B_label.Size = new Size(21, 20);
+            RGB_B_label.TabIndex = 6;
+            RGB_B_label.Text = "B:";
+            // 
+            // RGB_G_label
+            // 
+            RGB_G_label.AutoSize = true;
+            RGB_G_label.Location = new Point(302, 27);
+            RGB_G_label.Name = "RGB_G_label";
+            RGB_G_label.Size = new Size(22, 20);
+            RGB_G_label.TabIndex = 5;
+            RGB_G_label.Text = "G:";
+            RGB_G_label.Click += RGB_G_label_Click;
+            // 
+            // RGB_R_label
+            // 
+            RGB_R_label.AutoSize = true;
+            RGB_R_label.Location = new Point(74, 25);
+            RGB_R_label.Name = "RGB_R_label";
+            RGB_R_label.Size = new Size(21, 20);
+            RGB_R_label.TabIndex = 4;
+            RGB_R_label.Text = "R:";
             // 
             // RGB_B
             // 
@@ -133,39 +173,83 @@
             RGB_R.Size = new Size(68, 27);
             RGB_R.TabIndex = 1;
             // 
-            // RGB_R_label
+            // panel2
             // 
-            RGB_R_label.AutoSize = true;
-            RGB_R_label.Location = new Point(74, 25);
-            RGB_R_label.Name = "RGB_R_label";
-            RGB_R_label.Size = new Size(21, 20);
-            RGB_R_label.TabIndex = 4;
-            RGB_R_label.Text = "R:";
+            panel2.Controls.Add(HSV_V_Label);
+            panel2.Controls.Add(HSV_S_Label);
+            panel2.Controls.Add(HSV_H_Label);
+            panel2.Controls.Add(HSV_V);
+            panel2.Controls.Add(HSV_S);
+            panel2.Controls.Add(HSV_H);
+            panel2.Location = new Point(194, 514);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(801, 72);
+            panel2.TabIndex = 3;
+            panel2.Visible = false;
             // 
-            // RGB_G_label
+            // HSV_V_Label
             // 
-            RGB_G_label.AutoSize = true;
-            RGB_G_label.Location = new Point(302, 27);
-            RGB_G_label.Name = "RGB_G_label";
-            RGB_G_label.Size = new Size(22, 20);
-            RGB_G_label.TabIndex = 5;
-            RGB_G_label.Text = "G:";
-            RGB_G_label.Click += RGB_G_label_Click;
+            HSV_V_Label.AutoSize = true;
+            HSV_V_Label.Location = new Point(542, 27);
+            HSV_V_Label.Name = "HSV_V_Label";
+            HSV_V_Label.Size = new Size(21, 20);
+            HSV_V_Label.TabIndex = 6;
+            HSV_V_Label.Text = "V:";
             // 
-            // RGB_B_label
+            // HSV_S_Label
             // 
-            RGB_B_label.AutoSize = true;
-            RGB_B_label.Location = new Point(542, 27);
-            RGB_B_label.Name = "RGB_B_label";
-            RGB_B_label.Size = new Size(21, 20);
-            RGB_B_label.TabIndex = 6;
-            RGB_B_label.Text = "B:";
+            HSV_S_Label.AutoSize = true;
+            HSV_S_Label.Location = new Point(302, 27);
+            HSV_S_Label.Name = "HSV_S_Label";
+            HSV_S_Label.Size = new Size(20, 20);
+            HSV_S_Label.TabIndex = 5;
+            HSV_S_Label.Text = "S:";
+            // 
+            // HSV_H_Label
+            // 
+            HSV_H_Label.AutoSize = true;
+            HSV_H_Label.Location = new Point(74, 25);
+            HSV_H_Label.Name = "HSV_H_Label";
+            HSV_H_Label.Size = new Size(23, 20);
+            HSV_H_Label.TabIndex = 4;
+            HSV_H_Label.Text = "H:";
+            // 
+            // HSV_V
+            // 
+            HSV_V.DecimalPlaces = 1;
+            HSV_V.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            HSV_V.Location = new Point(566, 23);
+            HSV_V.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            HSV_V.Name = "HSV_V";
+            HSV_V.Size = new Size(68, 27);
+            HSV_V.TabIndex = 3;
+            // 
+            // HSV_S
+            // 
+            HSV_S.DecimalPlaces = 1;
+            HSV_S.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            HSV_S.Location = new Point(325, 23);
+            HSV_S.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            HSV_S.Name = "HSV_S";
+            HSV_S.Size = new Size(68, 27);
+            HSV_S.TabIndex = 2;
+            HSV_S.ValueChanged += HSV_S_ValueChanged;
+            // 
+            // HSV_H
+            // 
+            HSV_H.Location = new Point(96, 22);
+            HSV_H.Maximum = new decimal(new int[] { 360, 0, 0, 0 });
+            HSV_H.Name = "HSV_H";
+            HSV_H.Size = new Size(68, 27);
+            HSV_H.TabIndex = 1;
+            HSV_H.ValueChanged += HSV_H_ValueChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1476, 591);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(comboBoxColorSystems);
             Controls.Add(openImage);
@@ -179,6 +263,11 @@
             ((System.ComponentModel.ISupportInitialize)RGB_B).EndInit();
             ((System.ComponentModel.ISupportInitialize)RGB_G).EndInit();
             ((System.ComponentModel.ISupportInitialize)RGB_R).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)HSV_V).EndInit();
+            ((System.ComponentModel.ISupportInitialize)HSV_S).EndInit();
+            ((System.ComponentModel.ISupportInitialize)HSV_H).EndInit();
             ResumeLayout(false);
 
         }
@@ -197,5 +286,12 @@
         private Label RGB_G_label;
         private Label RGB_R_label;
         private Label RGB_B_label;
+        private Panel panel2;
+        private Label HSV_V_Label;
+        private Label HSV_S_Label;
+        private Label HSV_H_Label;
+        private NumericUpDown HSV_V;
+        private NumericUpDown HSV_S;
+        private NumericUpDown HSV_H;
     }
 }

@@ -53,7 +53,7 @@
               "RelativeDocumentMoniker": "Multimedia-PixelLab-HAKMON\\Form1.cs",
               "ToolTip": "D:\\MultiMedia\\Multimedia-PixelLab-HKMON\\Multimedia-PixelLab-HAKMON\\Form1.cs*",
               "RelativeToolTip": "Multimedia-PixelLab-HAKMON\\Form1.cs*",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAuwHMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAA+wHkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-10T12:04:30.764Z",
               "EditorCaption": ""
@@ -73,15 +73,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Multimedia-PixelLab-HAKMON",
+              "Title": "Multimedia-PixelLab-HAKMON.csproj",
               "DocumentMoniker": "D:\\MultiMedia\\Multimedia-PixelLab-HKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
               "RelativeDocumentMoniker": "Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
               "ToolTip": "D:\\MultiMedia\\Multimedia-PixelLab-HKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
               "RelativeToolTip": "Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-10T12:04:05.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-10T12:04:05.339Z"
             }
           ]
         }

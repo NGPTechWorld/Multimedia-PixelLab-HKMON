@@ -115,5 +115,15 @@ namespace Multimedia_PixelLab_HAKMON
         {
 
         }
+
+        private void HSV_S_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HSV_H_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
