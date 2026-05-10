@@ -28,12 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Text = "Form1";
+            System.Windows.Forms.Panel space;
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openImage = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            space = new System.Windows.Forms.Panel();
+            space.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // space
+            // 
+            space.AllowDrop = true;
+            space.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            space.BackColor = System.Drawing.Color.Gainsboro;
+            space.Controls.Add(this.pictureBox1);
+            space.Location = new System.Drawing.Point(-2, 54);
+            space.Name = "space";
+            space.Size = new System.Drawing.Size(1107, 454);
+            space.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1104, 448);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragDrop_1);
+            this.pictureBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragEnter);
+            // 
+            // openImage
+            // 
+            this.openImage.Location = new System.Drawing.Point(12, 12);
+            this.openImage.Name = "openImage";
+            this.openImage.Size = new System.Drawing.Size(136, 29);
+            this.openImage.TabIndex = 1;
+            this.openImage.Text = "Open Image";
+            this.openImage.UseVisualStyleBackColor = true;
+            this.openImage.Click += new System.EventHandler(this.openImage_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1107, 591);
+            this.Controls.Add(this.openImage);
+            this.Controls.Add(space);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            space.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Panel space;
+        private Button openImage;
+        private OpenFileDialog openFileDialog1;
+        private PictureBox pictureBox1;
     }
 }
