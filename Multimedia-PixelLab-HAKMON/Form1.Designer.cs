@@ -29,18 +29,25 @@
         private void InitializeComponent()
         {
             Panel space;
+            YUV_Panel = new Panel();
+            YUV_V_Label = new Label();
+            YUV_U_Label = new Label();
+            YUV_Y_Label = new Label();
+            YUV_V = new NumericUpDown();
+            YUV_U = new NumericUpDown();
+            YUV_Y = new NumericUpDown();
             RGB = new PictureBox();
             openImage = new Button();
             openFileDialog1 = new OpenFileDialog();
             comboBoxColorSystems = new ComboBox();
-            panel1 = new Panel();
+            RGB_Panel = new Panel();
             RGB_B_label = new Label();
             RGB_G_label = new Label();
             RGB_R_label = new Label();
             RGB_B = new NumericUpDown();
             RGB_G = new NumericUpDown();
             RGB_R = new NumericUpDown();
-            HSV = new Panel();
+            HSV_Panel = new Panel();
             Percent2 = new Label();
             Percent = new Label();
             HSV_V_Label = new Label();
@@ -51,12 +58,16 @@
             HSV_H = new NumericUpDown();
             space = new Panel();
             space.SuspendLayout();
+            YUV_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)YUV_V).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)YUV_U).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)YUV_Y).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RGB).BeginInit();
-            panel1.SuspendLayout();
+            RGB_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)RGB_B).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RGB_G).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RGB_R).BeginInit();
-            HSV.SuspendLayout();
+            HSV_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)HSV_V).BeginInit();
             ((System.ComponentModel.ISupportInitialize)HSV_S).BeginInit();
             ((System.ComponentModel.ISupportInitialize)HSV_H).BeginInit();
@@ -71,6 +82,73 @@
             space.Name = "space";
             space.Size = new Size(1107, 454);
             space.TabIndex = 0;
+            // 
+            // YUV_Panel
+            // 
+            YUV_Panel.Controls.Add(YUV_V_Label);
+            YUV_Panel.Controls.Add(YUV_U_Label);
+            YUV_Panel.Controls.Add(YUV_Y_Label);
+            YUV_Panel.Controls.Add(YUV_V);
+            YUV_Panel.Controls.Add(YUV_U);
+            YUV_Panel.Controls.Add(YUV_Y);
+            YUV_Panel.Location = new Point(192, 515);
+            YUV_Panel.Name = "YUV_Panel";
+            YUV_Panel.Size = new Size(801, 72);
+            YUV_Panel.TabIndex = 4;
+            // 
+            // YUV_V_Label
+            // 
+            YUV_V_Label.AutoSize = true;
+            YUV_V_Label.Location = new Point(542, 27);
+            YUV_V_Label.Name = "YUV_V_Label";
+            YUV_V_Label.Size = new Size(21, 20);
+            YUV_V_Label.TabIndex = 6;
+            YUV_V_Label.Text = "V:";
+            // 
+            // YUV_U_Label
+            // 
+            YUV_U_Label.AutoSize = true;
+            YUV_U_Label.Location = new Point(302, 27);
+            YUV_U_Label.Name = "YUV_U_Label";
+            YUV_U_Label.Size = new Size(22, 20);
+            YUV_U_Label.TabIndex = 5;
+            YUV_U_Label.Text = "U:";
+            // 
+            // YUV_Y_Label
+            // 
+            YUV_Y_Label.AutoSize = true;
+            YUV_Y_Label.Location = new Point(74, 25);
+            YUV_Y_Label.Name = "YUV_Y_Label";
+            YUV_Y_Label.Size = new Size(20, 20);
+            YUV_Y_Label.TabIndex = 4;
+            YUV_Y_Label.Text = "Y:";
+            YUV_Y_Label.Click += label3_Click;
+            // 
+            // YUV_V
+            // 
+            YUV_V.Location = new Point(566, 23);
+            YUV_V.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            YUV_V.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
+            YUV_V.Name = "YUV_V";
+            YUV_V.Size = new Size(68, 27);
+            YUV_V.TabIndex = 3;
+            // 
+            // YUV_U
+            // 
+            YUV_U.Location = new Point(325, 23);
+            YUV_U.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            YUV_U.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
+            YUV_U.Name = "YUV_U";
+            YUV_U.Size = new Size(68, 27);
+            YUV_U.TabIndex = 2;
+            // 
+            // YUV_Y
+            // 
+            YUV_Y.Location = new Point(96, 22);
+            YUV_Y.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            YUV_Y.Name = "YUV_Y";
+            YUV_Y.Size = new Size(68, 27);
+            YUV_Y.TabIndex = 1;
             // 
             // RGB
             // 
@@ -108,20 +186,20 @@
             comboBoxColorSystems.TabIndex = 2;
             comboBoxColorSystems.SelectedIndexChanged += comboBoxColorSystems_SelectedIndexChanged;
             // 
-            // panel1
+            // RGB_Panel
             // 
-            panel1.Controls.Add(RGB_B_label);
-            panel1.Controls.Add(RGB_G_label);
-            panel1.Controls.Add(RGB_R_label);
-            panel1.Controls.Add(RGB_B);
-            panel1.Controls.Add(RGB_G);
-            panel1.Controls.Add(RGB_R);
-            panel1.Location = new Point(194, 514);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(801, 72);
-            panel1.TabIndex = 1;
-            panel1.Visible = false;
-            panel1.Paint += panel1_Paint;
+            RGB_Panel.Controls.Add(RGB_B_label);
+            RGB_Panel.Controls.Add(RGB_G_label);
+            RGB_Panel.Controls.Add(RGB_R_label);
+            RGB_Panel.Controls.Add(RGB_B);
+            RGB_Panel.Controls.Add(RGB_G);
+            RGB_Panel.Controls.Add(RGB_R);
+            RGB_Panel.Location = new Point(194, 514);
+            RGB_Panel.Name = "RGB_Panel";
+            RGB_Panel.Size = new Size(801, 72);
+            RGB_Panel.TabIndex = 1;
+            RGB_Panel.Visible = false;
+            RGB_Panel.Paint += panel1_Paint;
             // 
             // RGB_B_label
             // 
@@ -175,20 +253,21 @@
             RGB_R.Size = new Size(68, 27);
             RGB_R.TabIndex = 1;
             // 
-            // HSV
+            // HSV_Panel
             // 
-            HSV.Controls.Add(Percent2);
-            HSV.Controls.Add(Percent);
-            HSV.Controls.Add(HSV_V_Label);
-            HSV.Controls.Add(HSV_S_Label);
-            HSV.Controls.Add(HSV_H_Label);
-            HSV.Controls.Add(HSV_V);
-            HSV.Controls.Add(HSV_S);
-            HSV.Controls.Add(HSV_H);
-            HSV.Location = new Point(194, 514);
-            HSV.Name = "HSV";
-            HSV.Size = new Size(801, 72);
-            HSV.TabIndex = 3;
+            HSV_Panel.Controls.Add(Percent2);
+            HSV_Panel.Controls.Add(Percent);
+            HSV_Panel.Controls.Add(HSV_V_Label);
+            HSV_Panel.Controls.Add(HSV_S_Label);
+            HSV_Panel.Controls.Add(HSV_H_Label);
+            HSV_Panel.Controls.Add(HSV_V);
+            HSV_Panel.Controls.Add(HSV_S);
+            HSV_Panel.Controls.Add(HSV_H);
+            HSV_Panel.Location = new Point(194, 514);
+            HSV_Panel.Name = "HSV_Panel";
+            HSV_Panel.Size = new Size(801, 72);
+            HSV_Panel.TabIndex = 3;
+            HSV_Panel.Paint += HSV_Panel_Paint;
             // 
             // Percent2
             // 
@@ -265,22 +344,28 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1476, 591);
-            Controls.Add(HSV);
-            Controls.Add(panel1);
+            Controls.Add(YUV_Panel);
+            Controls.Add(RGB_Panel);
             Controls.Add(comboBoxColorSystems);
             Controls.Add(openImage);
             Controls.Add(space);
+            Controls.Add(HSV_Panel);
             Name = "Form1";
             Text = "Form1";
             space.ResumeLayout(false);
+            YUV_Panel.ResumeLayout(false);
+            YUV_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)YUV_V).EndInit();
+            ((System.ComponentModel.ISupportInitialize)YUV_U).EndInit();
+            ((System.ComponentModel.ISupportInitialize)YUV_Y).EndInit();
             ((System.ComponentModel.ISupportInitialize)RGB).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            RGB_Panel.ResumeLayout(false);
+            RGB_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)RGB_B).EndInit();
             ((System.ComponentModel.ISupportInitialize)RGB_G).EndInit();
             ((System.ComponentModel.ISupportInitialize)RGB_R).EndInit();
-            HSV.ResumeLayout(false);
-            HSV.PerformLayout();
+            HSV_Panel.ResumeLayout(false);
+            HSV_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)HSV_V).EndInit();
             ((System.ComponentModel.ISupportInitialize)HSV_S).EndInit();
             ((System.ComponentModel.ISupportInitialize)HSV_H).EndInit();
@@ -295,14 +380,14 @@
         private OpenFileDialog openFileDialog1;
         private PictureBox RGB;
         private ComboBox comboBoxColorSystems;
-        private Panel panel1;
+        private Panel RGB_Panel;
         private NumericUpDown RGB_B;
         private NumericUpDown RGB_G;
         private NumericUpDown RGB_R;
         private Label RGB_G_label;
         private Label RGB_R_label;
         private Label RGB_B_label;
-        private Panel HSV;
+        private Panel HSV_Panel;
         private Label HSV_V_Label;
         private Label HSV_S_Label;
         private Label HSV_H_Label;
@@ -311,5 +396,12 @@
         private NumericUpDown HSV_H;
         private Label Percent2;
         private Label Percent;
+        private Panel YUV_Panel;
+        private Label YUV_V_Label;
+        private Label YUV_U_Label;
+        private Label YUV_Y_Label;
+        private NumericUpDown YUV_V;
+        private NumericUpDown YUV_U;
+        private NumericUpDown YUV_Y;
     }
 }
