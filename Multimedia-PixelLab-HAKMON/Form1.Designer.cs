@@ -32,7 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openImage = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxColorSystems = new System.Windows.Forms.ComboBox();
             space = new System.Windows.Forms.Panel();
             space.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,28 +73,29 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // comboBox1
+            // comboBoxColorSystems
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxColorSystems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxColorSystems.FormattingEnabled = true;
+            this.comboBoxColorSystems.Items.AddRange(new object[] {
             "RGB",
             "CMYK",
             "HSV",
             "YUV",
             "LAB",
             "YCbCr"});
-            this.comboBox1.Location = new System.Drawing.Point(28, 536);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.Text = "RGB";
+            this.comboBoxColorSystems.Location = new System.Drawing.Point(28, 536);
+            this.comboBoxColorSystems.Name = "comboBoxColorSystems";
+            this.comboBoxColorSystems.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxColorSystems.TabIndex = 2;
+            this.comboBoxColorSystems.SelectedIndexChanged += new System.EventHandler(this.comboBoxColorSystems_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1476, 591);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxColorSystems);
             this.Controls.Add(this.openImage);
             this.Controls.Add(space);
             this.Name = "Form1";
@@ -111,6 +112,6 @@
         private Button openImage;
         private OpenFileDialog openFileDialog1;
         private PictureBox pictureBox1;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxColorSystems;
     }
 }
