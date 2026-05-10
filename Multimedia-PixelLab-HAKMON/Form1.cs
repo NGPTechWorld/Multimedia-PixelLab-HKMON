@@ -9,7 +9,7 @@ namespace Multimedia_PixelLab_HAKMON
         public Form1()
         {
             InitializeComponent();
-            pictureBox1.AllowDrop = true;
+            RGB.AllowDrop = true;
             comboBoxColorSystems.SelectedIndex = 0;
         }
 
@@ -18,26 +18,26 @@ namespace Multimedia_PixelLab_HAKMON
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+                RGB.Image = Image.FromFile(openFileDialog1.FileName);
                 image = new Bitmap(openFileDialog1.FileName);
             }
         }
 
         private void pictureBox1_DragDrop_1(object sender, DragEventArgs e)
         {
-            // ÃÎÐ ÇáãáÝÇÊ
+            // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-            // ÚÑÖ Ãæá ÕæÑÉ
+            // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (files.Length > 0)
             {
-                pictureBox1.Image = Image.FromFile(files[0]);
+                RGB.Image = Image.FromFile(files[0]);
             }
         }
 
         private void pictureBox1_DragEnter(object sender, DragEventArgs e)
         {
-            // ÇáÊÃßÏ Ãä ÇáãáÝ ÕæÑÉ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 e.Effect = DragDropEffects.Copy;
@@ -57,7 +57,7 @@ namespace Multimedia_PixelLab_HAKMON
             switch (selectedSystem)
             {
                 case "RGB":
-                    pictureBox1.Image = image;
+                    RGB.Image = image;
                     return;
 
                 case "HSV":
@@ -81,7 +81,7 @@ namespace Multimedia_PixelLab_HAKMON
                     return;
             }
 
-            pictureBox1.Image = outputImage.ToBitmap();
+            RGB.Image = outputImage.ToBitmap();
         }
         private void ConvertToCMYK()
         {
@@ -103,7 +103,17 @@ namespace Multimedia_PixelLab_HAKMON
                 }
             }
 
-            pictureBox1.Image = cmykImage;
+            RGB.Image = cmykImage;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void RGB_G_label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,3 +38,44 @@ D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط ال�
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x86\native\vcruntime140.dll
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.csproj.CopyComplete
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Emgu.CV.Bitmap.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.exe
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.deps.json
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.runtimeconfig.json
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.pdb
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Emgu.CV.Platform.NetStandard.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\Emgu.CV.Bitmap.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x64\native\cvextern.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x64\native\opencv_videoio_ffmpeg455_64.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x86\native\cvextern.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x86\native\opencv_videoio_ffmpeg455.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x64\native\concrt140.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x64\native\msvcp140.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x64\native\msvcp140_1.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x64\native\msvcp140_2.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x64\native\msvcp140_atomic_wait.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x64\native\msvcp140_codecvt_ids.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x64\native\vcruntime140.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x64\native\vcruntime140_1.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x86\native\concrt140.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x86\native\msvcp140.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x86\native\msvcp140_1.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x86\native\msvcp140_2.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x86\native\msvcp140_atomic_wait.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x86\native\msvcp140_codecvt_ids.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\runtimes\win-x86\native\vcruntime140.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.csproj.AssemblyReference.cache
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia_PixelLab_HAKMON.Form1.resources
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia_PixelLab_HAKMON.Properties.Resources.resources
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.csproj.GenerateResource.cache
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.GeneratedMSBuildEditorConfig.editorconfig
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.AssemblyInfoInputs.cache
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.AssemblyInfo.cs
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.csproj.CoreCompileInputs.cache
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.sourcelink.json
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimed.DC8C4B91.Up2Date
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\refint\Multimedia-PixelLab-HAKMON.dll
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.pdb
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.genruntimeconfig.cache
+D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\ref\Multimedia-PixelLab-HAKMON.dll

@@ -28,81 +28,158 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Panel space;
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.openImage = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.comboBoxColorSystems = new System.Windows.Forms.ComboBox();
-            space = new System.Windows.Forms.Panel();
+            Panel space;
+            RGB = new PictureBox();
+            openImage = new Button();
+            openFileDialog1 = new OpenFileDialog();
+            comboBoxColorSystems = new ComboBox();
+            panel1 = new Panel();
+            RGB_B = new NumericUpDown();
+            RGB_G = new NumericUpDown();
+            RGB_R = new NumericUpDown();
+            RGB_R_label = new Label();
+            RGB_G_label = new Label();
+            RGB_B_label = new Label();
+            space = new Panel();
             space.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)RGB).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)RGB_B).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)RGB_G).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)RGB_R).BeginInit();
+            SuspendLayout();
             // 
             // space
             // 
             space.AllowDrop = true;
-            space.BackColor = System.Drawing.Color.Gainsboro;
-            space.Controls.Add(this.pictureBox1);
-            space.Location = new System.Drawing.Point(-2, 54);
+            space.BackColor = Color.Gainsboro;
+            space.Controls.Add(RGB);
+            space.Location = new Point(-2, 54);
             space.Name = "space";
-            space.Size = new System.Drawing.Size(1107, 454);
+            space.Size = new Size(1107, 454);
             space.TabIndex = 0;
             // 
-            // pictureBox1
+            // RGB
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1104, 448);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragDrop_1);
-            this.pictureBox1.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragEnter);
+            RGB.Location = new Point(0, 3);
+            RGB.Name = "RGB";
+            RGB.Size = new Size(1104, 448);
+            RGB.SizeMode = PictureBoxSizeMode.Zoom;
+            RGB.TabIndex = 0;
+            RGB.TabStop = false;
+            RGB.DragDrop += pictureBox1_DragDrop_1;
+            RGB.DragEnter += pictureBox1_DragEnter;
             // 
             // openImage
             // 
-            this.openImage.Location = new System.Drawing.Point(12, 12);
-            this.openImage.Name = "openImage";
-            this.openImage.Size = new System.Drawing.Size(136, 29);
-            this.openImage.TabIndex = 1;
-            this.openImage.Text = "Open Image";
-            this.openImage.UseVisualStyleBackColor = true;
-            this.openImage.Click += new System.EventHandler(this.openImage_Click);
+            openImage.Location = new Point(12, 12);
+            openImage.Name = "openImage";
+            openImage.Size = new Size(136, 29);
+            openImage.TabIndex = 1;
+            openImage.Text = "Open Image";
+            openImage.UseVisualStyleBackColor = true;
+            openImage.Click += openImage_Click;
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // comboBoxColorSystems
             // 
-            this.comboBoxColorSystems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxColorSystems.FormattingEnabled = true;
-            this.comboBoxColorSystems.Items.AddRange(new object[] {
-            "RGB",
-            "CMYK",
-            "HSV",
-            "YUV",
-            "LAB",
-            "YCbCr"});
-            this.comboBoxColorSystems.Location = new System.Drawing.Point(28, 536);
-            this.comboBoxColorSystems.Name = "comboBoxColorSystems";
-            this.comboBoxColorSystems.Size = new System.Drawing.Size(151, 28);
-            this.comboBoxColorSystems.TabIndex = 2;
-            this.comboBoxColorSystems.SelectedIndexChanged += new System.EventHandler(this.comboBoxColorSystems_SelectedIndexChanged);
+            comboBoxColorSystems.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxColorSystems.FormattingEnabled = true;
+            comboBoxColorSystems.Items.AddRange(new object[] { "RGB", "CMYK", "HSV", "YUV", "LAB", "YCbCr" });
+            comboBoxColorSystems.Location = new Point(28, 536);
+            comboBoxColorSystems.Name = "comboBoxColorSystems";
+            comboBoxColorSystems.Size = new Size(151, 28);
+            comboBoxColorSystems.TabIndex = 2;
+            comboBoxColorSystems.SelectedIndexChanged += comboBoxColorSystems_SelectedIndexChanged;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(RGB_B_label);
+            panel1.Controls.Add(RGB_G_label);
+            panel1.Controls.Add(RGB_R_label);
+            panel1.Controls.Add(RGB_B);
+            panel1.Controls.Add(RGB_G);
+            panel1.Controls.Add(RGB_R);
+            panel1.Location = new Point(194, 514);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(801, 72);
+            panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
+            // 
+            // RGB_B
+            // 
+            RGB_B.Location = new Point(566, 23);
+            RGB_B.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            RGB_B.Name = "RGB_B";
+            RGB_B.Size = new Size(68, 27);
+            RGB_B.TabIndex = 3;
+            // 
+            // RGB_G
+            // 
+            RGB_G.Location = new Point(325, 23);
+            RGB_G.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            RGB_G.Name = "RGB_G";
+            RGB_G.Size = new Size(68, 27);
+            RGB_G.TabIndex = 2;
+            // 
+            // RGB_R
+            // 
+            RGB_R.Location = new Point(96, 22);
+            RGB_R.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            RGB_R.Name = "RGB_R";
+            RGB_R.Size = new Size(68, 27);
+            RGB_R.TabIndex = 1;
+            // 
+            // RGB_R_label
+            // 
+            RGB_R_label.AutoSize = true;
+            RGB_R_label.Location = new Point(74, 25);
+            RGB_R_label.Name = "RGB_R_label";
+            RGB_R_label.Size = new Size(21, 20);
+            RGB_R_label.TabIndex = 4;
+            RGB_R_label.Text = "R:";
+            // 
+            // RGB_G_label
+            // 
+            RGB_G_label.AutoSize = true;
+            RGB_G_label.Location = new Point(302, 27);
+            RGB_G_label.Name = "RGB_G_label";
+            RGB_G_label.Size = new Size(22, 20);
+            RGB_G_label.TabIndex = 5;
+            RGB_G_label.Text = "G:";
+            RGB_G_label.Click += RGB_G_label_Click;
+            // 
+            // RGB_B_label
+            // 
+            RGB_B_label.AutoSize = true;
+            RGB_B_label.Location = new Point(542, 27);
+            RGB_B_label.Name = "RGB_B_label";
+            RGB_B_label.Size = new Size(21, 20);
+            RGB_B_label.TabIndex = 6;
+            RGB_B_label.Text = "B:";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1476, 591);
-            this.Controls.Add(this.comboBoxColorSystems);
-            this.Controls.Add(this.openImage);
-            this.Controls.Add(space);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1476, 591);
+            Controls.Add(panel1);
+            Controls.Add(comboBoxColorSystems);
+            Controls.Add(openImage);
+            Controls.Add(space);
+            Name = "Form1";
+            Text = "Form1";
             space.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)RGB).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)RGB_B).EndInit();
+            ((System.ComponentModel.ISupportInitialize)RGB_G).EndInit();
+            ((System.ComponentModel.ISupportInitialize)RGB_R).EndInit();
+            ResumeLayout(false);
 
         }
 
@@ -111,7 +188,14 @@
         private Panel space;
         private Button openImage;
         private OpenFileDialog openFileDialog1;
-        private PictureBox pictureBox1;
+        private PictureBox RGB;
         private ComboBox comboBoxColorSystems;
+        private Panel panel1;
+        private NumericUpDown RGB_B;
+        private NumericUpDown RGB_G;
+        private NumericUpDown RGB_R;
+        private Label RGB_G_label;
+        private Label RGB_R_label;
+        private Label RGB_B_label;
     }
 }
