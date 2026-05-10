@@ -7,6 +7,7 @@ namespace Multimedia_PixelLab_HAKMON
             InitializeComponent();
             pictureBox1.AllowDrop = true;
         }
+
         Bitmap image;
         private void openImage_Click(object sender, EventArgs e)
         {
@@ -15,7 +16,6 @@ namespace Multimedia_PixelLab_HAKMON
                 pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
                 image = new Bitmap(openFileDialog1.FileName);
             }
-
         }
 
         private void pictureBox1_DragDrop_1(object sender, DragEventArgs e)

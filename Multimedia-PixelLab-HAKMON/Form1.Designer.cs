@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openImage = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             space = new System.Windows.Forms.Panel();
             space.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -40,7 +41,6 @@
             // space
             // 
             space.AllowDrop = true;
-            space.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             space.BackColor = System.Drawing.Color.Gainsboro;
             space.Controls.Add(this.pictureBox1);
             space.Location = new System.Drawing.Point(-2, 54);
@@ -73,11 +73,28 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "RGB",
+            "CMYK",
+            "HSV",
+            "YUV",
+            "LAB",
+            "YCbCr"});
+            this.comboBox1.Location = new System.Drawing.Point(28, 536);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.TabIndex = 2;
+            this.comboBox1.Text = "RGB";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 591);
+            this.ClientSize = new System.Drawing.Size(1476, 591);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.openImage);
             this.Controls.Add(space);
             this.Name = "Form1";
@@ -94,5 +111,6 @@
         private Button openImage;
         private OpenFileDialog openFileDialog1;
         private PictureBox pictureBox1;
+        private ComboBox comboBox1;
     }
 }
