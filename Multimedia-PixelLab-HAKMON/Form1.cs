@@ -7,6 +7,7 @@ namespace Multimedia_PixelLab_HAKMON
     public partial class Form1 : Form
     {
         Bitmap image;
+        Bitmap originalImage;
         List<Panel> colorSystemsPanel = new List<Panel>();
         public Form1()
         {
@@ -22,14 +23,54 @@ namespace Multimedia_PixelLab_HAKMON
             colorSystemsPanel.Add(YCbCr_Panel);
             RGB_Panel.Enabled = false;
             ShowPanel(0);
+
+            RGB_R.Value = 50;
+            RGB_G.Value = 50;
+            RGB_B.Value = 50;
+            RGB_R.ValueChanged += RGB_ValueChanged;
+            RGB_G.ValueChanged += RGB_ValueChanged;
+            RGB_B.ValueChanged += RGB_ValueChanged;
         }
 
-        
+        private void RGB_ValueChanged(object sender, EventArgs e)
+        {
+            if (originalImage == null)
+                return;
+
+            Bitmap tempImage = new Bitmap(originalImage);
+
+            double rFactor = (double)RGB_R.Value / 50.0;
+            double gFactor = (double)RGB_G.Value / 50.0;
+            double bFactor = (double)RGB_B.Value / 50.0;
+
+            for (int y = 0; y < tempImage.Height; y++)
+            {
+                for (int x = 0; x < tempImage.Width; x++)
+                {
+                    Color pixel = originalImage.GetPixel(x, y);
+
+                    int newR = (int)(pixel.R * rFactor);
+                    int newG = (int)(pixel.G * gFactor);
+                    int newB = (int)(pixel.B * bFactor);
+
+                    newR = Math.Max(0, Math.Min(255, newR));
+                    newG = Math.Max(0, Math.Min(255, newG));
+                    newB = Math.Max(0, Math.Min(255, newB));
+
+                    Color newPixel = Color.FromArgb(newR, newG, newB);
+
+                    tempImage.SetPixel(x, y, newPixel);
+                }
+            }
+
+            RGB.Image = tempImage;
+        }
         private void openImage_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 RGB.Image = Image.FromFile(openFileDialog1.FileName);
+                originalImage = new Bitmap(openFileDialog1.FileName);
                 image = new Bitmap(openFileDialog1.FileName);
                 comboBoxColorSystems.Enabled = true;
                 RGB_Panel.Enabled = true;
@@ -38,10 +79,8 @@ namespace Multimedia_PixelLab_HAKMON
 
         private void pictureBox1_DragDrop_1(object sender, DragEventArgs e)
         {
-            // ��� �������
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-            // ��� ��� ����
             if (files.Length > 0)
             {
                 RGB.Image = Image.FromFile(files[0]);
@@ -52,7 +91,6 @@ namespace Multimedia_PixelLab_HAKMON
 
         private void pictureBox1_DragEnter(object sender, DragEventArgs e)
         {
-            // ������ �� ����� ����
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 e.Effect = DragDropEffects.Copy;
