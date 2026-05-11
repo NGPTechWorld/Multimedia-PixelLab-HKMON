@@ -135,5 +135,10 @@ namespace Multimedia_PixelLab_HAKMON
         {
 
         }
+
+        private void LAB_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

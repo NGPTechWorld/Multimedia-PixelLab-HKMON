@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Panel space;
+            RGB = new PictureBox();
             YUV_Panel = new Panel();
             YUV_V_Label = new Label();
             YUV_U_Label = new Label();
@@ -36,7 +37,6 @@
             YUV_V = new NumericUpDown();
             YUV_U = new NumericUpDown();
             YUV_Y = new NumericUpDown();
-            RGB = new PictureBox();
             openImage = new Button();
             openFileDialog1 = new OpenFileDialog();
             comboBoxColorSystems = new ComboBox();
@@ -56,13 +56,20 @@
             HSV_V = new NumericUpDown();
             HSV_S = new NumericUpDown();
             HSV_H = new NumericUpDown();
+            LAB_Panel = new Panel();
+            LAB_B_Label = new Label();
+            LAB_A_Label = new Label();
+            LAB_L_Label = new Label();
+            LAB_B = new NumericUpDown();
+            LAB_A = new NumericUpDown();
+            LAB_L = new NumericUpDown();
             space = new Panel();
             space.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)RGB).BeginInit();
             YUV_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)YUV_V).BeginInit();
             ((System.ComponentModel.ISupportInitialize)YUV_U).BeginInit();
             ((System.ComponentModel.ISupportInitialize)YUV_Y).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)RGB).BeginInit();
             RGB_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)RGB_B).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RGB_G).BeginInit();
@@ -71,6 +78,10 @@
             ((System.ComponentModel.ISupportInitialize)HSV_V).BeginInit();
             ((System.ComponentModel.ISupportInitialize)HSV_S).BeginInit();
             ((System.ComponentModel.ISupportInitialize)HSV_H).BeginInit();
+            LAB_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LAB_B).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LAB_A).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LAB_L).BeginInit();
             SuspendLayout();
             // 
             // space
@@ -82,6 +93,17 @@
             space.Name = "space";
             space.Size = new Size(1107, 454);
             space.TabIndex = 0;
+            // 
+            // RGB
+            // 
+            RGB.Location = new Point(0, 3);
+            RGB.Name = "RGB";
+            RGB.Size = new Size(1104, 448);
+            RGB.SizeMode = PictureBoxSizeMode.Zoom;
+            RGB.TabIndex = 0;
+            RGB.TabStop = false;
+            RGB.DragDrop += pictureBox1_DragDrop_1;
+            RGB.DragEnter += pictureBox1_DragEnter;
             // 
             // YUV_Panel
             // 
@@ -95,6 +117,7 @@
             YUV_Panel.Name = "YUV_Panel";
             YUV_Panel.Size = new Size(801, 72);
             YUV_Panel.TabIndex = 4;
+            YUV_Panel.Visible = false;
             // 
             // YUV_V_Label
             // 
@@ -149,17 +172,6 @@
             YUV_Y.Name = "YUV_Y";
             YUV_Y.Size = new Size(68, 27);
             YUV_Y.TabIndex = 1;
-            // 
-            // RGB
-            // 
-            RGB.Location = new Point(0, 3);
-            RGB.Name = "RGB";
-            RGB.Size = new Size(1104, 448);
-            RGB.SizeMode = PictureBoxSizeMode.Zoom;
-            RGB.TabIndex = 0;
-            RGB.TabStop = false;
-            RGB.DragDrop += pictureBox1_DragDrop_1;
-            RGB.DragEnter += pictureBox1_DragEnter;
             // 
             // openImage
             // 
@@ -339,11 +351,78 @@
             HSV_H.TabIndex = 1;
             HSV_H.ValueChanged += HSV_H_ValueChanged;
             // 
+            // LAB_Panel
+            // 
+            LAB_Panel.Controls.Add(LAB_B_Label);
+            LAB_Panel.Controls.Add(LAB_A_Label);
+            LAB_Panel.Controls.Add(LAB_L_Label);
+            LAB_Panel.Controls.Add(LAB_B);
+            LAB_Panel.Controls.Add(LAB_A);
+            LAB_Panel.Controls.Add(LAB_L);
+            LAB_Panel.Location = new Point(192, 514);
+            LAB_Panel.Name = "LAB_Panel";
+            LAB_Panel.Size = new Size(801, 72);
+            LAB_Panel.TabIndex = 5;
+            LAB_Panel.Paint += LAB_Panel_Paint;
+            // 
+            // LAB_B_Label
+            // 
+            LAB_B_Label.AutoSize = true;
+            LAB_B_Label.Location = new Point(542, 27);
+            LAB_B_Label.Name = "LAB_B_Label";
+            LAB_B_Label.Size = new Size(21, 20);
+            LAB_B_Label.TabIndex = 6;
+            LAB_B_Label.Text = "B:";
+            // 
+            // LAB_A_Label
+            // 
+            LAB_A_Label.AutoSize = true;
+            LAB_A_Label.Location = new Point(302, 27);
+            LAB_A_Label.Name = "LAB_A_Label";
+            LAB_A_Label.Size = new Size(22, 20);
+            LAB_A_Label.TabIndex = 5;
+            LAB_A_Label.Text = "A:";
+            // 
+            // LAB_L_Label
+            // 
+            LAB_L_Label.AutoSize = true;
+            LAB_L_Label.Location = new Point(74, 25);
+            LAB_L_Label.Name = "LAB_L_Label";
+            LAB_L_Label.Size = new Size(19, 20);
+            LAB_L_Label.TabIndex = 4;
+            LAB_L_Label.Text = "L:";
+            // 
+            // LAB_B
+            // 
+            LAB_B.Location = new Point(566, 23);
+            LAB_B.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            LAB_B.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
+            LAB_B.Name = "LAB_B";
+            LAB_B.Size = new Size(68, 27);
+            LAB_B.TabIndex = 3;
+            // 
+            // LAB_A
+            // 
+            LAB_A.Location = new Point(325, 23);
+            LAB_A.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            LAB_A.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
+            LAB_A.Name = "LAB_A";
+            LAB_A.Size = new Size(68, 27);
+            LAB_A.TabIndex = 2;
+            // 
+            // LAB_L
+            // 
+            LAB_L.Location = new Point(96, 22);
+            LAB_L.Name = "LAB_L";
+            LAB_L.Size = new Size(68, 27);
+            LAB_L.TabIndex = 1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1476, 591);
+            Controls.Add(LAB_Panel);
             Controls.Add(YUV_Panel);
             Controls.Add(RGB_Panel);
             Controls.Add(comboBoxColorSystems);
@@ -353,12 +432,12 @@
             Name = "Form1";
             Text = "Form1";
             space.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)RGB).EndInit();
             YUV_Panel.ResumeLayout(false);
             YUV_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)YUV_V).EndInit();
             ((System.ComponentModel.ISupportInitialize)YUV_U).EndInit();
             ((System.ComponentModel.ISupportInitialize)YUV_Y).EndInit();
-            ((System.ComponentModel.ISupportInitialize)RGB).EndInit();
             RGB_Panel.ResumeLayout(false);
             RGB_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)RGB_B).EndInit();
@@ -369,6 +448,11 @@
             ((System.ComponentModel.ISupportInitialize)HSV_V).EndInit();
             ((System.ComponentModel.ISupportInitialize)HSV_S).EndInit();
             ((System.ComponentModel.ISupportInitialize)HSV_H).EndInit();
+            LAB_Panel.ResumeLayout(false);
+            LAB_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)LAB_B).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LAB_A).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LAB_L).EndInit();
             ResumeLayout(false);
 
         }
@@ -403,5 +487,12 @@
         private NumericUpDown YUV_V;
         private NumericUpDown YUV_U;
         private NumericUpDown YUV_Y;
+        private Panel LAB_Panel;
+        private Label LAB_B_Label;
+        private Label LAB_A_Label;
+        private Label LAB_L_Label;
+        private NumericUpDown LAB_B;
+        private NumericUpDown LAB_A;
+        private NumericUpDown LAB_L;
     }
 }
