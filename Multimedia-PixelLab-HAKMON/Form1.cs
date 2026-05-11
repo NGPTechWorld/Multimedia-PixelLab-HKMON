@@ -140,5 +140,10 @@ namespace Multimedia_PixelLab_HAKMON
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

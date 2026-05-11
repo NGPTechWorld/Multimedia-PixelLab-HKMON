@@ -57,12 +57,6 @@
             HSV_S = new NumericUpDown();
             HSV_H = new NumericUpDown();
             LAB_Panel = new Panel();
-            LAB_B_Label = new Label();
-            LAB_A_Label = new Label();
-            LAB_L_Label = new Label();
-            LAB_B = new NumericUpDown();
-            LAB_A = new NumericUpDown();
-            LAB_L = new NumericUpDown();
             YCbCr_Panel = new Panel();
             YCbCr_Cr_Label = new Label();
             YCbCr_Cb_Label = new Label();
@@ -70,6 +64,25 @@
             YCbCr_Cr = new NumericUpDown();
             YCbCr_Cb = new NumericUpDown();
             YCbCr_Y = new NumericUpDown();
+            LAB_B_Label = new Label();
+            LAB_A_Label = new Label();
+            LAB_L_Label = new Label();
+            LAB_B = new NumericUpDown();
+            LAB_A = new NumericUpDown();
+            LAB_L = new NumericUpDown();
+            CMYK_Panel = new Panel();
+            CMYK_Y_Label = new Label();
+            CMYK_M_Label = new Label();
+            CMYK_C_Label = new Label();
+            numericUpDown1 = new NumericUpDown();
+            numericUpDown2 = new NumericUpDown();
+            numericUpDown3 = new NumericUpDown();
+            CMYK_K_Label = new Label();
+            numericUpDown4 = new NumericUpDown();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             space = new Panel();
             space.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)RGB).BeginInit();
@@ -86,13 +99,18 @@
             ((System.ComponentModel.ISupportInitialize)HSV_S).BeginInit();
             ((System.ComponentModel.ISupportInitialize)HSV_H).BeginInit();
             LAB_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)LAB_B).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)LAB_A).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)LAB_L).BeginInit();
             YCbCr_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)YCbCr_Cr).BeginInit();
             ((System.ComponentModel.ISupportInitialize)YCbCr_Cb).BeginInit();
             ((System.ComponentModel.ISupportInitialize)YCbCr_Y).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LAB_B).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LAB_A).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LAB_L).BeginInit();
+            CMYK_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
             SuspendLayout();
             // 
             // space
@@ -364,70 +382,19 @@
             // 
             // LAB_Panel
             // 
-            LAB_Panel.Controls.Add(YCbCr_Panel);
+            LAB_Panel.Controls.Add(CMYK_Panel);
             LAB_Panel.Controls.Add(LAB_B_Label);
             LAB_Panel.Controls.Add(LAB_A_Label);
             LAB_Panel.Controls.Add(LAB_L_Label);
             LAB_Panel.Controls.Add(LAB_B);
             LAB_Panel.Controls.Add(LAB_A);
             LAB_Panel.Controls.Add(LAB_L);
+            LAB_Panel.Controls.Add(YCbCr_Panel);
             LAB_Panel.Location = new Point(192, 514);
             LAB_Panel.Name = "LAB_Panel";
             LAB_Panel.Size = new Size(801, 72);
             LAB_Panel.TabIndex = 5;
             LAB_Panel.Paint += LAB_Panel_Paint;
-            // 
-            // LAB_B_Label
-            // 
-            LAB_B_Label.AutoSize = true;
-            LAB_B_Label.Location = new Point(542, 27);
-            LAB_B_Label.Name = "LAB_B_Label";
-            LAB_B_Label.Size = new Size(21, 20);
-            LAB_B_Label.TabIndex = 6;
-            LAB_B_Label.Text = "B:";
-            // 
-            // LAB_A_Label
-            // 
-            LAB_A_Label.AutoSize = true;
-            LAB_A_Label.Location = new Point(302, 27);
-            LAB_A_Label.Name = "LAB_A_Label";
-            LAB_A_Label.Size = new Size(22, 20);
-            LAB_A_Label.TabIndex = 5;
-            LAB_A_Label.Text = "A:";
-            // 
-            // LAB_L_Label
-            // 
-            LAB_L_Label.AutoSize = true;
-            LAB_L_Label.Location = new Point(74, 25);
-            LAB_L_Label.Name = "LAB_L_Label";
-            LAB_L_Label.Size = new Size(19, 20);
-            LAB_L_Label.TabIndex = 4;
-            LAB_L_Label.Text = "L:";
-            // 
-            // LAB_B
-            // 
-            LAB_B.Location = new Point(566, 23);
-            LAB_B.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
-            LAB_B.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
-            LAB_B.Name = "LAB_B";
-            LAB_B.Size = new Size(68, 27);
-            LAB_B.TabIndex = 3;
-            // 
-            // LAB_A
-            // 
-            LAB_A.Location = new Point(325, 23);
-            LAB_A.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
-            LAB_A.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
-            LAB_A.Name = "LAB_A";
-            LAB_A.Size = new Size(68, 27);
-            LAB_A.TabIndex = 2;
-            // 
-            // LAB_L
-            // 
-            LAB_L.Location = new Point(96, 22);
-            LAB_L.Name = "LAB_L";
-            LAB_L.Size = new Size(68, 27);
-            LAB_L.TabIndex = 1;
             // 
             // YCbCr_Panel
             // 
@@ -493,6 +460,178 @@
             YCbCr_Y.Size = new Size(68, 27);
             YCbCr_Y.TabIndex = 1;
             // 
+            // LAB_B_Label
+            // 
+            LAB_B_Label.AutoSize = true;
+            LAB_B_Label.Location = new Point(542, 27);
+            LAB_B_Label.Name = "LAB_B_Label";
+            LAB_B_Label.Size = new Size(21, 20);
+            LAB_B_Label.TabIndex = 6;
+            LAB_B_Label.Text = "B:";
+            // 
+            // LAB_A_Label
+            // 
+            LAB_A_Label.AutoSize = true;
+            LAB_A_Label.Location = new Point(302, 27);
+            LAB_A_Label.Name = "LAB_A_Label";
+            LAB_A_Label.Size = new Size(22, 20);
+            LAB_A_Label.TabIndex = 5;
+            LAB_A_Label.Text = "A:";
+            // 
+            // LAB_L_Label
+            // 
+            LAB_L_Label.AutoSize = true;
+            LAB_L_Label.Location = new Point(74, 25);
+            LAB_L_Label.Name = "LAB_L_Label";
+            LAB_L_Label.Size = new Size(19, 20);
+            LAB_L_Label.TabIndex = 4;
+            LAB_L_Label.Text = "L:";
+            // 
+            // LAB_B
+            // 
+            LAB_B.Location = new Point(566, 23);
+            LAB_B.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            LAB_B.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
+            LAB_B.Name = "LAB_B";
+            LAB_B.Size = new Size(68, 27);
+            LAB_B.TabIndex = 3;
+            // 
+            // LAB_A
+            // 
+            LAB_A.Location = new Point(325, 23);
+            LAB_A.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
+            LAB_A.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
+            LAB_A.Name = "LAB_A";
+            LAB_A.Size = new Size(68, 27);
+            LAB_A.TabIndex = 2;
+            // 
+            // LAB_L
+            // 
+            LAB_L.Location = new Point(96, 22);
+            LAB_L.Name = "LAB_L";
+            LAB_L.Size = new Size(68, 27);
+            LAB_L.TabIndex = 1;
+            // 
+            // CMYK_Panel
+            // 
+            CMYK_Panel.Controls.Add(label4);
+            CMYK_Panel.Controls.Add(label3);
+            CMYK_Panel.Controls.Add(label2);
+            CMYK_Panel.Controls.Add(label1);
+            CMYK_Panel.Controls.Add(CMYK_K_Label);
+            CMYK_Panel.Controls.Add(numericUpDown4);
+            CMYK_Panel.Controls.Add(CMYK_Y_Label);
+            CMYK_Panel.Controls.Add(CMYK_M_Label);
+            CMYK_Panel.Controls.Add(CMYK_C_Label);
+            CMYK_Panel.Controls.Add(numericUpDown1);
+            CMYK_Panel.Controls.Add(numericUpDown2);
+            CMYK_Panel.Controls.Add(numericUpDown3);
+            CMYK_Panel.Location = new Point(0, 0);
+            CMYK_Panel.Name = "CMYK_Panel";
+            CMYK_Panel.Size = new Size(801, 72);
+            CMYK_Panel.TabIndex = 7;
+            // 
+            // CMYK_Y_Label
+            // 
+            CMYK_Y_Label.AutoSize = true;
+            CMYK_Y_Label.Location = new Point(436, 27);
+            CMYK_Y_Label.Name = "CMYK_Y_Label";
+            CMYK_Y_Label.Size = new Size(20, 20);
+            CMYK_Y_Label.TabIndex = 6;
+            CMYK_Y_Label.Text = "Y:";
+            // 
+            // CMYK_M_Label
+            // 
+            CMYK_M_Label.AutoSize = true;
+            CMYK_M_Label.Location = new Point(241, 27);
+            CMYK_M_Label.Name = "CMYK_M_Label";
+            CMYK_M_Label.Size = new Size(25, 20);
+            CMYK_M_Label.TabIndex = 5;
+            CMYK_M_Label.Text = "M:";
+            // 
+            // CMYK_C_Label
+            // 
+            CMYK_C_Label.AutoSize = true;
+            CMYK_C_Label.Location = new Point(74, 25);
+            CMYK_C_Label.Name = "CMYK_C_Label";
+            CMYK_C_Label.Size = new Size(21, 20);
+            CMYK_C_Label.TabIndex = 4;
+            CMYK_C_Label.Text = "C:";
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(459, 23);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(68, 27);
+            numericUpDown1.TabIndex = 3;
+            // 
+            // numericUpDown2
+            // 
+            numericUpDown2.Location = new Point(269, 23);
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(68, 27);
+            numericUpDown2.TabIndex = 2;
+            // 
+            // numericUpDown3
+            // 
+            numericUpDown3.Location = new Point(96, 22);
+            numericUpDown3.Name = "numericUpDown3";
+            numericUpDown3.Size = new Size(68, 27);
+            numericUpDown3.TabIndex = 1;
+            // 
+            // CMYK_K_Label
+            // 
+            CMYK_K_Label.AutoSize = true;
+            CMYK_K_Label.Location = new Point(621, 27);
+            CMYK_K_Label.Name = "CMYK_K_Label";
+            CMYK_K_Label.Size = new Size(21, 20);
+            CMYK_K_Label.TabIndex = 8;
+            CMYK_K_Label.Text = "K:";
+            // 
+            // numericUpDown4
+            // 
+            numericUpDown4.Location = new Point(645, 23);
+            numericUpDown4.Name = "numericUpDown4";
+            numericUpDown4.Size = new Size(68, 27);
+            numericUpDown4.TabIndex = 7;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(166, 26);
+            label1.Name = "label1";
+            label1.Size = new Size(21, 20);
+            label1.TabIndex = 9;
+            label1.Text = "%";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(340, 27);
+            label2.Name = "label2";
+            label2.Size = new Size(21, 20);
+            label2.TabIndex = 10;
+            label2.Text = "%";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(529, 27);
+            label3.Name = "label3";
+            label3.Size = new Size(21, 20);
+            label3.TabIndex = 11;
+            label3.Text = "%";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(715, 27);
+            label4.Name = "label4";
+            label4.Size = new Size(21, 20);
+            label4.TabIndex = 12;
+            label4.Text = "%";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -526,14 +665,20 @@
             ((System.ComponentModel.ISupportInitialize)HSV_H).EndInit();
             LAB_Panel.ResumeLayout(false);
             LAB_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)LAB_B).EndInit();
-            ((System.ComponentModel.ISupportInitialize)LAB_A).EndInit();
-            ((System.ComponentModel.ISupportInitialize)LAB_L).EndInit();
             YCbCr_Panel.ResumeLayout(false);
             YCbCr_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)YCbCr_Cr).EndInit();
             ((System.ComponentModel.ISupportInitialize)YCbCr_Cb).EndInit();
             ((System.ComponentModel.ISupportInitialize)YCbCr_Y).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LAB_B).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LAB_A).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LAB_L).EndInit();
+            CMYK_Panel.ResumeLayout(false);
+            CMYK_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
             ResumeLayout(false);
 
         }
@@ -582,5 +727,18 @@
         private NumericUpDown YCbCr_Cr;
         private NumericUpDown YCbCr_Cb;
         private NumericUpDown YCbCr_Y;
+        private Panel CMYK_Panel;
+        private Label CMYK_K_Label;
+        private NumericUpDown numericUpDown4;
+        private Label CMYK_Y_Label;
+        private Label CMYK_M_Label;
+        private Label CMYK_C_Label;
+        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericUpDown2;
+        private NumericUpDown numericUpDown3;
+        private Label label1;
+        private Label label4;
+        private Label label3;
+        private Label label2;
     }
 }

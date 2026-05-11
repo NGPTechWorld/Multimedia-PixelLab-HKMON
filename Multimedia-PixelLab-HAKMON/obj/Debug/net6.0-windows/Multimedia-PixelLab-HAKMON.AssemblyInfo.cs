@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Multimedia-PixelLab-HAKMON")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+515b8e44a161c17ae27074fcb1020cabd972223f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cec12807bc1409795c3e114d795c4294e531d0f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Multimedia-PixelLab-HAKMON")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Multimedia-PixelLab-HAKMON")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
