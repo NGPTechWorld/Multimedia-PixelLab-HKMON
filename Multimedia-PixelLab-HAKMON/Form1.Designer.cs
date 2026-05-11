@@ -63,6 +63,13 @@
             LAB_B = new NumericUpDown();
             LAB_A = new NumericUpDown();
             LAB_L = new NumericUpDown();
+            YCbCr_Panel = new Panel();
+            YCbCr_Cr_Label = new Label();
+            YCbCr_Cb_Label = new Label();
+            YCbCr_Y_Label = new Label();
+            YCbCr_Cr = new NumericUpDown();
+            YCbCr_Cb = new NumericUpDown();
+            YCbCr_Y = new NumericUpDown();
             space = new Panel();
             space.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)RGB).BeginInit();
@@ -82,6 +89,10 @@
             ((System.ComponentModel.ISupportInitialize)LAB_B).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LAB_A).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LAB_L).BeginInit();
+            YCbCr_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)YCbCr_Cr).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)YCbCr_Cb).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)YCbCr_Y).BeginInit();
             SuspendLayout();
             // 
             // space
@@ -353,6 +364,7 @@
             // 
             // LAB_Panel
             // 
+            LAB_Panel.Controls.Add(YCbCr_Panel);
             LAB_Panel.Controls.Add(LAB_B_Label);
             LAB_Panel.Controls.Add(LAB_A_Label);
             LAB_Panel.Controls.Add(LAB_L_Label);
@@ -417,6 +429,70 @@
             LAB_L.Size = new Size(68, 27);
             LAB_L.TabIndex = 1;
             // 
+            // YCbCr_Panel
+            // 
+            YCbCr_Panel.Controls.Add(YCbCr_Cr_Label);
+            YCbCr_Panel.Controls.Add(YCbCr_Cb_Label);
+            YCbCr_Panel.Controls.Add(YCbCr_Y_Label);
+            YCbCr_Panel.Controls.Add(YCbCr_Cr);
+            YCbCr_Panel.Controls.Add(YCbCr_Cb);
+            YCbCr_Panel.Controls.Add(YCbCr_Y);
+            YCbCr_Panel.Location = new Point(0, 1);
+            YCbCr_Panel.Name = "YCbCr_Panel";
+            YCbCr_Panel.Size = new Size(801, 72);
+            YCbCr_Panel.TabIndex = 6;
+            // 
+            // YCbCr_Cr_Label
+            // 
+            YCbCr_Cr_Label.AutoSize = true;
+            YCbCr_Cr_Label.Location = new Point(538, 27);
+            YCbCr_Cr_Label.Name = "YCbCr_Cr_Label";
+            YCbCr_Cr_Label.Size = new Size(26, 20);
+            YCbCr_Cr_Label.TabIndex = 6;
+            YCbCr_Cr_Label.Text = "Cr:";
+            // 
+            // YCbCr_Cb_Label
+            // 
+            YCbCr_Cb_Label.AutoSize = true;
+            YCbCr_Cb_Label.Location = new Point(295, 27);
+            YCbCr_Cb_Label.Name = "YCbCr_Cb_Label";
+            YCbCr_Cb_Label.Size = new Size(30, 20);
+            YCbCr_Cb_Label.TabIndex = 5;
+            YCbCr_Cb_Label.Text = "Cb:";
+            // 
+            // YCbCr_Y_Label
+            // 
+            YCbCr_Y_Label.AutoSize = true;
+            YCbCr_Y_Label.Location = new Point(74, 25);
+            YCbCr_Y_Label.Name = "YCbCr_Y_Label";
+            YCbCr_Y_Label.Size = new Size(20, 20);
+            YCbCr_Y_Label.TabIndex = 4;
+            YCbCr_Y_Label.Text = "Y:";
+            // 
+            // YCbCr_Cr
+            // 
+            YCbCr_Cr.Location = new Point(566, 23);
+            YCbCr_Cr.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            YCbCr_Cr.Name = "YCbCr_Cr";
+            YCbCr_Cr.Size = new Size(68, 27);
+            YCbCr_Cr.TabIndex = 3;
+            // 
+            // YCbCr_Cb
+            // 
+            YCbCr_Cb.Location = new Point(325, 23);
+            YCbCr_Cb.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            YCbCr_Cb.Name = "YCbCr_Cb";
+            YCbCr_Cb.Size = new Size(68, 27);
+            YCbCr_Cb.TabIndex = 2;
+            // 
+            // YCbCr_Y
+            // 
+            YCbCr_Y.Location = new Point(96, 22);
+            YCbCr_Y.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            YCbCr_Y.Name = "YCbCr_Y";
+            YCbCr_Y.Size = new Size(68, 27);
+            YCbCr_Y.TabIndex = 1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -453,6 +529,11 @@
             ((System.ComponentModel.ISupportInitialize)LAB_B).EndInit();
             ((System.ComponentModel.ISupportInitialize)LAB_A).EndInit();
             ((System.ComponentModel.ISupportInitialize)LAB_L).EndInit();
+            YCbCr_Panel.ResumeLayout(false);
+            YCbCr_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)YCbCr_Cr).EndInit();
+            ((System.ComponentModel.ISupportInitialize)YCbCr_Cb).EndInit();
+            ((System.ComponentModel.ISupportInitialize)YCbCr_Y).EndInit();
             ResumeLayout(false);
 
         }
@@ -494,5 +575,12 @@
         private NumericUpDown LAB_B;
         private NumericUpDown LAB_A;
         private NumericUpDown LAB_L;
+        private Panel YCbCr_Panel;
+        private Label YCbCr_Cr_Label;
+        private Label YCbCr_Cb_Label;
+        private Label YCbCr_Y_Label;
+        private NumericUpDown YCbCr_Cr;
+        private NumericUpDown YCbCr_Cb;
+        private NumericUpDown YCbCr_Y;
     }
 }
