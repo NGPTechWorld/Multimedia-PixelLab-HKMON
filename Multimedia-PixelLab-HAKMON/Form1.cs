@@ -6,20 +6,33 @@ namespace Multimedia_PixelLab_HAKMON
 {
     public partial class Form1 : Form
     {
+        Bitmap image;
+        List<Panel> colorSystemsPanel = new List<Panel>();
         public Form1()
         {
             InitializeComponent();
             RGB.AllowDrop = true;
             comboBoxColorSystems.SelectedIndex = 0;
+            comboBoxColorSystems.Enabled = false;
+            colorSystemsPanel.Add(RGB_Panel);
+            colorSystemsPanel.Add(CMYK_Panel);
+            colorSystemsPanel.Add(HSV_Panel);
+            colorSystemsPanel.Add(YUV_Panel);
+            colorSystemsPanel.Add(LAB_Panel);
+            colorSystemsPanel.Add(YCbCr_Panel);
+            RGB_Panel.Enabled = false;
+            ShowPanel(0);
         }
 
-        Bitmap image;
+        
         private void openImage_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 RGB.Image = Image.FromFile(openFileDialog1.FileName);
                 image = new Bitmap(openFileDialog1.FileName);
+                comboBoxColorSystems.Enabled = true;
+                RGB_Panel.Enabled = true;
             }
         }
 
@@ -32,6 +45,8 @@ namespace Multimedia_PixelLab_HAKMON
             if (files.Length > 0)
             {
                 RGB.Image = Image.FromFile(files[0]);
+                comboBoxColorSystems.Enabled = true;
+                RGB_Panel.Enabled = true;
             }
         }
 
@@ -57,30 +72,35 @@ namespace Multimedia_PixelLab_HAKMON
             switch (selectedSystem)
             {
                 case "RGB":
+                    ShowPanel(0);
                     RGB.Image = image;
                     return;
 
+                case "CMYK":
+                    ShowPanel(1);
+                    ConvertToCMYK();
+                    return;
+
                 case "HSV":
+                    ShowPanel(2);
                     CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2Hsv);
                     break;
 
                 case "YUV":
+                    ShowPanel(3);
                     CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2Yuv);
                     break;
 
                 case "LAB":
+                    ShowPanel(4);
                     CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2Lab);
                     break;
 
                 case "YCbCr":
+                    ShowPanel(5);
                     CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2YCrCb);
                     break;
-
-                case "CMYK":
-                    ConvertToCMYK();
-                    return;
             }
-
             RGB.Image = outputImage.ToBitmap();
         }
         private void ConvertToCMYK()
@@ -145,5 +165,13 @@ namespace Multimedia_PixelLab_HAKMON
         {
 
         }
+        private void ShowPanel(int index)
+        {
+            for (int i = 0; i < colorSystemsPanel.Count; i++)
+            {
+                colorSystemsPanel[i].Visible = (i == index);
+            }
+        }
+
     }
 }

@@ -28,658 +28,719 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Panel space;
-            RGB = new PictureBox();
-            YUV_Panel = new Panel();
-            YUV_V_Label = new Label();
-            YUV_U_Label = new Label();
-            YUV_Y_Label = new Label();
-            YUV_V = new NumericUpDown();
-            YUV_U = new NumericUpDown();
-            YUV_Y = new NumericUpDown();
-            openImage = new Button();
-            openFileDialog1 = new OpenFileDialog();
-            comboBoxColorSystems = new ComboBox();
-            RGB_Panel = new Panel();
-            RGB_B_label = new Label();
-            RGB_G_label = new Label();
-            RGB_R_label = new Label();
-            RGB_B = new NumericUpDown();
-            RGB_G = new NumericUpDown();
-            RGB_R = new NumericUpDown();
-            HSV_Panel = new Panel();
-            Percent2 = new Label();
-            Percent = new Label();
-            HSV_V_Label = new Label();
-            HSV_S_Label = new Label();
-            HSV_H_Label = new Label();
-            HSV_V = new NumericUpDown();
-            HSV_S = new NumericUpDown();
-            HSV_H = new NumericUpDown();
-            LAB_Panel = new Panel();
-            YCbCr_Panel = new Panel();
-            YCbCr_Cr_Label = new Label();
-            YCbCr_Cb_Label = new Label();
-            YCbCr_Y_Label = new Label();
-            YCbCr_Cr = new NumericUpDown();
-            YCbCr_Cb = new NumericUpDown();
-            YCbCr_Y = new NumericUpDown();
-            LAB_B_Label = new Label();
-            LAB_A_Label = new Label();
-            LAB_L_Label = new Label();
-            LAB_B = new NumericUpDown();
-            LAB_A = new NumericUpDown();
-            LAB_L = new NumericUpDown();
-            CMYK_Panel = new Panel();
-            CMYK_Y_Label = new Label();
-            CMYK_M_Label = new Label();
-            CMYK_C_Label = new Label();
-            numericUpDown1 = new NumericUpDown();
-            numericUpDown2 = new NumericUpDown();
-            numericUpDown3 = new NumericUpDown();
-            CMYK_K_Label = new Label();
-            numericUpDown4 = new NumericUpDown();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            space = new Panel();
+            System.Windows.Forms.Panel space;
+            this.RGB = new System.Windows.Forms.PictureBox();
+            this.YUV_Panel = new System.Windows.Forms.Panel();
+            this.YUV_V_Label = new System.Windows.Forms.Label();
+            this.YUV_U_Label = new System.Windows.Forms.Label();
+            this.YUV_Y_Label = new System.Windows.Forms.Label();
+            this.YUV_V = new System.Windows.Forms.NumericUpDown();
+            this.YUV_U = new System.Windows.Forms.NumericUpDown();
+            this.YUV_Y = new System.Windows.Forms.NumericUpDown();
+            this.openImage = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.comboBoxColorSystems = new System.Windows.Forms.ComboBox();
+            this.RGB_Panel = new System.Windows.Forms.Panel();
+            this.RGB_B_label = new System.Windows.Forms.Label();
+            this.RGB_G_label = new System.Windows.Forms.Label();
+            this.RGB_R_label = new System.Windows.Forms.Label();
+            this.RGB_B = new System.Windows.Forms.NumericUpDown();
+            this.RGB_G = new System.Windows.Forms.NumericUpDown();
+            this.RGB_R = new System.Windows.Forms.NumericUpDown();
+            this.HSV_Panel = new System.Windows.Forms.Panel();
+            this.Percent2 = new System.Windows.Forms.Label();
+            this.Percent = new System.Windows.Forms.Label();
+            this.HSV_V_Label = new System.Windows.Forms.Label();
+            this.HSV_S_Label = new System.Windows.Forms.Label();
+            this.HSV_H_Label = new System.Windows.Forms.Label();
+            this.HSV_V = new System.Windows.Forms.NumericUpDown();
+            this.HSV_S = new System.Windows.Forms.NumericUpDown();
+            this.HSV_H = new System.Windows.Forms.NumericUpDown();
+            this.LAB_Panel = new System.Windows.Forms.Panel();
+            this.LAB_B_Label = new System.Windows.Forms.Label();
+            this.LAB_A_Label = new System.Windows.Forms.Label();
+            this.LAB_L_Label = new System.Windows.Forms.Label();
+            this.LAB_B = new System.Windows.Forms.NumericUpDown();
+            this.LAB_A = new System.Windows.Forms.NumericUpDown();
+            this.LAB_L = new System.Windows.Forms.NumericUpDown();
+            this.YCbCr_Panel = new System.Windows.Forms.Panel();
+            this.YCbCr_Cr_Label = new System.Windows.Forms.Label();
+            this.YCbCr_Cb_Label = new System.Windows.Forms.Label();
+            this.YCbCr_Y_Label = new System.Windows.Forms.Label();
+            this.YCbCr_Cr = new System.Windows.Forms.NumericUpDown();
+            this.YCbCr_Cb = new System.Windows.Forms.NumericUpDown();
+            this.YCbCr_Y = new System.Windows.Forms.NumericUpDown();
+            this.CMYK_Panel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CMYK_K_Label = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.CMYK_Y_Label = new System.Windows.Forms.Label();
+            this.CMYK_M_Label = new System.Windows.Forms.Label();
+            this.CMYK_C_Label = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            space = new System.Windows.Forms.Panel();
             space.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)RGB).BeginInit();
-            YUV_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)YUV_V).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)YUV_U).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)YUV_Y).BeginInit();
-            RGB_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)RGB_B).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)RGB_G).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)RGB_R).BeginInit();
-            HSV_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)HSV_V).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)HSV_S).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)HSV_H).BeginInit();
-            LAB_Panel.SuspendLayout();
-            YCbCr_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)YCbCr_Cr).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)YCbCr_Cb).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)YCbCr_Y).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)LAB_B).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)LAB_A).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)LAB_L).BeginInit();
-            CMYK_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
-            SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RGB)).BeginInit();
+            this.YUV_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.YUV_V)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YUV_U)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YUV_Y)).BeginInit();
+            this.RGB_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RGB_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RGB_G)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RGB_R)).BeginInit();
+            this.HSV_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HSV_V)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HSV_S)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HSV_H)).BeginInit();
+            this.LAB_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LAB_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LAB_A)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LAB_L)).BeginInit();
+            this.YCbCr_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.YCbCr_Cr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YCbCr_Cb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YCbCr_Y)).BeginInit();
+            this.CMYK_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.SuspendLayout();
             // 
             // space
             // 
             space.AllowDrop = true;
-            space.BackColor = Color.Gainsboro;
-            space.Controls.Add(RGB);
-            space.Location = new Point(-2, 54);
+            space.BackColor = System.Drawing.Color.Gainsboro;
+            space.Controls.Add(this.RGB);
+            space.Location = new System.Drawing.Point(-2, 54);
             space.Name = "space";
-            space.Size = new Size(1107, 454);
+            space.Size = new System.Drawing.Size(1107, 454);
             space.TabIndex = 0;
             // 
             // RGB
             // 
-            RGB.Location = new Point(0, 3);
-            RGB.Name = "RGB";
-            RGB.Size = new Size(1104, 448);
-            RGB.SizeMode = PictureBoxSizeMode.Zoom;
-            RGB.TabIndex = 0;
-            RGB.TabStop = false;
-            RGB.DragDrop += pictureBox1_DragDrop_1;
-            RGB.DragEnter += pictureBox1_DragEnter;
+            this.RGB.Location = new System.Drawing.Point(0, 3);
+            this.RGB.Name = "RGB";
+            this.RGB.Size = new System.Drawing.Size(1104, 448);
+            this.RGB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RGB.TabIndex = 0;
+            this.RGB.TabStop = false;
             // 
             // YUV_Panel
             // 
-            YUV_Panel.Controls.Add(YUV_V_Label);
-            YUV_Panel.Controls.Add(YUV_U_Label);
-            YUV_Panel.Controls.Add(YUV_Y_Label);
-            YUV_Panel.Controls.Add(YUV_V);
-            YUV_Panel.Controls.Add(YUV_U);
-            YUV_Panel.Controls.Add(YUV_Y);
-            YUV_Panel.Location = new Point(192, 515);
-            YUV_Panel.Name = "YUV_Panel";
-            YUV_Panel.Size = new Size(801, 72);
-            YUV_Panel.TabIndex = 4;
-            YUV_Panel.Visible = false;
+            this.YUV_Panel.Controls.Add(this.YUV_V_Label);
+            this.YUV_Panel.Controls.Add(this.YUV_U_Label);
+            this.YUV_Panel.Controls.Add(this.YUV_Y_Label);
+            this.YUV_Panel.Controls.Add(this.YUV_V);
+            this.YUV_Panel.Controls.Add(this.YUV_U);
+            this.YUV_Panel.Controls.Add(this.YUV_Y);
+            this.YUV_Panel.Location = new System.Drawing.Point(192, 515);
+            this.YUV_Panel.Name = "YUV_Panel";
+            this.YUV_Panel.Size = new System.Drawing.Size(801, 72);
+            this.YUV_Panel.TabIndex = 4;
+            this.YUV_Panel.Visible = false;
             // 
             // YUV_V_Label
             // 
-            YUV_V_Label.AutoSize = true;
-            YUV_V_Label.Location = new Point(542, 27);
-            YUV_V_Label.Name = "YUV_V_Label";
-            YUV_V_Label.Size = new Size(21, 20);
-            YUV_V_Label.TabIndex = 6;
-            YUV_V_Label.Text = "V:";
+            this.YUV_V_Label.AutoSize = true;
+            this.YUV_V_Label.Location = new System.Drawing.Point(542, 27);
+            this.YUV_V_Label.Name = "YUV_V_Label";
+            this.YUV_V_Label.Size = new System.Drawing.Size(21, 20);
+            this.YUV_V_Label.TabIndex = 6;
+            this.YUV_V_Label.Text = "V:";
             // 
             // YUV_U_Label
             // 
-            YUV_U_Label.AutoSize = true;
-            YUV_U_Label.Location = new Point(302, 27);
-            YUV_U_Label.Name = "YUV_U_Label";
-            YUV_U_Label.Size = new Size(22, 20);
-            YUV_U_Label.TabIndex = 5;
-            YUV_U_Label.Text = "U:";
+            this.YUV_U_Label.AutoSize = true;
+            this.YUV_U_Label.Location = new System.Drawing.Point(302, 27);
+            this.YUV_U_Label.Name = "YUV_U_Label";
+            this.YUV_U_Label.Size = new System.Drawing.Size(22, 20);
+            this.YUV_U_Label.TabIndex = 5;
+            this.YUV_U_Label.Text = "U:";
             // 
             // YUV_Y_Label
             // 
-            YUV_Y_Label.AutoSize = true;
-            YUV_Y_Label.Location = new Point(74, 25);
-            YUV_Y_Label.Name = "YUV_Y_Label";
-            YUV_Y_Label.Size = new Size(20, 20);
-            YUV_Y_Label.TabIndex = 4;
-            YUV_Y_Label.Text = "Y:";
-            YUV_Y_Label.Click += label3_Click;
+            this.YUV_Y_Label.AutoSize = true;
+            this.YUV_Y_Label.Location = new System.Drawing.Point(74, 25);
+            this.YUV_Y_Label.Name = "YUV_Y_Label";
+            this.YUV_Y_Label.Size = new System.Drawing.Size(20, 20);
+            this.YUV_Y_Label.TabIndex = 4;
+            this.YUV_Y_Label.Text = "Y:";
             // 
             // YUV_V
             // 
-            YUV_V.Location = new Point(566, 23);
-            YUV_V.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
-            YUV_V.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
-            YUV_V.Name = "YUV_V";
-            YUV_V.Size = new Size(68, 27);
-            YUV_V.TabIndex = 3;
+            this.YUV_V.Location = new System.Drawing.Point(566, 23);
+            this.YUV_V.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.YUV_V.Minimum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            -2147483648});
+            this.YUV_V.Name = "YUV_V";
+            this.YUV_V.Size = new System.Drawing.Size(68, 27);
+            this.YUV_V.TabIndex = 3;
             // 
             // YUV_U
             // 
-            YUV_U.Location = new Point(325, 23);
-            YUV_U.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
-            YUV_U.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
-            YUV_U.Name = "YUV_U";
-            YUV_U.Size = new Size(68, 27);
-            YUV_U.TabIndex = 2;
+            this.YUV_U.Location = new System.Drawing.Point(325, 23);
+            this.YUV_U.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.YUV_U.Minimum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            -2147483648});
+            this.YUV_U.Name = "YUV_U";
+            this.YUV_U.Size = new System.Drawing.Size(68, 27);
+            this.YUV_U.TabIndex = 2;
             // 
             // YUV_Y
             // 
-            YUV_Y.Location = new Point(96, 22);
-            YUV_Y.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
-            YUV_Y.Name = "YUV_Y";
-            YUV_Y.Size = new Size(68, 27);
-            YUV_Y.TabIndex = 1;
+            this.YUV_Y.Location = new System.Drawing.Point(96, 22);
+            this.YUV_Y.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.YUV_Y.Name = "YUV_Y";
+            this.YUV_Y.Size = new System.Drawing.Size(68, 27);
+            this.YUV_Y.TabIndex = 1;
             // 
             // openImage
             // 
-            openImage.Location = new Point(12, 12);
-            openImage.Name = "openImage";
-            openImage.Size = new Size(136, 29);
-            openImage.TabIndex = 1;
-            openImage.Text = "Open Image";
-            openImage.UseVisualStyleBackColor = true;
-            openImage.Click += openImage_Click;
+            this.openImage.Location = new System.Drawing.Point(12, 12);
+            this.openImage.Name = "openImage";
+            this.openImage.Size = new System.Drawing.Size(136, 29);
+            this.openImage.TabIndex = 1;
+            this.openImage.Text = "Open Image";
+            this.openImage.UseVisualStyleBackColor = true;
+            this.openImage.Click += new System.EventHandler(this.openImage_Click);
             // 
             // openFileDialog1
             // 
-            openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // comboBoxColorSystems
             // 
-            comboBoxColorSystems.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxColorSystems.FormattingEnabled = true;
-            comboBoxColorSystems.Items.AddRange(new object[] { "RGB", "CMYK", "HSV", "YUV", "LAB", "YCbCr" });
-            comboBoxColorSystems.Location = new Point(28, 536);
-            comboBoxColorSystems.Name = "comboBoxColorSystems";
-            comboBoxColorSystems.Size = new Size(151, 28);
-            comboBoxColorSystems.TabIndex = 2;
-            comboBoxColorSystems.SelectedIndexChanged += comboBoxColorSystems_SelectedIndexChanged;
+            this.comboBoxColorSystems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxColorSystems.FormattingEnabled = true;
+            this.comboBoxColorSystems.Items.AddRange(new object[] {
+            "RGB",
+            "CMYK",
+            "HSV",
+            "YUV",
+            "LAB",
+            "YCbCr"});
+            this.comboBoxColorSystems.Location = new System.Drawing.Point(28, 536);
+            this.comboBoxColorSystems.Name = "comboBoxColorSystems";
+            this.comboBoxColorSystems.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxColorSystems.TabIndex = 2;
+            this.comboBoxColorSystems.SelectedIndexChanged += new System.EventHandler(this.comboBoxColorSystems_SelectedIndexChanged);
             // 
             // RGB_Panel
             // 
-            RGB_Panel.Controls.Add(RGB_B_label);
-            RGB_Panel.Controls.Add(RGB_G_label);
-            RGB_Panel.Controls.Add(RGB_R_label);
-            RGB_Panel.Controls.Add(RGB_B);
-            RGB_Panel.Controls.Add(RGB_G);
-            RGB_Panel.Controls.Add(RGB_R);
-            RGB_Panel.Location = new Point(194, 514);
-            RGB_Panel.Name = "RGB_Panel";
-            RGB_Panel.Size = new Size(801, 72);
-            RGB_Panel.TabIndex = 1;
-            RGB_Panel.Visible = false;
-            RGB_Panel.Paint += panel1_Paint;
+            this.RGB_Panel.Controls.Add(this.RGB_B_label);
+            this.RGB_Panel.Controls.Add(this.RGB_G_label);
+            this.RGB_Panel.Controls.Add(this.RGB_R_label);
+            this.RGB_Panel.Controls.Add(this.RGB_B);
+            this.RGB_Panel.Controls.Add(this.RGB_G);
+            this.RGB_Panel.Controls.Add(this.RGB_R);
+            this.RGB_Panel.Location = new System.Drawing.Point(194, 514);
+            this.RGB_Panel.Name = "RGB_Panel";
+            this.RGB_Panel.Size = new System.Drawing.Size(801, 72);
+            this.RGB_Panel.TabIndex = 1;
+            this.RGB_Panel.Visible = false;
             // 
             // RGB_B_label
             // 
-            RGB_B_label.AutoSize = true;
-            RGB_B_label.Location = new Point(542, 27);
-            RGB_B_label.Name = "RGB_B_label";
-            RGB_B_label.Size = new Size(21, 20);
-            RGB_B_label.TabIndex = 6;
-            RGB_B_label.Text = "B:";
+            this.RGB_B_label.AutoSize = true;
+            this.RGB_B_label.Location = new System.Drawing.Point(542, 27);
+            this.RGB_B_label.Name = "RGB_B_label";
+            this.RGB_B_label.Size = new System.Drawing.Size(21, 20);
+            this.RGB_B_label.TabIndex = 6;
+            this.RGB_B_label.Text = "B:";
             // 
             // RGB_G_label
             // 
-            RGB_G_label.AutoSize = true;
-            RGB_G_label.Location = new Point(302, 27);
-            RGB_G_label.Name = "RGB_G_label";
-            RGB_G_label.Size = new Size(22, 20);
-            RGB_G_label.TabIndex = 5;
-            RGB_G_label.Text = "G:";
-            RGB_G_label.Click += RGB_G_label_Click;
+            this.RGB_G_label.AutoSize = true;
+            this.RGB_G_label.Location = new System.Drawing.Point(302, 27);
+            this.RGB_G_label.Name = "RGB_G_label";
+            this.RGB_G_label.Size = new System.Drawing.Size(22, 20);
+            this.RGB_G_label.TabIndex = 5;
+            this.RGB_G_label.Text = "G:";
             // 
             // RGB_R_label
             // 
-            RGB_R_label.AutoSize = true;
-            RGB_R_label.Location = new Point(74, 25);
-            RGB_R_label.Name = "RGB_R_label";
-            RGB_R_label.Size = new Size(21, 20);
-            RGB_R_label.TabIndex = 4;
-            RGB_R_label.Text = "R:";
+            this.RGB_R_label.AutoSize = true;
+            this.RGB_R_label.Location = new System.Drawing.Point(74, 25);
+            this.RGB_R_label.Name = "RGB_R_label";
+            this.RGB_R_label.Size = new System.Drawing.Size(21, 20);
+            this.RGB_R_label.TabIndex = 4;
+            this.RGB_R_label.Text = "R:";
             // 
             // RGB_B
             // 
-            RGB_B.Location = new Point(566, 23);
-            RGB_B.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
-            RGB_B.Name = "RGB_B";
-            RGB_B.Size = new Size(68, 27);
-            RGB_B.TabIndex = 3;
+            this.RGB_B.Location = new System.Drawing.Point(566, 23);
+            this.RGB_B.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.RGB_B.Name = "RGB_B";
+            this.RGB_B.Size = new System.Drawing.Size(68, 27);
+            this.RGB_B.TabIndex = 3;
             // 
             // RGB_G
             // 
-            RGB_G.Location = new Point(325, 23);
-            RGB_G.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
-            RGB_G.Name = "RGB_G";
-            RGB_G.Size = new Size(68, 27);
-            RGB_G.TabIndex = 2;
+            this.RGB_G.Location = new System.Drawing.Point(325, 23);
+            this.RGB_G.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.RGB_G.Name = "RGB_G";
+            this.RGB_G.Size = new System.Drawing.Size(68, 27);
+            this.RGB_G.TabIndex = 2;
             // 
             // RGB_R
             // 
-            RGB_R.Location = new Point(96, 22);
-            RGB_R.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
-            RGB_R.Name = "RGB_R";
-            RGB_R.Size = new Size(68, 27);
-            RGB_R.TabIndex = 1;
+            this.RGB_R.Location = new System.Drawing.Point(96, 22);
+            this.RGB_R.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.RGB_R.Name = "RGB_R";
+            this.RGB_R.Size = new System.Drawing.Size(68, 27);
+            this.RGB_R.TabIndex = 1;
             // 
             // HSV_Panel
             // 
-            HSV_Panel.Controls.Add(Percent2);
-            HSV_Panel.Controls.Add(Percent);
-            HSV_Panel.Controls.Add(HSV_V_Label);
-            HSV_Panel.Controls.Add(HSV_S_Label);
-            HSV_Panel.Controls.Add(HSV_H_Label);
-            HSV_Panel.Controls.Add(HSV_V);
-            HSV_Panel.Controls.Add(HSV_S);
-            HSV_Panel.Controls.Add(HSV_H);
-            HSV_Panel.Location = new Point(194, 514);
-            HSV_Panel.Name = "HSV_Panel";
-            HSV_Panel.Size = new Size(801, 72);
-            HSV_Panel.TabIndex = 3;
-            HSV_Panel.Paint += HSV_Panel_Paint;
+            this.HSV_Panel.Controls.Add(this.Percent2);
+            this.HSV_Panel.Controls.Add(this.Percent);
+            this.HSV_Panel.Controls.Add(this.HSV_V_Label);
+            this.HSV_Panel.Controls.Add(this.HSV_S_Label);
+            this.HSV_Panel.Controls.Add(this.HSV_H_Label);
+            this.HSV_Panel.Controls.Add(this.HSV_V);
+            this.HSV_Panel.Controls.Add(this.HSV_S);
+            this.HSV_Panel.Controls.Add(this.HSV_H);
+            this.HSV_Panel.Location = new System.Drawing.Point(194, 514);
+            this.HSV_Panel.Name = "HSV_Panel";
+            this.HSV_Panel.Size = new System.Drawing.Size(801, 72);
+            this.HSV_Panel.TabIndex = 3;
             // 
             // Percent2
             // 
-            Percent2.AutoSize = true;
-            Percent2.Location = new Point(636, 27);
-            Percent2.Name = "Percent2";
-            Percent2.Size = new Size(21, 20);
-            Percent2.TabIndex = 8;
-            Percent2.Text = "%";
-            Percent2.Visible = false;
+            this.Percent2.AutoSize = true;
+            this.Percent2.Location = new System.Drawing.Point(636, 27);
+            this.Percent2.Name = "Percent2";
+            this.Percent2.Size = new System.Drawing.Size(21, 20);
+            this.Percent2.TabIndex = 8;
+            this.Percent2.Text = "%";
+            this.Percent2.Visible = false;
             // 
             // Percent
             // 
-            Percent.AutoSize = true;
-            Percent.Location = new Point(393, 27);
-            Percent.Name = "Percent";
-            Percent.Size = new Size(21, 20);
-            Percent.TabIndex = 7;
-            Percent.Text = "%";
+            this.Percent.AutoSize = true;
+            this.Percent.Location = new System.Drawing.Point(393, 27);
+            this.Percent.Name = "Percent";
+            this.Percent.Size = new System.Drawing.Size(21, 20);
+            this.Percent.TabIndex = 7;
+            this.Percent.Text = "%";
             // 
             // HSV_V_Label
             // 
-            HSV_V_Label.AutoSize = true;
-            HSV_V_Label.Location = new Point(542, 27);
-            HSV_V_Label.Name = "HSV_V_Label";
-            HSV_V_Label.Size = new Size(21, 20);
-            HSV_V_Label.TabIndex = 6;
-            HSV_V_Label.Text = "V:";
+            this.HSV_V_Label.AutoSize = true;
+            this.HSV_V_Label.Location = new System.Drawing.Point(542, 27);
+            this.HSV_V_Label.Name = "HSV_V_Label";
+            this.HSV_V_Label.Size = new System.Drawing.Size(21, 20);
+            this.HSV_V_Label.TabIndex = 6;
+            this.HSV_V_Label.Text = "V:";
             // 
             // HSV_S_Label
             // 
-            HSV_S_Label.AutoSize = true;
-            HSV_S_Label.Location = new Point(302, 27);
-            HSV_S_Label.Name = "HSV_S_Label";
-            HSV_S_Label.Size = new Size(20, 20);
-            HSV_S_Label.TabIndex = 5;
-            HSV_S_Label.Text = "S:";
+            this.HSV_S_Label.AutoSize = true;
+            this.HSV_S_Label.Location = new System.Drawing.Point(302, 27);
+            this.HSV_S_Label.Name = "HSV_S_Label";
+            this.HSV_S_Label.Size = new System.Drawing.Size(20, 20);
+            this.HSV_S_Label.TabIndex = 5;
+            this.HSV_S_Label.Text = "S:";
             // 
             // HSV_H_Label
             // 
-            HSV_H_Label.AutoSize = true;
-            HSV_H_Label.Location = new Point(74, 25);
-            HSV_H_Label.Name = "HSV_H_Label";
-            HSV_H_Label.Size = new Size(23, 20);
-            HSV_H_Label.TabIndex = 4;
-            HSV_H_Label.Text = "H:";
+            this.HSV_H_Label.AutoSize = true;
+            this.HSV_H_Label.Location = new System.Drawing.Point(74, 25);
+            this.HSV_H_Label.Name = "HSV_H_Label";
+            this.HSV_H_Label.Size = new System.Drawing.Size(23, 20);
+            this.HSV_H_Label.TabIndex = 4;
+            this.HSV_H_Label.Text = "H:";
             // 
             // HSV_V
             // 
-            HSV_V.Location = new Point(566, 23);
-            HSV_V.Name = "HSV_V";
-            HSV_V.Size = new Size(68, 27);
-            HSV_V.TabIndex = 3;
+            this.HSV_V.Location = new System.Drawing.Point(566, 23);
+            this.HSV_V.Name = "HSV_V";
+            this.HSV_V.Size = new System.Drawing.Size(68, 27);
+            this.HSV_V.TabIndex = 3;
             // 
             // HSV_S
             // 
-            HSV_S.Location = new Point(325, 23);
-            HSV_S.Name = "HSV_S";
-            HSV_S.Size = new Size(68, 27);
-            HSV_S.TabIndex = 2;
-            HSV_S.ValueChanged += HSV_S_ValueChanged;
+            this.HSV_S.Location = new System.Drawing.Point(325, 23);
+            this.HSV_S.Name = "HSV_S";
+            this.HSV_S.Size = new System.Drawing.Size(68, 27);
+            this.HSV_S.TabIndex = 2;
             // 
             // HSV_H
             // 
-            HSV_H.Location = new Point(96, 22);
-            HSV_H.Maximum = new decimal(new int[] { 360, 0, 0, 0 });
-            HSV_H.Name = "HSV_H";
-            HSV_H.Size = new Size(68, 27);
-            HSV_H.TabIndex = 1;
-            HSV_H.ValueChanged += HSV_H_ValueChanged;
+            this.HSV_H.Location = new System.Drawing.Point(96, 22);
+            this.HSV_H.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.HSV_H.Name = "HSV_H";
+            this.HSV_H.Size = new System.Drawing.Size(68, 27);
+            this.HSV_H.TabIndex = 1;
             // 
             // LAB_Panel
             // 
-            LAB_Panel.Controls.Add(CMYK_Panel);
-            LAB_Panel.Controls.Add(LAB_B_Label);
-            LAB_Panel.Controls.Add(LAB_A_Label);
-            LAB_Panel.Controls.Add(LAB_L_Label);
-            LAB_Panel.Controls.Add(LAB_B);
-            LAB_Panel.Controls.Add(LAB_A);
-            LAB_Panel.Controls.Add(LAB_L);
-            LAB_Panel.Controls.Add(YCbCr_Panel);
-            LAB_Panel.Location = new Point(192, 514);
-            LAB_Panel.Name = "LAB_Panel";
-            LAB_Panel.Size = new Size(801, 72);
-            LAB_Panel.TabIndex = 5;
-            LAB_Panel.Paint += LAB_Panel_Paint;
-            // 
-            // YCbCr_Panel
-            // 
-            YCbCr_Panel.Controls.Add(YCbCr_Cr_Label);
-            YCbCr_Panel.Controls.Add(YCbCr_Cb_Label);
-            YCbCr_Panel.Controls.Add(YCbCr_Y_Label);
-            YCbCr_Panel.Controls.Add(YCbCr_Cr);
-            YCbCr_Panel.Controls.Add(YCbCr_Cb);
-            YCbCr_Panel.Controls.Add(YCbCr_Y);
-            YCbCr_Panel.Location = new Point(0, 1);
-            YCbCr_Panel.Name = "YCbCr_Panel";
-            YCbCr_Panel.Size = new Size(801, 72);
-            YCbCr_Panel.TabIndex = 6;
-            // 
-            // YCbCr_Cr_Label
-            // 
-            YCbCr_Cr_Label.AutoSize = true;
-            YCbCr_Cr_Label.Location = new Point(538, 27);
-            YCbCr_Cr_Label.Name = "YCbCr_Cr_Label";
-            YCbCr_Cr_Label.Size = new Size(26, 20);
-            YCbCr_Cr_Label.TabIndex = 6;
-            YCbCr_Cr_Label.Text = "Cr:";
-            // 
-            // YCbCr_Cb_Label
-            // 
-            YCbCr_Cb_Label.AutoSize = true;
-            YCbCr_Cb_Label.Location = new Point(295, 27);
-            YCbCr_Cb_Label.Name = "YCbCr_Cb_Label";
-            YCbCr_Cb_Label.Size = new Size(30, 20);
-            YCbCr_Cb_Label.TabIndex = 5;
-            YCbCr_Cb_Label.Text = "Cb:";
-            // 
-            // YCbCr_Y_Label
-            // 
-            YCbCr_Y_Label.AutoSize = true;
-            YCbCr_Y_Label.Location = new Point(74, 25);
-            YCbCr_Y_Label.Name = "YCbCr_Y_Label";
-            YCbCr_Y_Label.Size = new Size(20, 20);
-            YCbCr_Y_Label.TabIndex = 4;
-            YCbCr_Y_Label.Text = "Y:";
-            // 
-            // YCbCr_Cr
-            // 
-            YCbCr_Cr.Location = new Point(566, 23);
-            YCbCr_Cr.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
-            YCbCr_Cr.Name = "YCbCr_Cr";
-            YCbCr_Cr.Size = new Size(68, 27);
-            YCbCr_Cr.TabIndex = 3;
-            // 
-            // YCbCr_Cb
-            // 
-            YCbCr_Cb.Location = new Point(325, 23);
-            YCbCr_Cb.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
-            YCbCr_Cb.Name = "YCbCr_Cb";
-            YCbCr_Cb.Size = new Size(68, 27);
-            YCbCr_Cb.TabIndex = 2;
-            // 
-            // YCbCr_Y
-            // 
-            YCbCr_Y.Location = new Point(96, 22);
-            YCbCr_Y.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
-            YCbCr_Y.Name = "YCbCr_Y";
-            YCbCr_Y.Size = new Size(68, 27);
-            YCbCr_Y.TabIndex = 1;
+            this.LAB_Panel.Controls.Add(this.LAB_B_Label);
+            this.LAB_Panel.Controls.Add(this.LAB_A_Label);
+            this.LAB_Panel.Controls.Add(this.LAB_L_Label);
+            this.LAB_Panel.Controls.Add(this.LAB_B);
+            this.LAB_Panel.Controls.Add(this.LAB_A);
+            this.LAB_Panel.Controls.Add(this.LAB_L);
+            this.LAB_Panel.Location = new System.Drawing.Point(192, 514);
+            this.LAB_Panel.Name = "LAB_Panel";
+            this.LAB_Panel.Size = new System.Drawing.Size(801, 72);
+            this.LAB_Panel.TabIndex = 5;
             // 
             // LAB_B_Label
             // 
-            LAB_B_Label.AutoSize = true;
-            LAB_B_Label.Location = new Point(542, 27);
-            LAB_B_Label.Name = "LAB_B_Label";
-            LAB_B_Label.Size = new Size(21, 20);
-            LAB_B_Label.TabIndex = 6;
-            LAB_B_Label.Text = "B:";
+            this.LAB_B_Label.AutoSize = true;
+            this.LAB_B_Label.Location = new System.Drawing.Point(542, 27);
+            this.LAB_B_Label.Name = "LAB_B_Label";
+            this.LAB_B_Label.Size = new System.Drawing.Size(21, 20);
+            this.LAB_B_Label.TabIndex = 6;
+            this.LAB_B_Label.Text = "B:";
             // 
             // LAB_A_Label
             // 
-            LAB_A_Label.AutoSize = true;
-            LAB_A_Label.Location = new Point(302, 27);
-            LAB_A_Label.Name = "LAB_A_Label";
-            LAB_A_Label.Size = new Size(22, 20);
-            LAB_A_Label.TabIndex = 5;
-            LAB_A_Label.Text = "A:";
+            this.LAB_A_Label.AutoSize = true;
+            this.LAB_A_Label.Location = new System.Drawing.Point(302, 27);
+            this.LAB_A_Label.Name = "LAB_A_Label";
+            this.LAB_A_Label.Size = new System.Drawing.Size(22, 20);
+            this.LAB_A_Label.TabIndex = 5;
+            this.LAB_A_Label.Text = "A:";
             // 
             // LAB_L_Label
             // 
-            LAB_L_Label.AutoSize = true;
-            LAB_L_Label.Location = new Point(74, 25);
-            LAB_L_Label.Name = "LAB_L_Label";
-            LAB_L_Label.Size = new Size(19, 20);
-            LAB_L_Label.TabIndex = 4;
-            LAB_L_Label.Text = "L:";
+            this.LAB_L_Label.AutoSize = true;
+            this.LAB_L_Label.Location = new System.Drawing.Point(74, 25);
+            this.LAB_L_Label.Name = "LAB_L_Label";
+            this.LAB_L_Label.Size = new System.Drawing.Size(19, 20);
+            this.LAB_L_Label.TabIndex = 4;
+            this.LAB_L_Label.Text = "L:";
             // 
             // LAB_B
             // 
-            LAB_B.Location = new Point(566, 23);
-            LAB_B.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
-            LAB_B.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
-            LAB_B.Name = "LAB_B";
-            LAB_B.Size = new Size(68, 27);
-            LAB_B.TabIndex = 3;
+            this.LAB_B.Location = new System.Drawing.Point(566, 23);
+            this.LAB_B.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.LAB_B.Minimum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            -2147483648});
+            this.LAB_B.Name = "LAB_B";
+            this.LAB_B.Size = new System.Drawing.Size(68, 27);
+            this.LAB_B.TabIndex = 3;
             // 
             // LAB_A
             // 
-            LAB_A.Location = new Point(325, 23);
-            LAB_A.Maximum = new decimal(new int[] { 127, 0, 0, 0 });
-            LAB_A.Minimum = new decimal(new int[] { 128, 0, 0, int.MinValue });
-            LAB_A.Name = "LAB_A";
-            LAB_A.Size = new Size(68, 27);
-            LAB_A.TabIndex = 2;
+            this.LAB_A.Location = new System.Drawing.Point(325, 23);
+            this.LAB_A.Maximum = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
+            this.LAB_A.Minimum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            -2147483648});
+            this.LAB_A.Name = "LAB_A";
+            this.LAB_A.Size = new System.Drawing.Size(68, 27);
+            this.LAB_A.TabIndex = 2;
             // 
             // LAB_L
             // 
-            LAB_L.Location = new Point(96, 22);
-            LAB_L.Name = "LAB_L";
-            LAB_L.Size = new Size(68, 27);
-            LAB_L.TabIndex = 1;
+            this.LAB_L.Location = new System.Drawing.Point(96, 22);
+            this.LAB_L.Name = "LAB_L";
+            this.LAB_L.Size = new System.Drawing.Size(68, 27);
+            this.LAB_L.TabIndex = 1;
+            // 
+            // YCbCr_Panel
+            // 
+            this.YCbCr_Panel.Controls.Add(this.YCbCr_Cr_Label);
+            this.YCbCr_Panel.Controls.Add(this.YCbCr_Cb_Label);
+            this.YCbCr_Panel.Controls.Add(this.YCbCr_Y_Label);
+            this.YCbCr_Panel.Controls.Add(this.YCbCr_Cr);
+            this.YCbCr_Panel.Controls.Add(this.YCbCr_Cb);
+            this.YCbCr_Panel.Controls.Add(this.YCbCr_Y);
+            this.YCbCr_Panel.Location = new System.Drawing.Point(189, 514);
+            this.YCbCr_Panel.Name = "YCbCr_Panel";
+            this.YCbCr_Panel.Size = new System.Drawing.Size(801, 72);
+            this.YCbCr_Panel.TabIndex = 6;
+            // 
+            // YCbCr_Cr_Label
+            // 
+            this.YCbCr_Cr_Label.AutoSize = true;
+            this.YCbCr_Cr_Label.Location = new System.Drawing.Point(538, 27);
+            this.YCbCr_Cr_Label.Name = "YCbCr_Cr_Label";
+            this.YCbCr_Cr_Label.Size = new System.Drawing.Size(26, 20);
+            this.YCbCr_Cr_Label.TabIndex = 6;
+            this.YCbCr_Cr_Label.Text = "Cr:";
+            // 
+            // YCbCr_Cb_Label
+            // 
+            this.YCbCr_Cb_Label.AutoSize = true;
+            this.YCbCr_Cb_Label.Location = new System.Drawing.Point(295, 27);
+            this.YCbCr_Cb_Label.Name = "YCbCr_Cb_Label";
+            this.YCbCr_Cb_Label.Size = new System.Drawing.Size(30, 20);
+            this.YCbCr_Cb_Label.TabIndex = 5;
+            this.YCbCr_Cb_Label.Text = "Cb:";
+            // 
+            // YCbCr_Y_Label
+            // 
+            this.YCbCr_Y_Label.AutoSize = true;
+            this.YCbCr_Y_Label.Location = new System.Drawing.Point(74, 25);
+            this.YCbCr_Y_Label.Name = "YCbCr_Y_Label";
+            this.YCbCr_Y_Label.Size = new System.Drawing.Size(20, 20);
+            this.YCbCr_Y_Label.TabIndex = 4;
+            this.YCbCr_Y_Label.Text = "Y:";
+            // 
+            // YCbCr_Cr
+            // 
+            this.YCbCr_Cr.Location = new System.Drawing.Point(566, 23);
+            this.YCbCr_Cr.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.YCbCr_Cr.Name = "YCbCr_Cr";
+            this.YCbCr_Cr.Size = new System.Drawing.Size(68, 27);
+            this.YCbCr_Cr.TabIndex = 3;
+            // 
+            // YCbCr_Cb
+            // 
+            this.YCbCr_Cb.Location = new System.Drawing.Point(325, 23);
+            this.YCbCr_Cb.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.YCbCr_Cb.Name = "YCbCr_Cb";
+            this.YCbCr_Cb.Size = new System.Drawing.Size(68, 27);
+            this.YCbCr_Cb.TabIndex = 2;
+            // 
+            // YCbCr_Y
+            // 
+            this.YCbCr_Y.Location = new System.Drawing.Point(96, 22);
+            this.YCbCr_Y.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.YCbCr_Y.Name = "YCbCr_Y";
+            this.YCbCr_Y.Size = new System.Drawing.Size(68, 27);
+            this.YCbCr_Y.TabIndex = 1;
             // 
             // CMYK_Panel
             // 
-            CMYK_Panel.Controls.Add(label4);
-            CMYK_Panel.Controls.Add(label3);
-            CMYK_Panel.Controls.Add(label2);
-            CMYK_Panel.Controls.Add(label1);
-            CMYK_Panel.Controls.Add(CMYK_K_Label);
-            CMYK_Panel.Controls.Add(numericUpDown4);
-            CMYK_Panel.Controls.Add(CMYK_Y_Label);
-            CMYK_Panel.Controls.Add(CMYK_M_Label);
-            CMYK_Panel.Controls.Add(CMYK_C_Label);
-            CMYK_Panel.Controls.Add(numericUpDown1);
-            CMYK_Panel.Controls.Add(numericUpDown2);
-            CMYK_Panel.Controls.Add(numericUpDown3);
-            CMYK_Panel.Location = new Point(0, 0);
-            CMYK_Panel.Name = "CMYK_Panel";
-            CMYK_Panel.Size = new Size(801, 72);
-            CMYK_Panel.TabIndex = 7;
-            // 
-            // CMYK_Y_Label
-            // 
-            CMYK_Y_Label.AutoSize = true;
-            CMYK_Y_Label.Location = new Point(436, 27);
-            CMYK_Y_Label.Name = "CMYK_Y_Label";
-            CMYK_Y_Label.Size = new Size(20, 20);
-            CMYK_Y_Label.TabIndex = 6;
-            CMYK_Y_Label.Text = "Y:";
-            // 
-            // CMYK_M_Label
-            // 
-            CMYK_M_Label.AutoSize = true;
-            CMYK_M_Label.Location = new Point(241, 27);
-            CMYK_M_Label.Name = "CMYK_M_Label";
-            CMYK_M_Label.Size = new Size(25, 20);
-            CMYK_M_Label.TabIndex = 5;
-            CMYK_M_Label.Text = "M:";
-            // 
-            // CMYK_C_Label
-            // 
-            CMYK_C_Label.AutoSize = true;
-            CMYK_C_Label.Location = new Point(74, 25);
-            CMYK_C_Label.Name = "CMYK_C_Label";
-            CMYK_C_Label.Size = new Size(21, 20);
-            CMYK_C_Label.TabIndex = 4;
-            CMYK_C_Label.Text = "C:";
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(459, 23);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(68, 27);
-            numericUpDown1.TabIndex = 3;
-            // 
-            // numericUpDown2
-            // 
-            numericUpDown2.Location = new Point(269, 23);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(68, 27);
-            numericUpDown2.TabIndex = 2;
-            // 
-            // numericUpDown3
-            // 
-            numericUpDown3.Location = new Point(96, 22);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(68, 27);
-            numericUpDown3.TabIndex = 1;
-            // 
-            // CMYK_K_Label
-            // 
-            CMYK_K_Label.AutoSize = true;
-            CMYK_K_Label.Location = new Point(621, 27);
-            CMYK_K_Label.Name = "CMYK_K_Label";
-            CMYK_K_Label.Size = new Size(21, 20);
-            CMYK_K_Label.TabIndex = 8;
-            CMYK_K_Label.Text = "K:";
-            // 
-            // numericUpDown4
-            // 
-            numericUpDown4.Location = new Point(645, 23);
-            numericUpDown4.Name = "numericUpDown4";
-            numericUpDown4.Size = new Size(68, 27);
-            numericUpDown4.TabIndex = 7;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(166, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(21, 20);
-            label1.TabIndex = 9;
-            label1.Text = "%";
-            label1.Click += label1_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(340, 27);
-            label2.Name = "label2";
-            label2.Size = new Size(21, 20);
-            label2.TabIndex = 10;
-            label2.Text = "%";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(529, 27);
-            label3.Name = "label3";
-            label3.Size = new Size(21, 20);
-            label3.TabIndex = 11;
-            label3.Text = "%";
+            this.CMYK_Panel.Controls.Add(this.label4);
+            this.CMYK_Panel.Controls.Add(this.label3);
+            this.CMYK_Panel.Controls.Add(this.label2);
+            this.CMYK_Panel.Controls.Add(this.label1);
+            this.CMYK_Panel.Controls.Add(this.CMYK_K_Label);
+            this.CMYK_Panel.Controls.Add(this.numericUpDown4);
+            this.CMYK_Panel.Controls.Add(this.CMYK_Y_Label);
+            this.CMYK_Panel.Controls.Add(this.CMYK_M_Label);
+            this.CMYK_Panel.Controls.Add(this.CMYK_C_Label);
+            this.CMYK_Panel.Controls.Add(this.numericUpDown1);
+            this.CMYK_Panel.Controls.Add(this.numericUpDown2);
+            this.CMYK_Panel.Controls.Add(this.numericUpDown3);
+            this.CMYK_Panel.Location = new System.Drawing.Point(185, 515);
+            this.CMYK_Panel.Name = "CMYK_Panel";
+            this.CMYK_Panel.Size = new System.Drawing.Size(801, 72);
+            this.CMYK_Panel.TabIndex = 7;
+            this.CMYK_Panel.Visible = false;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(715, 27);
-            label4.Name = "label4";
-            label4.Size = new Size(21, 20);
-            label4.TabIndex = 12;
-            label4.Text = "%";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(715, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(21, 20);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "%";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(529, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "%";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(340, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "%";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(166, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "%";
+            // 
+            // CMYK_K_Label
+            // 
+            this.CMYK_K_Label.AutoSize = true;
+            this.CMYK_K_Label.Location = new System.Drawing.Point(621, 27);
+            this.CMYK_K_Label.Name = "CMYK_K_Label";
+            this.CMYK_K_Label.Size = new System.Drawing.Size(21, 20);
+            this.CMYK_K_Label.TabIndex = 8;
+            this.CMYK_K_Label.Text = "K:";
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(645, 23);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(68, 27);
+            this.numericUpDown4.TabIndex = 7;
+            // 
+            // CMYK_Y_Label
+            // 
+            this.CMYK_Y_Label.AutoSize = true;
+            this.CMYK_Y_Label.Location = new System.Drawing.Point(436, 27);
+            this.CMYK_Y_Label.Name = "CMYK_Y_Label";
+            this.CMYK_Y_Label.Size = new System.Drawing.Size(20, 20);
+            this.CMYK_Y_Label.TabIndex = 6;
+            this.CMYK_Y_Label.Text = "Y:";
+            // 
+            // CMYK_M_Label
+            // 
+            this.CMYK_M_Label.AutoSize = true;
+            this.CMYK_M_Label.Location = new System.Drawing.Point(241, 27);
+            this.CMYK_M_Label.Name = "CMYK_M_Label";
+            this.CMYK_M_Label.Size = new System.Drawing.Size(25, 20);
+            this.CMYK_M_Label.TabIndex = 5;
+            this.CMYK_M_Label.Text = "M:";
+            // 
+            // CMYK_C_Label
+            // 
+            this.CMYK_C_Label.AutoSize = true;
+            this.CMYK_C_Label.Location = new System.Drawing.Point(74, 25);
+            this.CMYK_C_Label.Name = "CMYK_C_Label";
+            this.CMYK_C_Label.Size = new System.Drawing.Size(21, 20);
+            this.CMYK_C_Label.TabIndex = 4;
+            this.CMYK_C_Label.Text = "C:";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(459, 23);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(68, 27);
+            this.numericUpDown1.TabIndex = 3;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(269, 23);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(68, 27);
+            this.numericUpDown2.TabIndex = 2;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(96, 22);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(68, 27);
+            this.numericUpDown3.TabIndex = 1;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1476, 591);
-            Controls.Add(LAB_Panel);
-            Controls.Add(YUV_Panel);
-            Controls.Add(RGB_Panel);
-            Controls.Add(comboBoxColorSystems);
-            Controls.Add(openImage);
-            Controls.Add(space);
-            Controls.Add(HSV_Panel);
-            Name = "Form1";
-            Text = "Form1";
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1476, 591);
+            this.Controls.Add(this.CMYK_Panel);
+            this.Controls.Add(this.LAB_Panel);
+            this.Controls.Add(this.YUV_Panel);
+            this.Controls.Add(this.RGB_Panel);
+            this.Controls.Add(this.comboBoxColorSystems);
+            this.Controls.Add(this.openImage);
+            this.Controls.Add(space);
+            this.Controls.Add(this.YCbCr_Panel);
+            this.Controls.Add(this.HSV_Panel);
+            this.Name = "Form1";
+            this.Text = "Form1";
             space.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)RGB).EndInit();
-            YUV_Panel.ResumeLayout(false);
-            YUV_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)YUV_V).EndInit();
-            ((System.ComponentModel.ISupportInitialize)YUV_U).EndInit();
-            ((System.ComponentModel.ISupportInitialize)YUV_Y).EndInit();
-            RGB_Panel.ResumeLayout(false);
-            RGB_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)RGB_B).EndInit();
-            ((System.ComponentModel.ISupportInitialize)RGB_G).EndInit();
-            ((System.ComponentModel.ISupportInitialize)RGB_R).EndInit();
-            HSV_Panel.ResumeLayout(false);
-            HSV_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)HSV_V).EndInit();
-            ((System.ComponentModel.ISupportInitialize)HSV_S).EndInit();
-            ((System.ComponentModel.ISupportInitialize)HSV_H).EndInit();
-            LAB_Panel.ResumeLayout(false);
-            LAB_Panel.PerformLayout();
-            YCbCr_Panel.ResumeLayout(false);
-            YCbCr_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)YCbCr_Cr).EndInit();
-            ((System.ComponentModel.ISupportInitialize)YCbCr_Cb).EndInit();
-            ((System.ComponentModel.ISupportInitialize)YCbCr_Y).EndInit();
-            ((System.ComponentModel.ISupportInitialize)LAB_B).EndInit();
-            ((System.ComponentModel.ISupportInitialize)LAB_A).EndInit();
-            ((System.ComponentModel.ISupportInitialize)LAB_L).EndInit();
-            CMYK_Panel.ResumeLayout(false);
-            CMYK_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
-            ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RGB)).EndInit();
+            this.YUV_Panel.ResumeLayout(false);
+            this.YUV_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.YUV_V)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YUV_U)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YUV_Y)).EndInit();
+            this.RGB_Panel.ResumeLayout(false);
+            this.RGB_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RGB_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RGB_G)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RGB_R)).EndInit();
+            this.HSV_Panel.ResumeLayout(false);
+            this.HSV_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HSV_V)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HSV_S)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HSV_H)).EndInit();
+            this.LAB_Panel.ResumeLayout(false);
+            this.LAB_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LAB_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LAB_A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LAB_L)).EndInit();
+            this.YCbCr_Panel.ResumeLayout(false);
+            this.YCbCr_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.YCbCr_Cr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YCbCr_Cb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.YCbCr_Y)).EndInit();
+            this.CMYK_Panel.ResumeLayout(false);
+            this.CMYK_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.ResumeLayout(false);
 
         }
 
