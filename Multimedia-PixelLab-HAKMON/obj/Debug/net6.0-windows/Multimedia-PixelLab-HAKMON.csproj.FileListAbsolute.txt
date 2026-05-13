@@ -34,3 +34,7 @@ D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.
 D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.pdb
 D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.genruntimeconfig.cache
 D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\ref\Multimedia-PixelLab-HAKMON.dll
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\KGySoft.CoreLibraries.dll
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\KGySoft.Drawing.dll
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\KGySoft.Drawing.Core.dll
+D:\Projects\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.csproj.CopyComplete

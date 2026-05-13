@@ -34,8 +34,8 @@
             this.openImage = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.number_of_colors_7 = new System.Windows.Forms.Panel();
-            this.color_change = new System.Windows.Forms.Button();
             this.color_count = new System.Windows.Forms.NumericUpDown();
+            this.color_change = new System.Windows.Forms.Button();
             space = new System.Windows.Forms.Panel();
             space.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,6 +98,29 @@
             this.number_of_colors_7.TabIndex = 2;
             this.number_of_colors_7.Paint += new System.Windows.Forms.PaintEventHandler(this.number_of_colors_7_Paint);
             // 
+            // color_count
+            // 
+            this.color_count.Location = new System.Drawing.Point(132, 15);
+            this.color_count.Maximum = new decimal(new int[] {
+            65536,
+            0,
+            0,
+            0});
+            this.color_count.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.color_count.Name = "color_count";
+            this.color_count.Size = new System.Drawing.Size(64, 27);
+            this.color_count.TabIndex = 4;
+            this.color_count.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.color_count.ValueChanged += new System.EventHandler(this.color_count_ValueChanged);
+            // 
             // color_change
             // 
             this.color_change.Location = new System.Drawing.Point(13, 15);
@@ -107,14 +130,6 @@
             this.color_change.Text = "Change";
             this.color_change.UseVisualStyleBackColor = true;
             this.color_change.Click += new System.EventHandler(this.color_change_Click);
-            // 
-            // color_count
-            // 
-            this.color_count.Location = new System.Drawing.Point(132, 15);
-            this.color_count.Name = "color_count";
-            this.color_count.Size = new System.Drawing.Size(64, 27);
-            this.color_count.TabIndex = 4;
-            this.color_count.ValueChanged += new System.EventHandler(this.color_count_ValueChanged);
             // 
             // Form1
             // 

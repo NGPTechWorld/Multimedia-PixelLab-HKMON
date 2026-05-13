@@ -10,7 +10,7 @@ namespace Multimedia_PixelLab_HAKMON
             InitializeComponent();
             pictureBox1.AllowDrop = true;
         }
-        Bitmap image;
+        Bitmap image, quantizedImage;
         int colorCount = 0;
         private void openImage_Click(object sender, EventArgs e)
         {
@@ -81,12 +81,7 @@ namespace Multimedia_PixelLab_HAKMON
                          Image_information_8.Height - 20));
         }
 
-        private void number_of_colors_7_Paint(object sender, PaintEventArgs e)
-        {
-            IQuantizer quantizer = OptimizedPaletteQuantizer.Octree(colorCount);
-            Bitmap convertedImage = image.ConvertPixelFormat(System.Drawing.Imaging.PixelFormat.Format32bppArgb, quantizer);
-            convertedImage.Save("output.jpg");
-        }
+        private void number_of_colors_7_Paint(object sender, PaintEventArgs e){}
 
         private void color_count_ValueChanged(object sender, EventArgs e)
         {
@@ -97,6 +92,11 @@ namespace Multimedia_PixelLab_HAKMON
         {
             if (image == null)
                 return;
+
+            quantizedImage = image.CloneCurrentFrame();
+            IQuantizer quantizer = OptimizedPaletteQuantizer.Wu(colorCount);
+            quantizedImage.Quantize(quantizer);
+            pictureBox1.Image = quantizedImage;
 
             number_of_colors_7.Invalidate();
         }
