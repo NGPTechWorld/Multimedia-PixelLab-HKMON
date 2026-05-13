@@ -1,3 +1,6 @@
+using KGySoft.Drawing.Imaging;
+using KGySoft.Drawing;
+
 namespace Multimedia_PixelLab_HAKMON
 {
     public partial class Form1 : Form
@@ -8,6 +11,7 @@ namespace Multimedia_PixelLab_HAKMON
             pictureBox1.AllowDrop = true;
         }
         Bitmap image;
+        int colorCount = 0;
         private void openImage_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -75,6 +79,26 @@ namespace Multimedia_PixelLab_HAKMON
                          new RectangleF(10, 10,
                          Image_information_8.Width - 20,
                          Image_information_8.Height - 20));
+        }
+
+        private void number_of_colors_7_Paint(object sender, PaintEventArgs e)
+        {
+            IQuantizer quantizer = OptimizedPaletteQuantizer.Octree(colorCount);
+            Bitmap convertedImage = image.ConvertPixelFormat(System.Drawing.Imaging.PixelFormat.Format32bppArgb, quantizer);
+            convertedImage.Save("output.jpg");
+        }
+
+        private void color_count_ValueChanged(object sender, EventArgs e)
+        {
+            colorCount = (int)color_count.Value;
+        }
+
+        private void color_change_Click(object sender, EventArgs e)
+        {
+            if (image == null)
+                return;
+
+            number_of_colors_7.Invalidate();
         }
     }
 }

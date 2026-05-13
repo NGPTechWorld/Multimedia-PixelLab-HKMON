@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "9Wme8hrHZctz1XkAAxnQbCqbaGqKNNU8ZWdFd7f5gWXZRDKPUo9PkX9UYo3S3qRdHqAdgjEu9ZvdIhXqUO2xzQ==",
+  "dgSpecHash": "WlEwaEMEwKisC8vO0xS+TiXR5E1KXVnezr5VG3W/lMpYSj1+WffJDfMkREOapidpOdUGQmIYSbU2xgdwM2MMJg==",
   "success": true,
   "projectFilePath": "D:\\Projects\\Multimedia-PixelLab-HKMON\\Multimedia-PixelLab-HAKMON\\Multimedia-PixelLab-HAKMON.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\kgysoft.corelibraries\\10.5.0\\kgysoft.corelibraries.10.5.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\kgysoft.drawing\\10.0.2\\kgysoft.drawing.10.0.2.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\kgysoft.drawing.core\\10.0.1\\kgysoft.drawing.core.10.0.1.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

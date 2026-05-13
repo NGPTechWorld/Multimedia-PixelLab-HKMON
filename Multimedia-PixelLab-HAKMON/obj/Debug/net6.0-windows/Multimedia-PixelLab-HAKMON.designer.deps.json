@@ -5,7 +5,116 @@
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v6.0": {}
+    ".NETCoreApp,Version=v6.0": {
+      "KGySoft.CoreLibraries/10.5.0": {
+        "runtime": {
+          "lib/net6.0/KGySoft.CoreLibraries.dll": {
+            "assemblyVersion": "10.5.0.0",
+            "fileVersion": "10.5.0.0"
+          }
+        }
+      },
+      "KGySoft.Drawing/10.0.2": {
+        "dependencies": {
+          "KGySoft.Drawing.Core": "10.0.1",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/KGySoft.Drawing.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.2.0"
+          }
+        }
+      },
+      "KGySoft.Drawing.Core/10.0.1": {
+        "dependencies": {
+          "KGySoft.CoreLibraries": "10.5.0"
+        },
+        "runtime": {
+          "lib/net6.0/KGySoft.Drawing.Core.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.1.0"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/6.0.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Drawing.Common/6.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/net6.0/System.Drawing.Common.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          },
+          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      }
+    }
   },
-  "libraries": {}
+  "libraries": {
+    "KGySoft.CoreLibraries/10.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JB4DtPa26/KaiNkZP2qPIex+cuho3dkEbrc5OULYJsUjLDXdK+ZmwkmxEctvOENmpNDUwPwPlJAU5pYcGyKGjw==",
+      "path": "kgysoft.corelibraries/10.5.0",
+      "hashPath": "kgysoft.corelibraries.10.5.0.nupkg.sha512"
+    },
+    "KGySoft.Drawing/10.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Iu7KzP3sS09JwYttKd7mCTvA9qcdx9SUiqGQZ3WAFHWG0krCismVcTpI6dAdvIFP3OT2SdATYMwlJR2LfELxxQ==",
+      "path": "kgysoft.drawing/10.0.2",
+      "hashPath": "kgysoft.drawing.10.0.2.nupkg.sha512"
+    },
+    "KGySoft.Drawing.Core/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KliHpZDORQk+g9jfBFWnJQhz7fFwN0l3PQb9VjzXrwThpE88IOtFmlsIugHVc8535Z/p0G7vplujvS/jEIAIcQ==",
+      "path": "kgysoft.drawing.core/10.0.1",
+      "hashPath": "kgysoft.drawing.core.10.0.1.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
+      "path": "microsoft.win32.systemevents/6.0.0",
+      "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
+      "path": "system.drawing.common/6.0.0",
+      "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
+    }
+  }
 }
