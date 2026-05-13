@@ -10,17 +10,17 @@ namespace Multimedia_PixelLab_HAKMON
             InitializeComponent();
             pictureBox1.AllowDrop = true;
         }
-        Bitmap image, quantizedImage;
+        Bitmap image, originalImage;
         int colorCount = 0;
         private void openImage_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
-                image = new Bitmap(openFileDialog1.FileName);
+                originalImage = new Bitmap(openFileDialog1.FileName);
+                image = originalImage.CloneCurrentFrame();
                 Image_information_8.Invalidate();
             }
-
         }
 
         private void pictureBox1_DragDrop_1(object sender, DragEventArgs e)
@@ -81,11 +81,76 @@ namespace Multimedia_PixelLab_HAKMON
                          Image_information_8.Height - 20));
         }
 
-        private void number_of_colors_7_Paint(object sender, PaintEventArgs e){}
+        private void number_of_colors_7_Paint(object sender, PaintEventArgs e) { }
 
         private void color_count_ValueChanged(object sender, EventArgs e)
         {
             colorCount = (int)color_count.Value;
+        }
+
+        private void save_image_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null)
+            {
+                MessageBox.Show("No image to save.");
+                return;
+            }
+
+            saveFileDialog1.Filter =
+                "Bitmap Image (*.bmp)|*.bmp|" +
+                "JPEG Image (*.jpg)|*.jpg;*.jpeg|" +
+                "PNG Image (*.png)|*.png|" +
+                "GIF Image (*.gif)|*.gif|" +
+                "Icon File (*.ico)|*.ico|" +
+                "TIFF Image (*.tif)|*.tif;*.tiff|" +
+                "All Files (*.*)|*.*";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog1.FileName;
+                string extension = Path.GetExtension(filePath).ToLower();
+
+                switch (extension)
+                {
+                    case ".bmp":
+                        pictureBox1.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Bmp);
+                        break;
+
+                    case ".jpg":
+                    case ".jpeg":
+                        pictureBox1.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Jpeg);
+                        break;
+
+                    case ".png":
+                        pictureBox1.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Png);
+                        break;
+
+                    case ".gif":
+                        pictureBox1.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Gif);
+                        break;
+
+                    case ".tif":
+                    case ".tiff":
+                        pictureBox1.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Tiff);
+                        break;
+
+                    case ".ico":
+                        pictureBox1.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Icon);
+                        break;
+
+                    default:
+                        MessageBox.Show("This format is not supported for saving.");
+                        break;
+                }
+
+                MessageBox.Show("Image saved successfully.");
+            }
         }
 
         private void color_change_Click(object sender, EventArgs e)
@@ -93,10 +158,10 @@ namespace Multimedia_PixelLab_HAKMON
             if (image == null)
                 return;
 
-            quantizedImage = image.CloneCurrentFrame();
+            image = originalImage.CloneCurrentFrame();
             IQuantizer quantizer = OptimizedPaletteQuantizer.Wu(colorCount);
-            quantizedImage.Quantize(quantizer);
-            pictureBox1.Image = quantizedImage;
+            image.Quantize(quantizer);
+            pictureBox1.Image = image;
 
             number_of_colors_7.Invalidate();
         }

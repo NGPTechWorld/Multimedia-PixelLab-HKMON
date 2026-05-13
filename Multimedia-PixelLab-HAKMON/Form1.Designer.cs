@@ -36,6 +36,8 @@
             this.number_of_colors_7 = new System.Windows.Forms.Panel();
             this.color_count = new System.Windows.Forms.NumericUpDown();
             this.color_change = new System.Windows.Forms.Button();
+            this.save_image = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             space = new System.Windows.Forms.Panel();
             space.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,6 +92,7 @@
             // 
             // number_of_colors_7
             // 
+            this.number_of_colors_7.Controls.Add(this.save_image);
             this.number_of_colors_7.Controls.Add(this.color_count);
             this.number_of_colors_7.Controls.Add(this.color_change);
             this.number_of_colors_7.Location = new System.Drawing.Point(781, -3);
@@ -123,13 +126,23 @@
             // 
             // color_change
             // 
-            this.color_change.Location = new System.Drawing.Point(13, 15);
+            this.color_change.Location = new System.Drawing.Point(13, 13);
             this.color_change.Name = "color_change";
             this.color_change.Size = new System.Drawing.Size(97, 29);
             this.color_change.TabIndex = 3;
             this.color_change.Text = "Change";
             this.color_change.UseVisualStyleBackColor = true;
             this.color_change.Click += new System.EventHandler(this.color_change_Click);
+            // 
+            // save_image
+            // 
+            this.save_image.Location = new System.Drawing.Point(216, 13);
+            this.save_image.Name = "save_image";
+            this.save_image.Size = new System.Drawing.Size(80, 29);
+            this.save_image.TabIndex = 5;
+            this.save_image.Text = "Save";
+            this.save_image.UseVisualStyleBackColor = true;
+            this.save_image.Click += new System.EventHandler(this.save_image_Click);
             // 
             // Form1
             // 
@@ -159,5 +172,7 @@
         private Panel number_of_colors_7;
         private NumericUpDown color_count;
         private Button color_change;
+        private Button save_image;
+        private SaveFileDialog saveFileDialog1;
     }
 }
