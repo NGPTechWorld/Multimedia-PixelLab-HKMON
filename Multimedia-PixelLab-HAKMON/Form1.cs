@@ -8,11 +8,12 @@ namespace Multimedia_PixelLab_HAKMON
     {
         Bitmap image;
         Bitmap originalImage;
+        bool isResetting = false;
         List<Panel> colorSystemsPanel = new List<Panel>();
         public Form1()
         {
             InitializeComponent();
-            RGB.AllowDrop = true;
+            Scene.AllowDrop = true;
             comboBoxColorSystems.SelectedIndex = 0;
             comboBoxColorSystems.Enabled = false;
             colorSystemsPanel.Add(RGB_Panel);
@@ -23,53 +24,254 @@ namespace Multimedia_PixelLab_HAKMON
             colorSystemsPanel.Add(YCbCr_Panel);
             RGB_Panel.Enabled = false;
             ShowPanel(0);
-
-            RGB_R.Value = 50;
-            RGB_G.Value = 50;
-            RGB_B.Value = 50;
-            RGB_R.ValueChanged += RGB_ValueChanged;
-            RGB_G.ValueChanged += RGB_ValueChanged;
-            RGB_B.ValueChanged += RGB_ValueChanged;
+            reset_value_sysColor();
+            initEvents();
         }
-
-        private void RGB_ValueChanged(object sender, EventArgs e)
+        private void initEvents()
         {
-            if (originalImage == null)
+            // RGB
+            RGB_R.ValueChanged += ColorSystem_ValueChanged;
+            RGB_G.ValueChanged += ColorSystem_ValueChanged;
+            RGB_B.ValueChanged += ColorSystem_ValueChanged;
+
+            // CMYK
+            CMYK_C.ValueChanged += ColorSystem_ValueChanged;
+            CMYK_M.ValueChanged += ColorSystem_ValueChanged;
+            CMYK_Y.ValueChanged += ColorSystem_ValueChanged;
+            CMYK_K.ValueChanged += ColorSystem_ValueChanged;
+
+            // HSV
+            HSV_H.ValueChanged += ColorSystem_ValueChanged;
+            HSV_S.ValueChanged += ColorSystem_ValueChanged;
+            HSV_V.ValueChanged += ColorSystem_ValueChanged;
+
+            // YUV
+            YUV_Y.ValueChanged += ColorSystem_ValueChanged;
+            YUV_U.ValueChanged += ColorSystem_ValueChanged;
+            YUV_V.ValueChanged += ColorSystem_ValueChanged;
+
+            // LAB
+            LAB_L.ValueChanged += ColorSystem_ValueChanged;
+            LAB_A.ValueChanged += ColorSystem_ValueChanged;
+            LAB_B.ValueChanged += ColorSystem_ValueChanged;
+
+            // YCbCr
+            YCbCr_Y.ValueChanged += ColorSystem_ValueChanged;
+            YCbCr_Cb.ValueChanged += ColorSystem_ValueChanged;
+            YCbCr_Cr.ValueChanged += ColorSystem_ValueChanged;
+        }
+        private void ColorSystem_ValueChanged(object sender, EventArgs e)
+        {
+            if (isResetting) return;
+            if (originalImage == null) return;
+
+            string selectedSystem = comboBoxColorSystems.SelectedItem.ToString();
+            Bitmap tempImage = new Bitmap(originalImage.Width, originalImage.Height);
+
+            if (selectedSystem == "LAB")
+            {
+                ApplyLAB();
                 return;
+            }
 
-            Bitmap tempImage = new Bitmap(originalImage);
+            double f1 = 1, f2 = 1, f3 = 1, f4 = 1;
 
-            double rFactor = (double)RGB_R.Value / 50.0;
-            double gFactor = (double)RGB_G.Value / 50.0;
-            double bFactor = (double)RGB_B.Value / 50.0;
+            switch (selectedSystem)
+            {
+                case "RGB":
+                    f1 = (double)RGB_R.Value / 50.0;
+                    f2 = (double)RGB_G.Value / 50.0;
+                    f3 = (double)RGB_B.Value / 50.0;
+                    break;
+                case "CMYK":
+                    f1 = (double)CMYK_C.Value / 50.0;
+                    f2 = (double)CMYK_M.Value / 50.0;
+                    f3 = (double)CMYK_Y.Value / 50.0;
+                    f4 = (double)CMYK_K.Value / 50.0;
+                    break;
+                case "HSV":
+                    f1 = (double)HSV_H.Value / 50.0;
+                    f2 = (double)HSV_S.Value / 50.0;
+                    f3 = (double)HSV_V.Value / 50.0;
+                    break;
+                case "YUV":
+                    f1 = (double)YUV_Y.Value / 50.0;
+                    f2 = (double)YUV_U.Value / 50.0;
+                    f3 = (double)YUV_V.Value / 50.0;
+                    break;
+                case "YCbCr":
+                    f1 = (double)YCbCr_Y.Value / 50.0;
+                    f2 = (double)YCbCr_Cb.Value / 50.0;
+                    f3 = (double)YCbCr_Cr.Value / 50.0;
+                    break;
+            }
 
             for (int y = 0; y < tempImage.Height; y++)
             {
                 for (int x = 0; x < tempImage.Width; x++)
                 {
                     Color pixel = originalImage.GetPixel(x, y);
+                    Color newPixel = pixel;
 
-                    int newR = (int)(pixel.R * rFactor);
-                    int newG = (int)(pixel.G * gFactor);
-                    int newB = (int)(pixel.B * bFactor);
+                    switch (selectedSystem)
+                    {
+                        case "RGB":
+                            {
+                                int newR = Math.Max(0, Math.Min(255, (int)(pixel.R * f1)));
+                                int newG = Math.Max(0, Math.Min(255, (int)(pixel.G * f2)));
+                                int newB = Math.Max(0, Math.Min(255, (int)(pixel.B * f3)));
+                                newPixel = Color.FromArgb(newR, newG, newB);
+                                break;
+                            }
 
-                    newR = Math.Max(0, Math.Min(255, newR));
-                    newG = Math.Max(0, Math.Min(255, newG));
-                    newB = Math.Max(0, Math.Min(255, newB));
+                        case "CMYK":
+                            {
+                                // RGB -> CMYK
+                                double r = pixel.R / 255.0;
+                                double g = pixel.G / 255.0;
+                                double b = pixel.B / 255.0;
 
-                    Color newPixel = Color.FromArgb(newR, newG, newB);
+                                double k = 1.0 - Math.Max(r, Math.Max(g, b));
+                                double c = (k < 1.0) ? (1.0 - r - k) / (1.0 - k) : 0;
+                                double m = (k < 1.0) ? (1.0 - g - k) / (1.0 - k) : 0;
+                                double yC = (k < 1.0) ? (1.0 - b - k) / (1.0 - k) : 0;
+
+                                c = Math.Max(0, Math.Min(1, c * f1));
+                                m = Math.Max(0, Math.Min(1, m * f2));
+                                yC = Math.Max(0, Math.Min(1, yC * f3));
+                                k = Math.Max(0, Math.Min(1, k * f4));
+
+                                // CMYK -> RGB
+                                int newR = Math.Max(0, Math.Min(255, (int)(255 * (1 - c) * (1 - k))));
+                                int newG = Math.Max(0, Math.Min(255, (int)(255 * (1 - m) * (1 - k))));
+                                int newB = Math.Max(0, Math.Min(255, (int)(255 * (1 - yC) * (1 - k))));
+
+                                newPixel = Color.FromArgb(newR, newG, newB);
+                                break;
+                            }
+
+                        case "HSV":
+                            {
+                                double h = pixel.GetHue();           // 0..360
+                                double s = pixel.GetSaturation();    // 0..1
+                                double v = pixel.GetBrightness();    // 0..1
+
+                                h = (h * f1) % 360;
+                                if (h < 0) h += 360;
+                                s = Math.Max(0, Math.Min(1, s * f2));
+                                v = Math.Max(0, Math.Min(1, v * f3));
+
+                                newPixel = HsvToRgb(h, s, v);
+                                break;
+                            }
+
+                        case "YUV":
+                            {
+                                // RGB -> YUV
+                                double Y = 0.299 * pixel.R + 0.587 * pixel.G + 0.114 * pixel.B;
+                                double U = -0.14713 * pixel.R - 0.28886 * pixel.G + 0.436 * pixel.B;
+                                double V = 0.615 * pixel.R - 0.51499 * pixel.G - 0.10001 * pixel.B;
+
+                                Y *= f1;
+                                U *= f2;
+                                V *= f3;
+
+                                // YUV -> RGB
+                                int r = Math.Max(0, Math.Min(255, (int)(Y + 1.13983 * V)));
+                                int g = Math.Max(0, Math.Min(255, (int)(Y - 0.39465 * U - 0.58060 * V)));
+                                int b = Math.Max(0, Math.Min(255, (int)(Y + 2.03211 * U)));
+
+                                newPixel = Color.FromArgb(r, g, b);
+                                break;
+                            }
+
+                        case "YCbCr":
+                            {
+                                // RGB -> YCbCr
+                                double Y = 0.299 * pixel.R + 0.587 * pixel.G + 0.114 * pixel.B;
+                                double Cb = 128 - 0.168736 * pixel.R - 0.331264 * pixel.G + 0.5 * pixel.B;
+                                double Cr = 128 + 0.5 * pixel.R - 0.418688 * pixel.G - 0.081312 * pixel.B;
+
+                                // Y ÖÑÈ ãÈÇÔÑ¡ Cb/Cr Íæá ÇáãäÊÕÝ 128
+                                Y = Y * f1;
+                                Cb = 128 + (Cb - 128) * f2;
+                                Cr = 128 + (Cr - 128) * f3;
+
+                                // YCbCr -> RGB
+                                int r = Math.Max(0, Math.Min(255, (int)(Y + 1.402 * (Cr - 128))));
+                                int g = Math.Max(0, Math.Min(255, (int)(Y - 0.344136 * (Cb - 128) - 0.714136 * (Cr - 128))));
+                                int b = Math.Max(0, Math.Min(255, (int)(Y + 1.772 * (Cb - 128))));
+
+                                newPixel = Color.FromArgb(r, g, b);
+                                break;
+                            }
+                    }
 
                     tempImage.SetPixel(x, y, newPixel);
                 }
             }
 
-            RGB.Image = tempImage;
+            Scene.Image = tempImage;
         }
+        private void ApplyLAB()
+        {
+            double lFactor = (double)LAB_L.Value / 50.0;
+            double aFactor = (double)LAB_A.Value / 50.0;
+            double bFactor = (double)LAB_B.Value / 50.0;
+
+            Mat inputMat = originalImage.ToMat();
+            Mat labMat = new Mat();
+            CvInvoke.CvtColor(inputMat, labMat, ColorConversion.Bgr2Lab);
+
+            Bitmap labBitmap = labMat.ToBitmap();
+            Bitmap modifiedLab = new Bitmap(labBitmap.Width, labBitmap.Height);
+
+            for (int y = 0; y < labBitmap.Height; y++)
+            {
+                for (int x = 0; x < labBitmap.Width; x++)
+                {
+                    Color pixel = labBitmap.GetPixel(x, y);
+
+                    int L = Math.Max(0, Math.Min(255, (int)(pixel.R * lFactor)));
+                    int A = Math.Max(0, Math.Min(255, (int)(pixel.G * aFactor)));
+                    int B = Math.Max(0, Math.Min(255, (int)(pixel.B * bFactor)));
+
+                    modifiedLab.SetPixel(x, y, Color.FromArgb(L, A, B));
+                }
+            }
+
+            Mat modifiedMat = modifiedLab.ToMat();
+            Mat resultMat = new Mat();
+            CvInvoke.CvtColor(modifiedMat, resultMat, ColorConversion.Lab2Bgr);
+
+            Scene.Image = resultMat.ToBitmap();
+        }
+        private Color HsvToRgb(double h, double s, double v)
+        {
+            double c = v * s;
+            double x = c * (1 - Math.Abs((h / 60.0) % 2 - 1));
+            double m = v - c;
+
+            double r1 = 0, g1 = 0, b1 = 0;
+            if (h < 60) { r1 = c; g1 = x; b1 = 0; }
+            else if (h < 120) { r1 = x; g1 = c; b1 = 0; }
+            else if (h < 180) { r1 = 0; g1 = c; b1 = x; }
+            else if (h < 240) { r1 = 0; g1 = x; b1 = c; }
+            else if (h < 300) { r1 = x; g1 = 0; b1 = c; }
+            else { r1 = c; g1 = 0; b1 = x; }
+
+            int r = Math.Max(0, Math.Min(255, (int)((r1 + m) * 255)));
+            int g = Math.Max(0, Math.Min(255, (int)((g1 + m) * 255)));
+            int b = Math.Max(0, Math.Min(255, (int)((b1 + m) * 255)));
+
+            return Color.FromArgb(r, g, b);
+        }
+
         private void openImage_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                RGB.Image = Image.FromFile(openFileDialog1.FileName);
+                Scene.Image = Image.FromFile(openFileDialog1.FileName);
                 originalImage = new Bitmap(openFileDialog1.FileName);
                 image = new Bitmap(openFileDialog1.FileName);
                 comboBoxColorSystems.Enabled = true;
@@ -83,7 +285,9 @@ namespace Multimedia_PixelLab_HAKMON
 
             if (files.Length > 0)
             {
-                RGB.Image = Image.FromFile(files[0]);
+                Scene.Image = Image.FromFile(files[0]);
+                originalImage = new Bitmap(openFileDialog1.FileName);
+                image = new Bitmap(openFileDialog1.FileName);
                 comboBoxColorSystems.Enabled = true;
                 RGB_Panel.Enabled = true;
             }
@@ -111,7 +315,7 @@ namespace Multimedia_PixelLab_HAKMON
             {
                 case "RGB":
                     ShowPanel(0);
-                    RGB.Image = image;
+                    Scene.Image = image;
                     return;
 
                 case "CMYK":
@@ -139,7 +343,7 @@ namespace Multimedia_PixelLab_HAKMON
                     CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2YCrCb);
                     break;
             }
-            RGB.Image = outputImage.ToBitmap();
+            Scene.Image = outputImage.ToBitmap();
         }
         private void ConvertToCMYK()
         {
@@ -161,48 +365,9 @@ namespace Multimedia_PixelLab_HAKMON
                 }
             }
 
-            RGB.Image = cmykImage;
+            Scene.Image = cmykImage;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void RGB_G_label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HSV_S_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HSV_H_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HSV_Panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LAB_Panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void ShowPanel(int index)
         {
             for (int i = 0; i < colorSystemsPanel.Count; i++)
@@ -211,5 +376,20 @@ namespace Multimedia_PixelLab_HAKMON
             }
         }
 
+        private void resetImage_Click(object sender, EventArgs e)
+        {
+            reset_value_sysColor();
+            /*image = originalImage;
+            RGB.Image = Image.FromFile(openFileDialog1.FileName);*/
+        }
+        private void reset_value_sysColor()
+        {
+            RGB_R.Value = 50; RGB_G.Value = 50; RGB_B.Value = 50;
+            CMYK_C.Value = 50; CMYK_M.Value = 50; CMYK_Y.Value = 50; CMYK_K.Value = 50;
+            HSV_H.Value = 50; HSV_S.Value = 50; HSV_V.Value = 50;
+            YUV_Y.Value = 50; YUV_U.Value = 50; YUV_V.Value = 50;
+            LAB_L.Value = 50; LAB_A.Value = 50; LAB_B.Value = 50;
+            YCbCr_Y.Value = 50; YCbCr_Cb.Value = 50; YCbCr_Cr.Value = 50;
+        }
     }
 }

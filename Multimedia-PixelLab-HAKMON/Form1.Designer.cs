@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Panel space;
-            this.RGB = new System.Windows.Forms.PictureBox();
+            this.Scene = new System.Windows.Forms.PictureBox();
             this.YUV_Panel = new System.Windows.Forms.Panel();
             this.YUV_V_Label = new System.Windows.Forms.Label();
             this.YUV_U_Label = new System.Windows.Forms.Label();
@@ -76,16 +76,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CMYK_K_Label = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.CMYK_K = new System.Windows.Forms.NumericUpDown();
             this.CMYK_Y_Label = new System.Windows.Forms.Label();
             this.CMYK_M_Label = new System.Windows.Forms.Label();
             this.CMYK_C_Label = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.CMYK_Y = new System.Windows.Forms.NumericUpDown();
+            this.CMYK_M = new System.Windows.Forms.NumericUpDown();
+            this.CMYK_C = new System.Windows.Forms.NumericUpDown();
+            this.resetImage = new System.Windows.Forms.Button();
             space = new System.Windows.Forms.Panel();
             space.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RGB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Scene)).BeginInit();
             this.YUV_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.YUV_V)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YUV_U)).BeginInit();
@@ -107,30 +108,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.YCbCr_Cb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.YCbCr_Y)).BeginInit();
             this.CMYK_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CMYK_K)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CMYK_Y)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CMYK_M)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CMYK_C)).BeginInit();
             this.SuspendLayout();
             // 
             // space
             // 
             space.AllowDrop = true;
             space.BackColor = System.Drawing.Color.Gainsboro;
-            space.Controls.Add(this.RGB);
+            space.Controls.Add(this.Scene);
             space.Location = new System.Drawing.Point(-2, 54);
             space.Name = "space";
             space.Size = new System.Drawing.Size(1107, 454);
             space.TabIndex = 0;
             // 
-            // RGB
+            // Scene
             // 
-            this.RGB.Location = new System.Drawing.Point(0, 3);
-            this.RGB.Name = "RGB";
-            this.RGB.Size = new System.Drawing.Size(1104, 448);
-            this.RGB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RGB.TabIndex = 0;
-            this.RGB.TabStop = false;
+            this.Scene.Location = new System.Drawing.Point(0, 3);
+            this.Scene.Name = "Scene";
+            this.Scene.Size = new System.Drawing.Size(1104, 448);
+            this.Scene.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Scene.TabIndex = 0;
+            this.Scene.TabStop = false;
             // 
             // YUV_Panel
             // 
@@ -578,13 +579,13 @@
             this.CMYK_Panel.Controls.Add(this.label2);
             this.CMYK_Panel.Controls.Add(this.label1);
             this.CMYK_Panel.Controls.Add(this.CMYK_K_Label);
-            this.CMYK_Panel.Controls.Add(this.numericUpDown4);
+            this.CMYK_Panel.Controls.Add(this.CMYK_K);
             this.CMYK_Panel.Controls.Add(this.CMYK_Y_Label);
             this.CMYK_Panel.Controls.Add(this.CMYK_M_Label);
             this.CMYK_Panel.Controls.Add(this.CMYK_C_Label);
-            this.CMYK_Panel.Controls.Add(this.numericUpDown1);
-            this.CMYK_Panel.Controls.Add(this.numericUpDown2);
-            this.CMYK_Panel.Controls.Add(this.numericUpDown3);
+            this.CMYK_Panel.Controls.Add(this.CMYK_Y);
+            this.CMYK_Panel.Controls.Add(this.CMYK_M);
+            this.CMYK_Panel.Controls.Add(this.CMYK_C);
             this.CMYK_Panel.Location = new System.Drawing.Point(185, 515);
             this.CMYK_Panel.Name = "CMYK_Panel";
             this.CMYK_Panel.Size = new System.Drawing.Size(801, 72);
@@ -636,12 +637,12 @@
             this.CMYK_K_Label.TabIndex = 8;
             this.CMYK_K_Label.Text = "K:";
             // 
-            // numericUpDown4
+            // CMYK_K
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(645, 23);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(68, 27);
-            this.numericUpDown4.TabIndex = 7;
+            this.CMYK_K.Location = new System.Drawing.Point(645, 23);
+            this.CMYK_K.Name = "CMYK_K";
+            this.CMYK_K.Size = new System.Drawing.Size(68, 27);
+            this.CMYK_K.TabIndex = 7;
             // 
             // CMYK_Y_Label
             // 
@@ -670,37 +671,48 @@
             this.CMYK_C_Label.TabIndex = 4;
             this.CMYK_C_Label.Text = "C:";
             // 
-            // numericUpDown1
+            // CMYK_Y
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(459, 23);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(68, 27);
-            this.numericUpDown1.TabIndex = 3;
+            this.CMYK_Y.Location = new System.Drawing.Point(459, 23);
+            this.CMYK_Y.Name = "CMYK_Y";
+            this.CMYK_Y.Size = new System.Drawing.Size(68, 27);
+            this.CMYK_Y.TabIndex = 3;
             // 
-            // numericUpDown2
+            // CMYK_M
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(269, 23);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(68, 27);
-            this.numericUpDown2.TabIndex = 2;
+            this.CMYK_M.Location = new System.Drawing.Point(269, 23);
+            this.CMYK_M.Name = "CMYK_M";
+            this.CMYK_M.Size = new System.Drawing.Size(68, 27);
+            this.CMYK_M.TabIndex = 2;
             // 
-            // numericUpDown3
+            // CMYK_C
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(96, 22);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(68, 27);
-            this.numericUpDown3.TabIndex = 1;
-            this.numericUpDown3.Value = new decimal(new int[] {
+            this.CMYK_C.Location = new System.Drawing.Point(96, 22);
+            this.CMYK_C.Name = "CMYK_C";
+            this.CMYK_C.Size = new System.Drawing.Size(68, 27);
+            this.CMYK_C.TabIndex = 1;
+            this.CMYK_C.Value = new decimal(new int[] {
             50,
             0,
             0,
             0});
+            // 
+            // resetImage
+            // 
+            this.resetImage.Location = new System.Drawing.Point(166, 12);
+            this.resetImage.Name = "resetImage";
+            this.resetImage.Size = new System.Drawing.Size(136, 29);
+            this.resetImage.TabIndex = 8;
+            this.resetImage.Text = "Clear Image";
+            this.resetImage.UseVisualStyleBackColor = true;
+            this.resetImage.Click += new System.EventHandler(this.resetImage_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1476, 591);
+            this.Controls.Add(this.resetImage);
             this.Controls.Add(this.CMYK_Panel);
             this.Controls.Add(this.LAB_Panel);
             this.Controls.Add(this.YUV_Panel);
@@ -713,7 +725,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             space.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.RGB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Scene)).EndInit();
             this.YUV_Panel.ResumeLayout(false);
             this.YUV_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.YUV_V)).EndInit();
@@ -741,10 +753,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.YCbCr_Y)).EndInit();
             this.CMYK_Panel.ResumeLayout(false);
             this.CMYK_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CMYK_K)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CMYK_Y)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CMYK_M)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CMYK_C)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -754,7 +766,7 @@
         private Panel space;
         private Button openImage;
         private OpenFileDialog openFileDialog1;
-        private PictureBox RGB;
+        private PictureBox Scene;
         private ComboBox comboBoxColorSystems;
         private Panel RGB_Panel;
         private NumericUpDown RGB_B;
@@ -795,16 +807,17 @@
         private NumericUpDown YCbCr_Y;
         private Panel CMYK_Panel;
         private Label CMYK_K_Label;
-        private NumericUpDown numericUpDown4;
+        private NumericUpDown CMYK_K;
         private Label CMYK_Y_Label;
         private Label CMYK_M_Label;
         private Label CMYK_C_Label;
-        private NumericUpDown numericUpDown1;
-        private NumericUpDown numericUpDown2;
-        private NumericUpDown numericUpDown3;
+        private NumericUpDown CMYK_Y;
+        private NumericUpDown CMYK_M;
+        private NumericUpDown CMYK_C;
         private Label label1;
         private Label label4;
         private Label label3;
         private Label label2;
+        private Button resetImage;
     }
 }
