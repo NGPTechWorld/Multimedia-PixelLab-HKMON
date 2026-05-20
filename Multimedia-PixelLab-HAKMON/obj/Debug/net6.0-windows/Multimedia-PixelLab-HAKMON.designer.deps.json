@@ -143,6 +143,37 @@
           }
         }
       },
+      "KGySoft.CoreLibraries/10.5.0": {
+        "runtime": {
+          "lib/net6.0/KGySoft.CoreLibraries.dll": {
+            "assemblyVersion": "10.5.0.0",
+            "fileVersion": "10.5.0.0"
+          }
+        }
+      },
+      "KGySoft.Drawing/10.0.2": {
+        "dependencies": {
+          "KGySoft.Drawing.Core": "10.0.1",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/KGySoft.Drawing.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.2.0"
+          }
+        }
+      },
+      "KGySoft.Drawing.Core/10.0.1": {
+        "dependencies": {
+          "KGySoft.CoreLibraries": "10.5.0"
+        },
+        "runtime": {
+          "lib/net6.0/KGySoft.Drawing.Core.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.1.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.1": {},
       "Microsoft.NETCore.Targets/1.1.3": {},
       "Microsoft.Win32.SystemEvents/6.0.0": {
@@ -377,6 +408,27 @@
       "sha512": "sha512-/kkz66AROssDbzgXR5UyVnxvQ/bE22voerybxNdqFr1jJjCERet77rLqmvJI/dqCHDa4oTpwLY77B5MfPM48kg==",
       "path": "emgu.runtime.windows.msvc.rt.x86/19.29.30138",
       "hashPath": "emgu.runtime.windows.msvc.rt.x86.19.29.30138.nupkg.sha512"
+    },
+    "KGySoft.CoreLibraries/10.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JB4DtPa26/KaiNkZP2qPIex+cuho3dkEbrc5OULYJsUjLDXdK+ZmwkmxEctvOENmpNDUwPwPlJAU5pYcGyKGjw==",
+      "path": "kgysoft.corelibraries/10.5.0",
+      "hashPath": "kgysoft.corelibraries.10.5.0.nupkg.sha512"
+    },
+    "KGySoft.Drawing/10.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Iu7KzP3sS09JwYttKd7mCTvA9qcdx9SUiqGQZ3WAFHWG0krCismVcTpI6dAdvIFP3OT2SdATYMwlJR2LfELxxQ==",
+      "path": "kgysoft.drawing/10.0.2",
+      "hashPath": "kgysoft.drawing.10.0.2.nupkg.sha512"
+    },
+    "KGySoft.Drawing.Core/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KliHpZDORQk+g9jfBFWnJQhz7fFwN0l3PQb9VjzXrwThpE88IOtFmlsIugHVc8535Z/p0G7vplujvS/jEIAIcQ==",
+      "path": "kgysoft.drawing.core/10.0.1",
+      "hashPath": "kgysoft.drawing.core.10.0.1.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.1": {
       "type": "package",

@@ -79,3 +79,7 @@ D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net
 D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.pdb
 D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.genruntimeconfig.cache
 D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\ref\Multimedia-PixelLab-HAKMON.dll
+D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\KGySoft.CoreLibraries.dll
+D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\KGySoft.Drawing.dll
+D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\KGySoft.Drawing.Core.dll
+D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia_PixelLab_HAKMON.Form2.resources

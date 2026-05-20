@@ -87,6 +87,13 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.Image_information_8 = new System.Windows.Forms.Panel();
+            this.number_of_colors_7 = new System.Windows.Forms.Panel();
+            this.save_image = new System.Windows.Forms.Button();
+            this.color_count = new System.Windows.Forms.NumericUpDown();
+            this.color_change = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             space = new System.Windows.Forms.Panel();
             space.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Scene)).BeginInit();
@@ -115,6 +122,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CMYK_Y)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CMYK_M)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CMYK_C)).BeginInit();
+            this.number_of_colors_7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.color_count)).BeginInit();
             this.SuspendLayout();
             // 
             // space
@@ -745,11 +754,84 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "CS Components";
             // 
+            // Image_information_8
+            // 
+            this.Image_information_8.Location = new System.Drawing.Point(1111, 54);
+            this.Image_information_8.Name = "Image_information_8";
+            this.Image_information_8.Size = new System.Drawing.Size(321, 451);
+            this.Image_information_8.TabIndex = 12;
+            this.Image_information_8.Paint += new System.Windows.Forms.PaintEventHandler(this.Image_information_8_Paint);
+            // 
+            // number_of_colors_7
+            // 
+            this.number_of_colors_7.Controls.Add(this.save_image);
+            this.number_of_colors_7.Controls.Add(this.color_count);
+            this.number_of_colors_7.Controls.Add(this.color_change);
+            this.number_of_colors_7.Location = new System.Drawing.Point(702, -3);
+            this.number_of_colors_7.Name = "number_of_colors_7";
+            this.number_of_colors_7.Size = new System.Drawing.Size(400, 54);
+            this.number_of_colors_7.TabIndex = 13;
+            // 
+            // save_image
+            // 
+            this.save_image.Location = new System.Drawing.Point(216, 13);
+            this.save_image.Name = "save_image";
+            this.save_image.Size = new System.Drawing.Size(154, 29);
+            this.save_image.TabIndex = 5;
+            this.save_image.Text = "Save Image";
+            this.save_image.UseVisualStyleBackColor = true;
+            this.save_image.Click += new System.EventHandler(this.save_image_Click);
+            // 
+            // color_count
+            // 
+            this.color_count.Location = new System.Drawing.Point(132, 15);
+            this.color_count.Maximum = new decimal(new int[] {
+            65536,
+            0,
+            0,
+            0});
+            this.color_count.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.color_count.Name = "color_count";
+            this.color_count.Size = new System.Drawing.Size(64, 27);
+            this.color_count.TabIndex = 4;
+            this.color_count.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.color_count.ValueChanged += new System.EventHandler(this.color_count_ValueChanged);
+            // 
+            // color_change
+            // 
+            this.color_change.Location = new System.Drawing.Point(13, 13);
+            this.color_change.Name = "color_change";
+            this.color_change.Size = new System.Drawing.Size(97, 29);
+            this.color_change.TabIndex = 3;
+            this.color_change.Text = "Change";
+            this.color_change.UseVisualStyleBackColor = true;
+            this.color_change.Click += new System.EventHandler(this.color_change_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(587, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 20);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Number Color";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1476, 597);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.number_of_colors_7);
+            this.Controls.Add(this.Image_information_8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
@@ -798,6 +880,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CMYK_Y)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CMYK_M)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CMYK_C)).EndInit();
+            this.number_of_colors_7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.color_count)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -864,5 +948,12 @@
         private ComboBox comboBox1;
         private Label label5;
         private Label label6;
+        private Panel Image_information_8;
+        private Panel number_of_colors_7;
+        private Button save_image;
+        private NumericUpDown color_count;
+        private Button color_change;
+        private Label label7;
+        private SaveFileDialog saveFileDialog1;
     }
 }

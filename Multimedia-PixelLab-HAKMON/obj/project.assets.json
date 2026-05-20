@@ -125,6 +125,40 @@
           }
         }
       },
+      "KGySoft.CoreLibraries/10.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/KGySoft.CoreLibraries.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/KGySoft.CoreLibraries.dll": {}
+        }
+      },
+      "KGySoft.Drawing/10.0.2": {
+        "type": "package",
+        "dependencies": {
+          "KGySoft.Drawing.Core": "10.0.1",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "lib/net5.0/KGySoft.Drawing.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/KGySoft.Drawing.dll": {}
+        }
+      },
+      "KGySoft.Drawing.Core/10.0.1": {
+        "type": "package",
+        "dependencies": {
+          "KGySoft.CoreLibraries": "10.5.0"
+        },
+        "compile": {
+          "lib/net6.0/KGySoft.Drawing.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/KGySoft.Drawing.Core.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.1": {
         "type": "package",
         "compile": {
@@ -488,6 +522,117 @@
         "runtimes/win-x86/native/msvcp140_atomic_wait.dll",
         "runtimes/win-x86/native/msvcp140_codecvt_ids.dll",
         "runtimes/win-x86/native/vcruntime140.dll"
+      ]
+    },
+    "KGySoft.CoreLibraries/10.5.0": {
+      "sha512": "JB4DtPa26/KaiNkZP2qPIex+cuho3dkEbrc5OULYJsUjLDXdK+ZmwkmxEctvOENmpNDUwPwPlJAU5pYcGyKGjw==",
+      "type": "package",
+      "path": "kgysoft.corelibraries/10.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon64.png",
+        "LICENSE",
+        "kgysoft.corelibraries.10.5.0.nupkg.sha512",
+        "kgysoft.corelibraries.nuspec",
+        "lib/net10.0/KGySoft.CoreLibraries.dll",
+        "lib/net10.0/KGySoft.CoreLibraries.xml",
+        "lib/net35/KGySoft.CoreLibraries.dll",
+        "lib/net35/KGySoft.CoreLibraries.xml",
+        "lib/net40/KGySoft.CoreLibraries.dll",
+        "lib/net40/KGySoft.CoreLibraries.xml",
+        "lib/net45/KGySoft.CoreLibraries.dll",
+        "lib/net45/KGySoft.CoreLibraries.xml",
+        "lib/net472/KGySoft.CoreLibraries.dll",
+        "lib/net472/KGySoft.CoreLibraries.xml",
+        "lib/net5.0/KGySoft.CoreLibraries.dll",
+        "lib/net5.0/KGySoft.CoreLibraries.xml",
+        "lib/net6.0/KGySoft.CoreLibraries.dll",
+        "lib/net6.0/KGySoft.CoreLibraries.xml",
+        "lib/net7.0/KGySoft.CoreLibraries.dll",
+        "lib/net7.0/KGySoft.CoreLibraries.xml",
+        "lib/net8.0/KGySoft.CoreLibraries.dll",
+        "lib/net8.0/KGySoft.CoreLibraries.xml",
+        "lib/net9.0/KGySoft.CoreLibraries.dll",
+        "lib/net9.0/KGySoft.CoreLibraries.xml",
+        "lib/netcoreapp3.0/KGySoft.CoreLibraries.dll",
+        "lib/netcoreapp3.0/KGySoft.CoreLibraries.xml",
+        "lib/netstandard2.0/KGySoft.CoreLibraries.dll",
+        "lib/netstandard2.0/KGySoft.CoreLibraries.xml",
+        "lib/netstandard2.1/KGySoft.CoreLibraries.dll",
+        "lib/netstandard2.1/KGySoft.CoreLibraries.xml",
+        "readme.md",
+        "readme.txt"
+      ]
+    },
+    "KGySoft.Drawing/10.0.2": {
+      "sha512": "Iu7KzP3sS09JwYttKd7mCTvA9qcdx9SUiqGQZ3WAFHWG0krCismVcTpI6dAdvIFP3OT2SdATYMwlJR2LfELxxQ==",
+      "type": "package",
+      "path": "kgysoft.drawing/10.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon64.png",
+        "LICENSE",
+        "kgysoft.drawing.10.0.2.nupkg.sha512",
+        "kgysoft.drawing.nuspec",
+        "lib/net35/KGySoft.Drawing.dll",
+        "lib/net35/KGySoft.Drawing.xml",
+        "lib/net40/KGySoft.Drawing.dll",
+        "lib/net40/KGySoft.Drawing.xml",
+        "lib/net46/KGySoft.Drawing.dll",
+        "lib/net46/KGySoft.Drawing.xml",
+        "lib/net5.0/KGySoft.Drawing.dll",
+        "lib/net5.0/KGySoft.Drawing.xml",
+        "lib/net7.0/KGySoft.Drawing.dll",
+        "lib/net7.0/KGySoft.Drawing.xml",
+        "lib/netcoreapp3.0/KGySoft.Drawing.dll",
+        "lib/netcoreapp3.0/KGySoft.Drawing.xml",
+        "lib/netstandard2.0/KGySoft.Drawing.dll",
+        "lib/netstandard2.0/KGySoft.Drawing.xml",
+        "lib/netstandard2.1/KGySoft.Drawing.dll",
+        "lib/netstandard2.1/KGySoft.Drawing.xml",
+        "readme.md",
+        "readme.txt"
+      ]
+    },
+    "KGySoft.Drawing.Core/10.0.1": {
+      "sha512": "KliHpZDORQk+g9jfBFWnJQhz7fFwN0l3PQb9VjzXrwThpE88IOtFmlsIugHVc8535Z/p0G7vplujvS/jEIAIcQ==",
+      "type": "package",
+      "path": "kgysoft.drawing.core/10.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon64.png",
+        "LICENSE",
+        "kgysoft.drawing.core.10.0.1.nupkg.sha512",
+        "kgysoft.drawing.core.nuspec",
+        "lib/net10.0/KGySoft.Drawing.Core.dll",
+        "lib/net10.0/KGySoft.Drawing.Core.xml",
+        "lib/net35/KGySoft.Drawing.Core.dll",
+        "lib/net35/KGySoft.Drawing.Core.xml",
+        "lib/net40/KGySoft.Drawing.Core.dll",
+        "lib/net40/KGySoft.Drawing.Core.xml",
+        "lib/net45/KGySoft.Drawing.Core.dll",
+        "lib/net45/KGySoft.Drawing.Core.xml",
+        "lib/net46/KGySoft.Drawing.Core.dll",
+        "lib/net46/KGySoft.Drawing.Core.xml",
+        "lib/net5.0/KGySoft.Drawing.Core.dll",
+        "lib/net5.0/KGySoft.Drawing.Core.xml",
+        "lib/net6.0/KGySoft.Drawing.Core.dll",
+        "lib/net6.0/KGySoft.Drawing.Core.xml",
+        "lib/net8.0/KGySoft.Drawing.Core.dll",
+        "lib/net8.0/KGySoft.Drawing.Core.xml",
+        "lib/net9.0/KGySoft.Drawing.Core.dll",
+        "lib/net9.0/KGySoft.Drawing.Core.xml",
+        "lib/netcoreapp3.0/KGySoft.Drawing.Core.dll",
+        "lib/netcoreapp3.0/KGySoft.Drawing.Core.xml",
+        "lib/netstandard2.0/KGySoft.Drawing.Core.dll",
+        "lib/netstandard2.0/KGySoft.Drawing.Core.xml",
+        "lib/netstandard2.1/KGySoft.Drawing.Core.dll",
+        "lib/netstandard2.1/KGySoft.Drawing.Core.xml",
+        "readme.md",
+        "readme.txt"
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.1": {
@@ -1583,7 +1728,8 @@
     "net6.0-windows7.0": [
       "Emgu.CV >= 4.5.5.4823",
       "Emgu.CV.Bitmap >= 4.5.5.4823",
-      "Emgu.CV.runtime.windows >= 4.5.5.4823"
+      "Emgu.CV.runtime.windows >= 4.5.5.4823",
+      "KGySoft.Drawing >= 10.0.2"
     ]
   },
   "packageFolders": {
@@ -1636,6 +1782,10 @@
           "Emgu.CV.runtime.windows": {
             "target": "Package",
             "version": "[4.5.5.4823, )"
+          },
+          "KGySoft.Drawing": {
+            "target": "Package",
+            "version": "[10.0.2, )"
           }
         },
         "imports": [

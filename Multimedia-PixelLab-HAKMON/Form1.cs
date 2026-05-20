@@ -1,6 +1,7 @@
 ﻿using Emgu.CV;
 using Emgu.CV.CvEnum;
-using Emgu.CV.Structure;
+using KGySoft.Drawing.Imaging;
+using KGySoft.Drawing;
 
 namespace Multimedia_PixelLab_HAKMON
 {
@@ -42,6 +43,7 @@ namespace Multimedia_PixelLab_HAKMON
                 comboBoxColorSystems.Enabled = true;
                 comboBox1.Enabled = true;
                 RGB_Panel.Enabled = true;
+                Image_information_8.Invalidate();
             }
         }
 
@@ -57,6 +59,7 @@ namespace Multimedia_PixelLab_HAKMON
                 comboBoxColorSystems.Enabled = true;
                 comboBox1.Enabled = true;
                 RGB_Panel.Enabled = true;
+                Image_information_8.Invalidate();
             }
         }
 
@@ -446,7 +449,7 @@ namespace Multimedia_PixelLab_HAKMON
                     break;
             }
         }
-       
+
         //============================
         // 4) 
         //============================
@@ -457,19 +460,61 @@ namespace Multimedia_PixelLab_HAKMON
         // 6) 
         //============================
         //============================
-        // 7) 
+        // 7)  Color Change Quantize
         //============================
-        //============================
-        // 8) 
-        //============================
-
-        private void ShowPanel(int index)
+        int colorCount = 0;
+        private void color_change_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < colorSystemsPanel.Count; i++)
-            {
-                colorSystemsPanel[i].Visible = (i == index);
-            }
+            if (image == null)
+                return;
+
+            image = originalImage.CloneCurrentFrame();
+            IQuantizer quantizer = OptimizedPaletteQuantizer.Wu(colorCount);
+            image.Quantize(quantizer);
+            Scene.Image = image;
+
+            number_of_colors_7.Invalidate();
         }
+        //============================
+        // 8) Image Information
+        //============================
+        private void Image_information_8_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            g.Clear(Color.White);
+
+            if (image == null)
+            {
+                g.DrawString("No Image Loaded",
+                             new Font("Arial", 12),
+                             Brushes.Black,
+                             new PointF(10, 10));
+                return;
+            }
+
+            FileInfo fileInfo = new FileInfo(openFileDialog1.FileName);
+
+            string info =
+                "Image Information\n\n" +
+                "File Name: " + fileInfo.Name + "\n" +
+                "File Path: " + fileInfo.FullName + "\n" +
+                "File Size: " + (fileInfo.Length / 1024.0).ToString("0.00") + " KB\n" +
+                "Width: " + image.Width + " px\n" +
+                "Height: " + image.Height + " px\n" +
+                "Resolution: " + image.HorizontalResolution + " x " +
+                                  image.VerticalResolution + " DPI\n" +
+                "Pixel Format: " + image.PixelFormat.ToString() + "\n" +
+                "Raw Format: " + image.RawFormat.ToString();
+
+            g.DrawString(info,
+                         new Font("Consolas", 11),
+                         Brushes.Black,
+                         new RectangleF(10, 10,
+                         Image_information_8.Width - 20,
+                         Image_information_8.Height - 20));
+        }
+
         //============================
         // 9) Clear Image 
         //============================
@@ -491,6 +536,85 @@ namespace Multimedia_PixelLab_HAKMON
             comboBoxColorSystems.SelectedIndex = 0;
             comboBox1.SelectedIndex = 0;
             isResetting = false;
+        }
+        private void ShowPanel(int index)
+        {
+            for (int i = 0; i < colorSystemsPanel.Count; i++)
+            {
+                colorSystemsPanel[i].Visible = (i == index);
+            }
+        }
+        //============================
+        // 10) Save Image 
+        //============================
+        private void save_image_Click(object sender, EventArgs e)
+        {
+            if (Scene.Image == null)
+            {
+                MessageBox.Show("No image to save.");
+                return;
+            }
+
+            saveFileDialog1.Filter =
+                "Bitmap Image (*.bmp)|*.bmp|" +
+                "JPEG Image (*.jpg)|*.jpg;*.jpeg|" +
+                "PNG Image (*.png)|*.png|" +
+                "GIF Image (*.gif)|*.gif|" +
+                "Icon File (*.ico)|*.ico|" +
+                "TIFF Image (*.tif)|*.tif;*.tiff|" +
+                "All Files (*.*)|*.*";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog1.FileName;
+                string extension = Path.GetExtension(filePath).ToLower();
+
+                switch (extension)
+                {
+                    case ".bmp":
+                        Scene.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Bmp);
+                        break;
+
+                    case ".jpg":
+                    case ".jpeg":
+                        Scene.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Jpeg);
+                        break;
+
+                    case ".png":
+                        Scene.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Png);
+                        break;
+
+                    case ".gif":
+                        Scene.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Gif);
+                        break;
+
+                    case ".tif":
+                    case ".tiff":
+                        Scene.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Tiff);
+                        break;
+
+                    case ".ico":
+                        Scene.Image.Save(filePath,
+                            System.Drawing.Imaging.ImageFormat.Icon);
+                        break;
+
+                    default:
+                        MessageBox.Show("This format is not supported for saving.");
+                        break;
+                }
+
+                MessageBox.Show("Image saved successfully.");
+            }
+        }
+
+        private void color_count_ValueChanged(object sender, EventArgs e)
+        {
+            colorCount = (int)color_count.Value;
         }
     }
 }
