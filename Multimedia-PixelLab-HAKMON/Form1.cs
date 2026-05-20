@@ -1,4 +1,4 @@
-using Emgu.CV;
+Ôªøusing Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 
@@ -14,8 +14,9 @@ namespace Multimedia_PixelLab_HAKMON
         {
             InitializeComponent();
             Scene.AllowDrop = true;
-            comboBoxColorSystems.SelectedIndex = 0;
+
             comboBoxColorSystems.Enabled = false;
+            comboBox1.Enabled = false;
             colorSystemsPanel.Add(RGB_Panel);
             colorSystemsPanel.Add(CMYK_Panel);
             colorSystemsPanel.Add(HSV_Panel);
@@ -27,6 +28,111 @@ namespace Multimedia_PixelLab_HAKMON
             reset_value_sysColor();
             initEvents();
         }
+
+        //============================
+        // 1) Import & Drag 
+        //============================
+        private void openImage_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Scene.Image = Image.FromFile(openFileDialog1.FileName);
+                originalImage = new Bitmap(openFileDialog1.FileName);
+                image = new Bitmap(openFileDialog1.FileName);
+                comboBoxColorSystems.Enabled = true;
+                comboBox1.Enabled = true;
+                RGB_Panel.Enabled = true;
+            }
+        }
+
+        private void pictureBox1_DragDrop_1(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            if (files.Length > 0)
+            {
+                Scene.Image = Image.FromFile(files[0]);
+                originalImage = new Bitmap(files[0]);
+                image = new Bitmap(files[0]);
+                comboBoxColorSystems.Enabled = true;
+                comboBox1.Enabled = true;
+                RGB_Panel.Enabled = true;
+            }
+        }
+
+        private void pictureBox1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+        //============================
+        // 2) Convert Color Systems
+        //============================
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (image == null)
+                return;
+
+            string selectedSystem = comboBox1.SelectedItem.ToString();
+
+            Mat inputImage = image.ToMat();
+            Mat outputImage = new Mat();
+
+            switch (selectedSystem)
+            {
+                case "RGB":
+                    Scene.Image = image;
+                    return;
+
+                case "CMYK":
+                    ConvertToCMYK();
+                    return;
+
+                case "HSV":
+                    CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2Hsv);
+                    break;
+
+                case "YUV":
+                    CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2Yuv);
+                    break;
+
+                case "LAB":
+                    CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2Lab);
+                    break;
+
+                case "YCbCr":
+                    CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2YCrCb);
+                    break;
+            }
+            Scene.Image = outputImage.ToBitmap();
+        }
+        private void ConvertToCMYK()
+        {
+            Bitmap cmykImage = new Bitmap(image.Width, image.Height);
+
+            for (int y = 0; y < image.Height; y++)
+            {
+                for (int x = 0; x < image.Width; x++)
+                {
+                    Color pixel = image.GetPixel(x, y);
+
+                    int c = 255 - pixel.R;
+                    int m = 255 - pixel.G;
+                    int yC = 255 - pixel.B;
+
+                    Color cmykColor = Color.FromArgb(c, m, yC);
+
+                    cmykImage.SetPixel(x, y, cmykColor);
+                }
+            }
+
+            Scene.Image = cmykImage;
+        }
+        //============================
+        // 3) Change CS Components
+        //============================
         private void initEvents()
         {
             // RGB
@@ -63,10 +169,10 @@ namespace Multimedia_PixelLab_HAKMON
         private void ColorSystem_ValueChanged(object sender, EventArgs e)
         {
             if (isResetting) return;
-            if (originalImage == null) return;
+            if (image == null) return;
 
             string selectedSystem = comboBoxColorSystems.SelectedItem.ToString();
-            Bitmap tempImage = new Bitmap(originalImage.Width, originalImage.Height);
+            Bitmap tempImage = new Bitmap(image.Width, image.Height);
 
             if (selectedSystem == "LAB")
             {
@@ -110,7 +216,7 @@ namespace Multimedia_PixelLab_HAKMON
             {
                 for (int x = 0; x < tempImage.Width; x++)
                 {
-                    Color pixel = originalImage.GetPixel(x, y);
+                    Color pixel = image.GetPixel(x, y);
                     Color newPixel = pixel;
 
                     switch (selectedSystem)
@@ -152,16 +258,22 @@ namespace Multimedia_PixelLab_HAKMON
 
                         case "HSV":
                             {
-                                double h = pixel.GetHue();           // 0..360
-                                double s = pixel.GetSaturation();    // 0..1
-                                double v = pixel.GetBrightness();    // 0..1
+                                double h, s, v;
 
-                                h = (h * f1) % 360;
+                                RgbToHsv(pixel, out h, out s, out v);
+
+                                h += (double)(HSV_H.Value - 50) * 3.6;
+
                                 if (h < 0) h += 360;
-                                s = Math.Max(0, Math.Min(1, s * f2));
-                                v = Math.Max(0, Math.Min(1, v * f3));
+                                if (h >= 360) h -= 360;
+                                s += ((double)HSV_S.Value - 50.0) / 50.0;
+                                v += ((double)HSV_V.Value - 50.0) / 50.0;
+
+                                s = Math.Max(0, Math.Min(1, s));
+                                v = Math.Max(0, Math.Min(1, v));
 
                                 newPixel = HsvToRgb(h, s, v);
+
                                 break;
                             }
 
@@ -192,7 +304,7 @@ namespace Multimedia_PixelLab_HAKMON
                                 double Cb = 128 - 0.168736 * pixel.R - 0.331264 * pixel.G + 0.5 * pixel.B;
                                 double Cr = 128 + 0.5 * pixel.R - 0.418688 * pixel.G - 0.081312 * pixel.B;
 
-                                // Y ÷—» „»«‘—° Cb/Cr ÕÊ· «·„‰ ’› 128
+                                // Y ÿ∂ÿ±ÿ® ŸÖÿ®ÿßÿ¥ÿ±ÿå Cb/Cr ÿ≠ŸàŸÑ ÿßŸÑŸÖŸÜÿ™ÿµŸÅ 128
                                 Y = Y * f1;
                                 Cb = 128 + (Cb - 128) * f2;
                                 Cr = 128 + (Cr - 128) * f3;
@@ -213,13 +325,45 @@ namespace Multimedia_PixelLab_HAKMON
 
             Scene.Image = tempImage;
         }
+        private void RgbToHsv(Color color, out double h, out double s, out double v)
+        {
+            double r = color.R / 255.0;
+            double g = color.G / 255.0;
+            double b = color.B / 255.0;
+
+            double max = Math.Max(r, Math.Max(g, b));
+            double min = Math.Min(r, Math.Min(g, b));
+
+            double delta = max - min;
+
+            h = 0;
+
+            if (delta != 0)
+            {
+                if (max == r)
+                    h = 60 * (((g - b) / delta) % 6);
+
+                else if (max == g)
+                    h = 60 * (((b - r) / delta) + 2);
+
+                else
+                    h = 60 * (((r - g) / delta) + 4);
+            }
+
+            if (h < 0)
+                h += 360;
+
+            s = (max == 0) ? 0 : delta / max;
+
+            v = max;
+        }
         private void ApplyLAB()
         {
             double lFactor = (double)LAB_L.Value / 50.0;
             double aFactor = (double)LAB_A.Value / 50.0;
             double bFactor = (double)LAB_B.Value / 50.0;
 
-            Mat inputMat = originalImage.ToMat();
+            Mat inputMat = image.ToMat();
             Mat labMat = new Mat();
             CvInvoke.CvtColor(inputMat, labMat, ColorConversion.Bgr2Lab);
 
@@ -267,39 +411,6 @@ namespace Multimedia_PixelLab_HAKMON
             return Color.FromArgb(r, g, b);
         }
 
-        private void openImage_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                Scene.Image = Image.FromFile(openFileDialog1.FileName);
-                originalImage = new Bitmap(openFileDialog1.FileName);
-                image = new Bitmap(openFileDialog1.FileName);
-                comboBoxColorSystems.Enabled = true;
-                RGB_Panel.Enabled = true;
-            }
-        }
-
-        private void pictureBox1_DragDrop_1(object sender, DragEventArgs e)
-        {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-            if (files.Length > 0)
-            {
-                Scene.Image = Image.FromFile(files[0]);
-                originalImage = new Bitmap(openFileDialog1.FileName);
-                image = new Bitmap(openFileDialog1.FileName);
-                comboBoxColorSystems.Enabled = true;
-                RGB_Panel.Enabled = true;
-            }
-        }
-
-        private void pictureBox1_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                e.Effect = DragDropEffects.Copy;
-            }
-        }
 
         private void comboBoxColorSystems_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -308,65 +419,49 @@ namespace Multimedia_PixelLab_HAKMON
 
             string selectedSystem = comboBoxColorSystems.SelectedItem.ToString();
 
-            Mat inputImage = image.ToMat();
-            Mat outputImage = new Mat();
-
             switch (selectedSystem)
             {
                 case "RGB":
                     ShowPanel(0);
-                    Scene.Image = image;
-                    return;
+                    break;
 
                 case "CMYK":
                     ShowPanel(1);
-                    ConvertToCMYK();
-                    return;
+                    break;
 
                 case "HSV":
                     ShowPanel(2);
-                    CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2Hsv);
                     break;
 
                 case "YUV":
                     ShowPanel(3);
-                    CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2Yuv);
                     break;
 
                 case "LAB":
                     ShowPanel(4);
-                    CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2Lab);
                     break;
 
                 case "YCbCr":
                     ShowPanel(5);
-                    CvInvoke.CvtColor(inputImage, outputImage, ColorConversion.Bgr2YCrCb);
                     break;
             }
-            Scene.Image = outputImage.ToBitmap();
         }
-        private void ConvertToCMYK()
-        {
-            Bitmap cmykImage = new Bitmap(image.Width, image.Height);
-
-            for (int y = 0; y < image.Height; y++)
-            {
-                for (int x = 0; x < image.Width; x++)
-                {
-                    Color pixel = image.GetPixel(x, y);
-
-                    int c = 255 - pixel.R;
-                    int m = 255 - pixel.G;
-                    int yC = 255 - pixel.B;
-
-                    Color cmykColor = Color.FromArgb(c, m, yC);
-
-                    cmykImage.SetPixel(x, y, cmykColor);
-                }
-            }
-
-            Scene.Image = cmykImage;
-        }
+       
+        //============================
+        // 4) 
+        //============================
+        //============================
+        // 5) 
+        //============================
+        //============================
+        // 6) 
+        //============================
+        //============================
+        // 7) 
+        //============================
+        //============================
+        // 8) 
+        //============================
 
         private void ShowPanel(int index)
         {
@@ -375,7 +470,9 @@ namespace Multimedia_PixelLab_HAKMON
                 colorSystemsPanel[i].Visible = (i == index);
             }
         }
-
+        //============================
+        // 9) Clear Image 
+        //============================
         private void resetImage_Click(object sender, EventArgs e)
         {
             reset_value_sysColor();
@@ -384,12 +481,16 @@ namespace Multimedia_PixelLab_HAKMON
         }
         private void reset_value_sysColor()
         {
+            isResetting = true;
             RGB_R.Value = 50; RGB_G.Value = 50; RGB_B.Value = 50;
             CMYK_C.Value = 50; CMYK_M.Value = 50; CMYK_Y.Value = 50; CMYK_K.Value = 50;
             HSV_H.Value = 50; HSV_S.Value = 50; HSV_V.Value = 50;
             YUV_Y.Value = 50; YUV_U.Value = 50; YUV_V.Value = 50;
             LAB_L.Value = 50; LAB_A.Value = 50; LAB_B.Value = 50;
             YCbCr_Y.Value = 50; YCbCr_Cb.Value = 50; YCbCr_Cr.Value = 50;
+            comboBoxColorSystems.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;
+            isResetting = false;
         }
     }
 }
