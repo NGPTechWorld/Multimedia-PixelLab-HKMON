@@ -9,6 +9,7 @@ namespace Multimedia_PixelLab_HAKMON
     {
         Bitmap image;
         Bitmap originalImage;
+
         bool isResetting = false;
         List<Panel> colorSystemsPanel = new List<Panel>();
         public Form1()
@@ -24,9 +25,11 @@ namespace Multimedia_PixelLab_HAKMON
             colorSystemsPanel.Add(YUV_Panel);
             colorSystemsPanel.Add(LAB_Panel);
             colorSystemsPanel.Add(YCbCr_Panel);
+            comboBoxColorSystems.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;
             RGB_Panel.Enabled = false;
             ShowPanel(0);
-            reset_value_sysColor();
+            reset_value_sysColor(true);
             initEvents();
         }
 
@@ -174,8 +177,10 @@ namespace Multimedia_PixelLab_HAKMON
             if (isResetting) return;
             if (image == null) return;
 
+
             string selectedSystem = comboBoxColorSystems.SelectedItem.ToString();
-            Bitmap tempImage = new Bitmap(image.Width, image.Height);
+            Bitmap source = originalImage;                          // ⬅️ الأساس الثابت
+            Bitmap tempImage = new Bitmap(source.Width, source.Height);
 
             if (selectedSystem == "LAB")
             {
@@ -219,7 +224,7 @@ namespace Multimedia_PixelLab_HAKMON
             {
                 for (int x = 0; x < tempImage.Width; x++)
                 {
-                    Color pixel = image.GetPixel(x, y);
+                    Color pixel = source.GetPixel(x, y);
                     Color newPixel = pixel;
 
                     switch (selectedSystem)
@@ -325,7 +330,7 @@ namespace Multimedia_PixelLab_HAKMON
                     tempImage.SetPixel(x, y, newPixel);
                 }
             }
-
+            image = tempImage;
             Scene.Image = tempImage;
         }
         private void RgbToHsv(Color color, out double h, out double s, out double v)
@@ -448,6 +453,7 @@ namespace Multimedia_PixelLab_HAKMON
                     ShowPanel(5);
                     break;
             }
+            reset_value_sysColor();
         }
 
         //============================
@@ -463,6 +469,11 @@ namespace Multimedia_PixelLab_HAKMON
         // 7)  Color Change Quantize
         //============================
         int colorCount = 0;
+        private void color_count_ValueChanged(object sender, EventArgs e)
+        {
+            colorCount = (int)color_count.Value;
+        }
+       
         private void color_change_Click(object sender, EventArgs e)
         {
             if (image == null)
@@ -524,17 +535,21 @@ namespace Multimedia_PixelLab_HAKMON
             /*image = originalImage;
             RGB.Image = Image.FromFile(openFileDialog1.FileName);*/
         }
-        private void reset_value_sysColor()
+        private void reset_value_sysColor(bool first=false)
         {
-            isResetting = true;
+            if (!first)
+            {
+                image = (Bitmap)originalImage.Clone();
+            }
+            isResetting = true;  
             RGB_R.Value = 50; RGB_G.Value = 50; RGB_B.Value = 50;
             CMYK_C.Value = 50; CMYK_M.Value = 50; CMYK_Y.Value = 50; CMYK_K.Value = 50;
             HSV_H.Value = 50; HSV_S.Value = 50; HSV_V.Value = 50;
             YUV_Y.Value = 50; YUV_U.Value = 50; YUV_V.Value = 50;
             LAB_L.Value = 50; LAB_A.Value = 50; LAB_B.Value = 50;
             YCbCr_Y.Value = 50; YCbCr_Cb.Value = 50; YCbCr_Cr.Value = 50;
-            comboBoxColorSystems.SelectedIndex = 0;
-            comboBox1.SelectedIndex = 0;
+
+            Scene.Image = image;
             isResetting = false;
         }
         private void ShowPanel(int index)
@@ -612,9 +627,10 @@ namespace Multimedia_PixelLab_HAKMON
             }
         }
 
-        private void color_count_ValueChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            colorCount = (int)color_count.Value;
+            Form3 form = new Form3();
+            form.Show();
         }
     }
 }
