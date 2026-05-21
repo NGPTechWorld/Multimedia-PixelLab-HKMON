@@ -59,5 +59,26 @@ namespace Multimedia_PixelLab_HAKMON.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _60e924ae_10e3_4e20_a51a_7e99674fad3b {
+            get {
+                object obj = ResourceManager.GetObject("60e924ae-10e3-4e20-a51a-7e99674fad3b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap abstract_white_background_with_stripes_abstract_white_gradient_background_shiny_white_texture_illustration_vector {
+            get {
+                object obj = ResourceManager.GetObject("abstract-white-background-with-stripes-abstract-white-gradient-background-shiny-w" +
+                        "hite-texture-illustration-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

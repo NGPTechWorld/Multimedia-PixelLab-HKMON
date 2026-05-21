@@ -131,24 +131,25 @@
             // space
             // 
             space.AllowDrop = true;
-            space.BackColor = System.Drawing.Color.Gainsboro;
+            space.BackColor = System.Drawing.Color.LightGray;
             space.Controls.Add(this.Scene);
-            space.Location = new System.Drawing.Point(-2, 54);
+            space.Location = new System.Drawing.Point(18, 54);
             space.Name = "space";
-            space.Size = new System.Drawing.Size(1107, 454);
+            space.Size = new System.Drawing.Size(1087, 454);
             space.TabIndex = 0;
             // 
             // Scene
             // 
-            this.Scene.Location = new System.Drawing.Point(0, 3);
+            this.Scene.Location = new System.Drawing.Point(3, 3);
             this.Scene.Name = "Scene";
-            this.Scene.Size = new System.Drawing.Size(1104, 448);
+            this.Scene.Size = new System.Drawing.Size(1101, 448);
             this.Scene.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Scene.TabIndex = 0;
             this.Scene.TabStop = false;
             // 
             // YUV_Panel
             // 
+            this.YUV_Panel.BackColor = System.Drawing.Color.Transparent;
             this.YUV_Panel.Controls.Add(this.YUV_V_Label);
             this.YUV_Panel.Controls.Add(this.YUV_U_Label);
             this.YUV_Panel.Controls.Add(this.YUV_Y_Label);
@@ -236,7 +237,7 @@
             // 
             // openImage
             // 
-            this.openImage.Location = new System.Drawing.Point(12, 12);
+            this.openImage.Location = new System.Drawing.Point(18, 13);
             this.openImage.Name = "openImage";
             this.openImage.Size = new System.Drawing.Size(136, 29);
             this.openImage.TabIndex = 1;
@@ -267,6 +268,7 @@
             // 
             // RGB_Panel
             // 
+            this.RGB_Panel.BackColor = System.Drawing.Color.Transparent;
             this.RGB_Panel.Controls.Add(this.RGB_B_label);
             this.RGB_Panel.Controls.Add(this.RGB_G_label);
             this.RGB_Panel.Controls.Add(this.RGB_R_label);
@@ -344,6 +346,7 @@
             // 
             // HSV_Panel
             // 
+            this.HSV_Panel.BackColor = System.Drawing.Color.Transparent;
             this.HSV_Panel.Controls.Add(this.Percent2);
             this.HSV_Panel.Controls.Add(this.Percent);
             this.HSV_Panel.Controls.Add(this.HSV_V_Label);
@@ -431,6 +434,7 @@
             // 
             // LAB_Panel
             // 
+            this.LAB_Panel.BackColor = System.Drawing.Color.Transparent;
             this.LAB_Panel.Controls.Add(this.LAB_B_Label);
             this.LAB_Panel.Controls.Add(this.LAB_A_Label);
             this.LAB_Panel.Controls.Add(this.LAB_L_Label);
@@ -512,6 +516,7 @@
             // 
             // YCbCr_Panel
             // 
+            this.YCbCr_Panel.BackColor = System.Drawing.Color.Transparent;
             this.YCbCr_Panel.Controls.Add(this.YCbCr_Cr_Label);
             this.YCbCr_Panel.Controls.Add(this.YCbCr_Cb_Label);
             this.YCbCr_Panel.Controls.Add(this.YCbCr_Y_Label);
@@ -588,6 +593,7 @@
             // 
             // CMYK_Panel
             // 
+            this.CMYK_Panel.BackColor = System.Drawing.Color.Transparent;
             this.CMYK_Panel.Controls.Add(this.label4);
             this.CMYK_Panel.Controls.Add(this.label3);
             this.CMYK_Panel.Controls.Add(this.label2);
@@ -741,18 +747,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(318, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 20);
+            this.label5.Size = new System.Drawing.Size(101, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Color System";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(18, 518);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 20);
+            this.label6.Size = new System.Drawing.Size(119, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "CS Components";
             // 
@@ -766,6 +776,7 @@
             // 
             // number_of_colors_7
             // 
+            this.number_of_colors_7.BackColor = System.Drawing.Color.Transparent;
             this.number_of_colors_7.Controls.Add(this.save_image);
             this.number_of_colors_7.Controls.Add(this.color_count);
             this.number_of_colors_7.Controls.Add(this.color_change);
@@ -820,23 +831,28 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(587, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 20);
+            this.label7.Size = new System.Drawing.Size(108, 20);
             this.label7.TabIndex = 14;
             this.label7.Text = "Number Color";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(1111, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(133, 20);
+            this.label8.Size = new System.Drawing.Size(142, 20);
             this.label8.TabIndex = 15;
             this.label8.Text = "Image Information";
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(1111, 520);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(331, 64);
@@ -849,6 +865,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1455, 594);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
@@ -868,6 +885,7 @@
             this.Controls.Add(space);
             this.Controls.Add(this.YCbCr_Panel);
             this.Controls.Add(this.HSV_Panel);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PixelLap";
