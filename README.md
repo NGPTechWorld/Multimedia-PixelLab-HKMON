@@ -1,4 +1,8 @@
 # تقرير مشروع مختبر الصور — PixelLab
+<img width="1465" height="635" alt="image" src="https://github.com/user-attachments/assets/2471d4d6-2d22-4f3e-87f2-34fcfda9511e" />
+<img width="1272" height="728" alt="image" src="https://github.com/user-attachments/assets/14362089-2af2-40c8-8bed-354bf1716085" />
+<img width="1278" height="733" alt="image" src="https://github.com/user-attachments/assets/5de5f4fa-510b-43c4-856f-4cfefba81315" />
+
 
 ## مقدمة
 
