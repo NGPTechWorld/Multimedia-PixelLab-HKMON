@@ -1,5 +1,6 @@
 ﻿using Emgu.CV;
 using Emgu.CV.CvEnum;
+using Emgu.CV.Util;
 using KGySoft.Drawing.Imaging;
 using KGySoft.Drawing;
 
@@ -380,32 +381,29 @@ namespace Multimedia_PixelLab_HAKMON
             double aFactor = (double)LAB_A.Value / 50.0;
             double bFactor = (double)LAB_B.Value / 50.0;
 
-            Mat inputMat = image.ToMat();
-            Mat labMat = new Mat();
+            using Mat inputMat = originalImage.ToMat();
+            using Mat labMat = new Mat();
             CvInvoke.CvtColor(inputMat, labMat, ColorConversion.Bgr2Lab);
 
-            Bitmap labBitmap = labMat.ToBitmap();
-            Bitmap modifiedLab = new Bitmap(labBitmap.Width, labBitmap.Height);
+            using VectorOfMat channels = new VectorOfMat();
+            CvInvoke.Split(labMat, channels);
 
-            for (int y = 0; y < labBitmap.Height; y++)
-            {
-                for (int x = 0; x < labBitmap.Width; x++)
-                {
-                    Color pixel = labBitmap.GetPixel(x, y);
+            using Mat L = channels[0];
+            using Mat A = channels[1];
+            using Mat B = channels[2];
 
-                    int L = Math.Max(0, Math.Min(255, (int)(pixel.R * lFactor)));
-                    int A = Math.Max(0, Math.Min(255, (int)(pixel.G * aFactor)));
-                    int B = Math.Max(0, Math.Min(255, (int)(pixel.B * bFactor)));
+            L.ConvertTo(L, DepthType.Cv8U, lFactor, 0);
+            A.ConvertTo(A, DepthType.Cv8U, aFactor, 128 * (1 - aFactor));
+            B.ConvertTo(B, DepthType.Cv8U, bFactor, 128 * (1 - bFactor));
 
-                    modifiedLab.SetPixel(x, y, Color.FromArgb(L, A, B));
-                }
-            }
+            using VectorOfMat newChannels = new VectorOfMat(L, A, B);
+            using Mat mergedLab = new Mat();
+            CvInvoke.Merge(newChannels, mergedLab);
 
-            Mat modifiedMat = modifiedLab.ToMat();
-            Mat resultMat = new Mat();
-            CvInvoke.CvtColor(modifiedMat, resultMat, ColorConversion.Lab2Bgr);
+            using Mat resultBgr = new Mat();
+            CvInvoke.CvtColor(mergedLab, resultBgr, ColorConversion.Lab2Bgr);
 
-            Scene.Image = resultMat.ToBitmap();
+            Scene.Image = resultBgr.ToBitmap();
         }
         private Color HsvToRgb(double h, double s, double v)
         {

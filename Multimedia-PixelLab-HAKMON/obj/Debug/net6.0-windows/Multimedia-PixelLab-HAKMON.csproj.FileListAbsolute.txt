@@ -81,10 +81,8 @@ D:\MultiMedia\Multimedia-PixelLab-HKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\KGySoft.CoreLibraries.dll
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\KGySoft.Drawing.dll
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\KGySoft.Drawing.Core.dll
-D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia_PixelLab_HAKMON.Form2.resources
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\ColorMine.dll
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\OpenTK.dll
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\bin\Debug\net6.0-windows\OpenTK.GLControl.dll
-D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia_PixelLab_HAKMON.Form3.resources
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia_PixelLab_HAKMON.Form4.resources
 D:\Univercity\Years\ITE 4th Year\الفصل الثاني\نظم وسائط المتعددة\عملي\Multimedia-PixelLab-HAKMON\Multimedia-PixelLab-HAKMON\obj\Debug\net6.0-windows\Multimedia-PixelLab-HAKMON.csproj.CopyComplete
