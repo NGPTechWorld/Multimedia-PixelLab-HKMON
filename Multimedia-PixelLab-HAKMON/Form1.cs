@@ -629,7 +629,8 @@ namespace Multimedia_PixelLab_HAKMON
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 form = new Form3();
+            Bitmap? src = originalImage != null ? (Bitmap)originalImage.Clone() : null;
+            Form4 form = new Form4(src);
             form.Show();
         }
     }
