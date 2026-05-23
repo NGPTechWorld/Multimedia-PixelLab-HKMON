@@ -7,6 +7,7 @@ namespace Multimedia_PixelLab_HAKMON
 {
     public partial class Form1 : Form
     {
+        String pathImage="";
         Bitmap image;
         Bitmap originalImage;
 
@@ -19,6 +20,8 @@ namespace Multimedia_PixelLab_HAKMON
 
             comboBoxColorSystems.Enabled = false;
             comboBox1.Enabled = false;
+            resetImage.Enabled = false;
+            number_of_colors_7.Enabled = false;
             colorSystemsPanel.Add(RGB_Panel);
             colorSystemsPanel.Add(CMYK_Panel);
             colorSystemsPanel.Add(HSV_Panel);
@@ -43,9 +46,12 @@ namespace Multimedia_PixelLab_HAKMON
                 Scene.Image = Image.FromFile(openFileDialog1.FileName);
                 originalImage = new Bitmap(openFileDialog1.FileName);
                 image = new Bitmap(openFileDialog1.FileName);
+                pathImage = openFileDialog1.FileName;
                 comboBoxColorSystems.Enabled = true;
                 comboBox1.Enabled = true;
                 RGB_Panel.Enabled = true;
+                resetImage.Enabled = true;
+                number_of_colors_7.Enabled = true;
                 Image_information_8.Invalidate();
             }
         }
@@ -59,9 +65,12 @@ namespace Multimedia_PixelLab_HAKMON
                 Scene.Image = Image.FromFile(files[0]);
                 originalImage = new Bitmap(files[0]);
                 image = new Bitmap(files[0]);
+                pathImage = files[0];
                 comboBoxColorSystems.Enabled = true;
                 comboBox1.Enabled = true;
                 RGB_Panel.Enabled = true;
+                resetImage.Enabled = true;
+                number_of_colors_7.Enabled = true;
                 Image_information_8.Invalidate();
             }
         }
@@ -457,14 +466,14 @@ namespace Multimedia_PixelLab_HAKMON
         }
 
         //============================
-        // 4) 
+        // 4 - 5 ) Color Systems 3D space 
         //============================
-        //============================
-        // 5) 
-        //============================
-        //============================
-        // 6) 
-        //============================
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Bitmap? src = originalImage != null ? (Bitmap)originalImage.Clone() : null;
+            Form4 form = new Form4(src);
+            form.Show();
+        }
         //============================
         // 7)  Color Change Quantize
         //============================
@@ -480,6 +489,7 @@ namespace Multimedia_PixelLab_HAKMON
                 return;
 
             image = originalImage.CloneCurrentFrame();
+            colorCount= Math.Max(2, Math.Min(65536, colorCount));
             IQuantizer quantizer = OptimizedPaletteQuantizer.Wu(colorCount);
             image.Quantize(quantizer);
             Scene.Image = image;
@@ -503,8 +513,8 @@ namespace Multimedia_PixelLab_HAKMON
                              new PointF(10, 10));
                 return;
             }
-
-            FileInfo fileInfo = new FileInfo(openFileDialog1.FileName);
+            
+            FileInfo fileInfo = new FileInfo(pathImage);
 
             string info =
                 "Image Information\n\n" +
@@ -627,11 +637,5 @@ namespace Multimedia_PixelLab_HAKMON
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Bitmap? src = originalImage != null ? (Bitmap)originalImage.Clone() : null;
-            Form4 form = new Form4(src);
-            form.Show();
-        }
     }
 }

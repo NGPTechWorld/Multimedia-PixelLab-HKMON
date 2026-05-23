@@ -146,6 +146,8 @@
             this.Scene.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Scene.TabIndex = 0;
             this.Scene.TabStop = false;
+            this.Scene.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragDrop_1);
+            this.Scene.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragEnter);
             // 
             // YUV_Panel
             // 

@@ -58,7 +58,7 @@ namespace Multimedia_PixelLab_HAKMON
             glControl1.MouseClick += GlControl1_MouseClick;
 
             CachePixels();
-            UpdateImageInfoLabel();
+            //UpdateImageInfoLabel();
             UpdateAllSystemDisplays(Color.White);
         }
 
@@ -118,14 +118,14 @@ namespace Multimedia_PixelLab_HAKMON
             _pixelCount = idx / 3;
         }
 
-        private void UpdateImageInfoLabel()
+  /*      private void UpdateImageInfoLabel()
         {
             if (_image == null)
                 lblImageInfo.Text = "No image loaded (open one in main window)";
             else
                 lblImageInfo.Text = $"Image: {_image.Width}×{_image.Height} ({_pixelCount:N0} sampled points)";
         }
-
+*/
         // ─────────────────────────────────────────────
         //  OpenGL lifecycle
         // ─────────────────────────────────────────────
