@@ -189,7 +189,7 @@ namespace Multimedia_PixelLab_HAKMON
 
 
             string selectedSystem = comboBoxColorSystems.SelectedItem.ToString();
-            Bitmap source = originalImage;                          // ⬅️ الأساس الثابت
+            Bitmap source = originalImage;        
             Bitmap tempImage = new Bitmap(source.Width, source.Height);
 
             if (selectedSystem == "LAB")
